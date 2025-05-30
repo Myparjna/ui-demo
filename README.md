@@ -43,7 +43,7 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/006">
             <p align="center">006</p>
-            <img width=240 src="[006.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
     </tr>
@@ -52,19 +52,19 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/007">
             <p align="center">007</p>
-            <img width=240 src="[007.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/008">
             <p align="center">008</p>
-            <img width=240 src="[008.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/009">
             <p align="center">009</p>
-            <img width=240 src="[009.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
     </tr>
@@ -256,19 +256,19 @@
     <td valign="top">
         <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/001">
             <p align="center">001</p>
-            <img width=240 src="001.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/002">
             <p align="center">002</p>
-            <img width=240 src="002.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/003">
             <p align="center">003</p>
-            <img width=240 src="003.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     </tr>
@@ -277,19 +277,19 @@
     <td valign="top">
         <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/004">
             <p align="center">004</p>
-            <img width=240 src="004.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/005">
             <p align="center">005</p>
-            <img width=240 src="005.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/006">
             <p align="center">006</p>
-            <img width=240 src="006.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     </tr>
