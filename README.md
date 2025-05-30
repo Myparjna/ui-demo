@@ -9,13 +9,13 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/001">
-            <p align="center">001</p>
+            <p align="center">甬想官网黑色版本Deepseek0528</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/002">
-            <p align="center">002</p>
+            <p align="center">甬想官网白色版本Deepseek0528</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
