@@ -1,228 +1,1877 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>一封情书</title>
-    <link rel="icon" type="image/x-icon" href="https://i.loli.net/2021/06/03/lFg2V4WUcmkB98G.png">
-    <meta name="language" content="zh-CN">
-    <meta name="title" content="小孙同学">
-    <meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
-    <meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
-    <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
-    <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
-    <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
-    <script type="text/javascript" src="./Love_files/jscex-parser.js"></script>
-    <script type="text/javascript" src="./Love_files/jscex-jit.js"></script>
-    <script type="text/javascript" src="./Love_files/jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="./Love_files/jscex-async.min.js"></script>
-    <script type="text/javascript" src="./Love_files/jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="./Love_files/functions.js" charset="utf-8"></script>
-    <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>宁波甬想科技有限公司 - 软件服务开发定制专家</title>
+    <meta
+      name="description"
+      content="宁波甬想科技有限公司专注于提供高质量的软件定制开发、APP开发、系统集成及技术咨询服务，致力于以创新技术驱动企业数字化转型。"
+    />
+    <meta
+      name="keywords"
+      content="宁波软件开发, 软件定制, APP开发, 系统集成, 甬想科技, 智慧楼宇, 智慧工地, 企业管理系统"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      body {
+        font-family: "HarmonyOS Sans", "Inter", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .harmony-font {
+        font-family: "HarmonyOS Sans", "Inter", sans-serif;
+      }
+      .hero-bg {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(17, 24, 39, 0.85),
+            rgba(17, 24, 39, 0.98)
+          ),
+          url("https://cdn.sa.net/2025/05/30/gpW5Ji1lBk9oAxr.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      #hero-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.3;
+      }
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .modal {
+        transition: opacity 0.3s ease-in-out;
+      }
+      .modal-content {
+        transition: transform 0.3s ease-in-out;
+      }
+      .modal-content::-webkit-scrollbar {
+        width: 8px;
+      }
+      .modal-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      .modal-content::-webkit-scrollbar-thumb {
+        background: #a8a8a8;
+        border-radius: 10px;
+      }
+      .modal-content::-webkit-scrollbar-thumb:hover {
+        background: #888;
+      }
 
-</head>
+      .prose h4 {
+        @apply text-slate-800;
+      }
+      .prose p {
+        @apply text-slate-600;
+      }
+      .prose ul > li::before {
+        @apply bg-sky-500;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100 text-slate-700">
+    <!-- Header / Navigation -->
+    <header
+      id="navbar"
+      class="bg-slate-900/80 backdrop-blur-md shadow-lg fixed w-full z-40 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 h-16 flex justify-between items-center"
+      >
+        <a href="#home" class="flex items-center space-x-2">
+          <img
+            src="https://cdn.sa.net/2025/05/30/K9En12xj6Iz4YDd.png"
+            alt="宁波甬想科技有限公司 LOGO"
+            class="h-10"
+          />
+          <span class="text-xl font-bold text-white">宁波甬想科技</span>
+        </a>
+        <nav class="hidden md:flex items-center space-x-1">
+          <a
+            href="#home"
+            class="px-4 py-2 text-slate-300 hover:text-white rounded-md transition-colors duration-200"
+            >首页</a
+          >
+          <a
+            href="#services"
+            class="px-4 py-2 text-slate-300 hover:text-white rounded-md transition-colors duration-200"
+            >服务范围</a
+          >
+          <a
+            href="#featured-projects"
+            class="px-4 py-2 text-slate-300 hover:text-white rounded-md transition-colors duration-200"
+            >精选案例</a
+          >
+          <a
+            href="#all-projects"
+            class="px-4 py-2 text-slate-300 hover:text-white rounded-md transition-colors duration-200"
+            >项目中心</a
+          >
+          <a
+            href="#about"
+            class="px-4 py-2 text-slate-300 hover:text-white rounded-md transition-colors duration-200"
+            >关于我们</a
+          >
+          <a
+            href="#contact"
+            class="px-4 py-2 text-slate-300 hover:text-white rounded-md transition-colors duration-200"
+            >联系我们</a
+          >
+        </nav>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-white focus:outline-none p-2"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-slate-900 border-t border-slate-700"
+      >
+        <a
+          href="#home"
+          class="block px-6 py-3 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          >首页</a
+        >
+        <a
+          href="#services"
+          class="block px-6 py-3 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          >服务范围</a
+        >
+        <a
+          href="#featured-projects"
+          class="block px-6 py-3 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          >精选案例</a
+        >
+        <a
+          href="#all-projects"
+          class="block px-6 py-3 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          >项目中心</a
+        >
+        <a
+          href="#about"
+          class="block px-6 py-3 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          >关于我们</a
+        >
+        <a
+          href="#contact"
+          class="block px-6 py-3 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
+          >联系我们</a
+        >
+      </div>
+    </header>
 
-<body>
-    <div id="main">
-        <div id="error">亲，您使用的浏览器无法支持即将显示的内容，请换成谷歌(<a
-                href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a
-                href="http://firefox.com.cn/download/">Firefox</a>)浏览器哟~</div>
-        <div id="wrap">
-            <div id="text">
-                <div id="code">
-                    <span class="say">一定要爱你</span><br><br>
-                    <span class="say">我知道你是一个天真善良温柔的女孩</span><br>
-                    <span class="say">真的希望自己能够配上你</span><br>
-                    <span class="say">如果你能给我机会让我好好的爱你</span><br>
-                    <span class="say">真的只想真心真意对你说</span><br>
-                    <br>
-                    <span class="say">我爱你一定爱到花都开了 鸟儿把歌唱</span><br>
-                    <span class="say">爱到牛郎织女为我们点头</span><br>
-                    <span class="say">爱到花儿绽放鸟儿成群 把我们环绕</span><br>
-                    <span class="say">爱到每道彩虹映出你的美</span><br>
-                    <br>
-                    <span class="say">我爱你一定爱到海枯石烂 永远不后悔</span><br>
-                    <span class="say">爱到来生来世也会说无悔</span><br>
-                    <span class="say">就把这首动听的歌唱给心爱的女孩</span><br>
-                    <span class="say">真的希望你能给我个机会</span><br>
-                    <span class="say">让我去爱你</span><br>
-                    <br>
-                    <span class="say"><span class="space"></span> -- 你的，太阳。</span>
-                </div>
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-bg min-h-screen flex items-center justify-center pt-16 relative overflow-hidden"
+    >
+      <canvas id="hero-canvas"></canvas>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 animate-on-scroll harmony-font leading-tight"
+        >
+          宁波甬想科技
+        </h1>
+        <p
+          class="text-lg sm:text-xl md:text-2xl text-slate-200 mb-10 animate-on-scroll"
+          style="--delay: 0.2s"
+        >
+          以智慧驱动未来，用代码构筑卓越软件解决方案
+        </p>
+        <a
+          href="#contact"
+          class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-lg animate-on-scroll"
+          style="--delay: 0.4s"
+        >
+          获取定制方案
+          <i data-lucide="arrow-right" class="inline-block ml-2 w-5 h-5"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center animate-on-scroll"
+        >
+          我们的服务范围
+        </h2>
+        <p
+          class="text-lg text-slate-600 mb-12 text-center max-w-2xl mx-auto animate-on-scroll"
+          style="--delay: 0.1s"
+        >
+          我们提供全面的软件开发和技术服务，满足您多样化的业务需求，助力企业实现数字化转型和效率提升。
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-sky-100 hover:border-sky-500 border-2 border-transparent transition-all duration-300 animate-on-scroll"
+            style="--delay: 0.2s"
+          >
+            <div
+              class="bg-sky-500 text-white rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6 shadow-md"
+            >
+              <i data-lucide="code-2" class="w-8 h-8"></i>
             </div>
-            <div id="clock-box">
-                <a href="https://sunguoqi.com" target="_blank">星星</a> 和 <a href="https://sunguoqi.com"
-                    target="_blank">月亮</a> 在一起的
-                <div id="clock"></div>
+            <h3 class="text-2xl font-semibold mb-3 text-slate-800">
+              软件定制开发
+            </h3>
+            <p class="text-slate-600 text-sm">
+              根据您的特定需求，量身打造高效、稳定、易扩展的各类应用软件和系统平台。
+            </p>
+          </div>
+          <div
+            class="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-sky-100 hover:border-sky-500 border-2 border-transparent transition-all duration-300 animate-on-scroll"
+            style="--delay: 0.3s"
+          >
+            <div
+              class="bg-green-500 text-white rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6 shadow-md"
+            >
+              <i data-lucide="smartphone" class="w-8 h-8"></i>
             </div>
-            <canvas id="canvas" width="1100" height="680"></canvas>
+            <h3 class="text-2xl font-semibold mb-3 text-slate-800">APP 开发</h3>
+            <p class="text-slate-600 text-sm">
+              提供 iOS 和 Android
+              平台的原生及混合应用开发，覆盖小程序、公众号等移动解决方案。
+            </p>
+          </div>
+          <div
+            class="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-sky-100 hover:border-sky-500 border-2 border-transparent transition-all duration-300 animate-on-scroll"
+            style="--delay: 0.4s"
+          >
+            <div
+              class="bg-purple-500 text-white rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6 shadow-md"
+            >
+              <i data-lucide="database-zap" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3 text-slate-800">系统集成</h3>
+            <p class="text-slate-600 text-sm">
+              整合现有IT系统与新应用，打破信息孤岛，实现数据共享与业务流程自动化。
+            </p>
+          </div>
+          <div
+            class="bg-slate-50 p-8 rounded-xl shadow-lg hover:shadow-sky-100 hover:border-sky-500 border-2 border-transparent transition-all duration-300 animate-on-scroll"
+            style="--delay: 0.5s"
+          >
+            <div
+              class="bg-amber-500 text-white rounded-full p-3 w-16 h-16 flex items-center justify-center mb-6 shadow-md"
+            >
+              <i data-lucide="settings-2" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3 text-slate-800">
+              运维与技术支持
+            </h3>
+            <p class="text-slate-600 text-sm">
+              提供持续的系统维护、升级优化和专业技术支持服务，保障系统稳定运行。
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
+    <!-- Featured Projects Section -->
+    <section id="featured-projects" class="py-16 md:py-24 bg-slate-100">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center animate-on-scroll"
+        >
+          精选项目案例
+        </h2>
+        <p
+          class="text-lg text-slate-600 mb-12 text-center max-w-2xl mx-auto animate-on-scroll"
+          style="--delay: 0.1s"
+        >
+          探索我们如何通过创新的技术解决方案，为不同行业的客户创造价值，解决实际业务挑战。
+        </p>
+        <div
+          id="featured-projects-grid"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        ></div>
+      </div>
+    </section>
+
+    <!-- All Projects Section -->
+    <section id="all-projects" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center animate-on-scroll"
+        >
+          项目中心
+        </h2>
+        <p
+          class="text-lg text-slate-600 mb-12 text-center max-w-2xl mx-auto animate-on-scroll"
+          style="--delay: 0.1s"
+        >
+          浏览我们丰富的项目经验，涵盖智慧城市、企业管理、教育科技等多个领域，展现我们的技术实力和行业洞察。
+        </p>
+        <div
+          class="mb-12 flex flex-wrap justify-center gap-x-3 gap-y-2 animate-on-scroll"
+          style="--delay: 0.2s"
+          id="project-filters"
+        >
+          <button
+            class="filter-btn active font-medium py-2 px-5 rounded-lg transition-all duration-200"
+            data-filter="all"
+          >
+            全部项目
+          </button>
+        </div>
+        <div
+          id="all-projects-grid"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        ></div>
+        <div
+          id="no-projects-message"
+          class="hidden text-center text-slate-500 py-10"
+        >
+          <i
+            data-lucide="folder-search"
+            class="w-16 h-16 mx-auto mb-4 text-slate-400"
+          ></i>
+          <p class="text-xl">暂无匹配的项目</p>
+          <p>请尝试其他筛选条件或查看全部项目。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-slate-800 text-slate-300">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+              关于甬想科技
+            </h2>
+            <p class="text-lg text-slate-300 mb-4">
+              宁波甬想科技有限公司（Ningbo Yongxiang Technology Co.,
+              Ltd.）是一家专注于信息传输、软件和信息技术服务的创新型企业。我们深耕应用软件开发领域，致力于为客户提供从需求分析、方案设计、软件开发、系统部署到后期运维的全方位、一站式技术服务。
+            </p>
+            <p class="text-slate-400 mb-6">
+              我们的核心团队由经验丰富的项目经理、资深架构师和专业工程师组成，凭借深厚的技术积累和对行业趋势的敏锐洞察，成功交付了众多高质量的软件项目。我们坚持以客户为中心，以技术创新为驱动，助力企业实现数字化转型和业务增长。
+            </p>
+            <a
+              href="#contact"
+              class="bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              进一步了解我们
+              <i data-lucide="users" class="inline-block ml-2 w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="animate-on-scroll" style="--delay: 0.2s">
+            <img
+              src="https://cdn.sa.net/2025/05/30/M3tDqzg9Xakv4bE.jpg"
+              alt="甬想科技团队协作"
+              class="rounded-xl shadow-2xl w-full h-auto object-cover aspect-[4/3] lg:aspect-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center animate-on-scroll"
+        >
+          联系我们
+        </h2>
+        <p
+          class="text-lg text-slate-600 mb-12 text-center max-w-2xl mx-auto animate-on-scroll"
+          style="--delay: 0.1s"
+        >
+          我们期待与您深入交流，共同探讨如何通过技术创新为您的业务赋能。请通过以下方式联系我们，或填写表单。
+        </p>
+        <div class="grid lg:grid-cols-5 gap-12">
+          <div class="lg:col-span-2 animate-on-scroll" style="--delay: 0.2s">
+            <h3 class="text-2xl font-semibold mb-6 text-slate-800">
+              宁波甬想科技有限公司
+            </h3>
+            <div class="space-y-5">
+              <div class="flex items-start space-x-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-6 h-6 text-sky-600 mt-1 flex-shrink-0"
+                ></i>
+                <div>
+                  <h4 class="font-semibold text-slate-700">公司地址</h4>
+                  <p class="text-slate-600 text-sm">
+                    浙江省宁波市镇海区骆驼街道荣骆路238号钟毓轩4号大楼9层
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i
+                  data-lucide="phone"
+                  class="w-6 h-6 text-sky-600 mt-1 flex-shrink-0"
+                ></i>
+                <div>
+                  <h4 class="font-semibold text-slate-700">联系电话</h4>
+                  <p class="text-slate-600 text-sm">13566594660</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i
+                  data-lucide="mail"
+                  class="w-6 h-6 text-sky-600 mt-1 flex-shrink-0"
+                ></i>
+                <div>
+                  <h4 class="font-semibold text-slate-700">电子邮箱</h4>
+                  <p class="text-slate-600 text-sm">wuxin@nbgztech.com</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i
+                  data-lucide="briefcase"
+                  class="w-6 h-6 text-sky-600 mt-1 flex-shrink-0"
+                ></i>
+                <div>
+                  <h4 class="font-semibold text-slate-700">业务范畴</h4>
+                  <p class="text-slate-600 text-sm">
+                    信息传输、软件和信息技术服务业 - 软件开发 - 应用软件开发
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form
+            id="contact-form"
+            class="lg:col-span-3 space-y-6 bg-slate-50 p-8 rounded-xl shadow-xl animate-on-scroll"
+            style="--delay: 0.3s"
+          >
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >您的姓名 <span class="text-red-500">*</span></label
+              >
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors bg-white text-slate-800"
+                placeholder="请输入您的姓名"
+              />
+              <p
+                data-form-error="name"
+                class="hidden mt-1 text-sm text-red-600"
+              >
+                姓名不能为空
+              </p>
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >电子邮箱 <span class="text-red-500">*</span></label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors bg-white text-slate-800"
+                placeholder="请输入您的邮箱地址"
+              />
+              <p
+                data-form-error="email"
+                class="hidden mt-1 text-sm text-red-600"
+              >
+                请输入有效的邮箱地址
+              </p>
+            </div>
+            <div>
+              <label
+                for="phone_contact"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >联系电话 (可选)</label
+              >
+              <input
+                type="tel"
+                name="phone_contact"
+                id="phone_contact"
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors bg-white text-slate-800"
+                placeholder="请输入您的联系电话"
+              />
+            </div>
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-slate-700 mb-1"
+                >咨询内容 <span class="text-red-500">*</span></label
+              >
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                required
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors bg-white text-slate-800"
+                placeholder="请简要描述您的需求或问题"
+              ></textarea>
+              <p
+                data-form-error="message"
+                class="hidden mt-1 text-sm text-red-600"
+              >
+                咨询内容不能为空
+              </p>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+              >
+                发送消息
+                <i data-lucide="send" class="inline-block ml-2 w-5 h-5"></i>
+              </button>
+            </div>
+            <div id="form-status" class="mt-4 text-center text-sm"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+      <div class="container mx-auto px-6 text-center">
+        <img
+          src="https://cdn.sa.net/2025/05/30/K9En12xj6Iz4YDd.png"
+          alt="宁波甬想科技有限公司 LOGO"
+          class="h-12 mx-auto mb-4"
+        />
+        <p class="mb-2 text-slate-200 font-semibold">宁波甬想科技有限公司</p>
+        <p class="text-xs sm:text-sm mb-1">
+          地址：浙江省宁波市镇海区骆驼街道荣骆路238号钟毓轩4号大楼9层
+        </p>
+        <p class="text-xs sm:text-sm mb-1">
+          电话：13566594660 | 邮箱：wuxin@nbgztech.com
+        </p>
+        <p class="text-xs sm:text-sm mt-4">
+          © <span id="current-year">2025</span> 宁波甬想科技有限公司. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div
+      id="project-modal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none modal"
+    >
+      <div
+        class="modal-content bg-white rounded-lg shadow-xl p-6 md:p-8 w-full max-w-3xl max-h-[90vh] overflow-y-auto relative transform scale-95"
+      >
+        <button
+          id="close-modal-btn"
+          class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 z-10 p-1 rounded-full hover:bg-slate-100 transition-colors"
+        >
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+        <div
+          id="modal-image-container"
+          class="relative mb-6 min-h-[200px] bg-slate-100 rounded-md flex items-center justify-center"
+        ></div>
+        <button
+          id="prev-image-btn"
+          class="absolute top-1/2 -translate-y-1/2 left-2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition-colors z-20 hidden"
+        >
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <button
+          id="next-image-btn"
+          class="absolute top-1/2 -translate-y-1/2 right-2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition-colors z-20 hidden"
+        >
+          <i data-lucide="chevron-right"></i>
+        </button>
+
+        <h3
+          id="modal-title"
+          class="text-2xl md:text-3xl font-bold text-slate-900 mb-3"
+        ></h3>
+        <div id="modal-category" class="mb-4"></div>
+        <div
+          id="modal-description"
+          class="text-slate-700 prose prose-sm sm:prose-base max-w-none"
+        ></div>
+      </div>
     </div>
 
-    <audio preload="auto" autoplay="" id="media" src="love.mp3" autoplay preload loop="loop"></audio>
-
     <script>
-        (function () {
-            var canvas = $('#canvas');
+      lucide.createIcons();
 
-            if (!canvas[0].getContext) {
-                $("#error").show();
-                return false;
-            }
+      // Smooth scroll & Mobile Menu Close
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const offset = document.getElementById("navbar").offsetHeight;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = targetElement.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
 
-            var width = canvas.width();
-            var height = canvas.height();
-
-            canvas.attr("width", width);
-            canvas.attr("height", height);
-
-            var opts = {
-                seed: {
-                    x: width / 2 - 20,
-                    color: "rgb(190, 26, 37)",
-                    scale: 2
-                },
-                branch: [
-                    [535, 680, 570, 250, 500, 200, 30, 100, [
-                        [540, 500, 455, 417, 340, 400, 13, 100, [
-                            [450, 435, 434, 430, 394, 395, 2, 40]
-                        ]],
-                        [550, 445, 600, 356, 680, 345, 12, 100, [
-                            [578, 400, 648, 409, 661, 426, 3, 80]
-                        ]],
-                        [539, 281, 537, 248, 534, 217, 3, 40],
-                        [546, 397, 413, 247, 328, 244, 9, 80, [
-                            [427, 286, 383, 253, 371, 205, 2, 40],
-                            [498, 345, 435, 315, 395, 330, 4, 60]
-                        ]],
-                        [546, 357, 608, 252, 678, 221, 6, 100, [
-                            [590, 293, 646, 277, 648, 271, 2, 80]
-                        ]]
-                    ]]
-                ],
-                bloom: {
-                    num: 700,
-                    width: 1080,
-                    height: 650,
-                },
-                footer: {
-                    width: 1200,
-                    height: 5,
-                    speed: 10,
-                }
-            }
-
-            var tree = new Tree(canvas[0], width, height, opts);
-            var seed = tree.seed;
-            var foot = tree.footer;
-            var hold = 1;
-
-            canvas.click(function (e) {
-                var offset = canvas.offset(), x, y;
-                x = e.pageX - offset.left;
-                y = e.pageY - offset.top;
-                if (seed.hover(x, y)) {
-                    hold = 0;
-                    canvas.unbind("click");
-                    canvas.unbind("mousemove");
-                    canvas.removeClass('hand');
-                }
-            }).mousemove(function (e) {
-                var offset = canvas.offset(), x, y;
-                x = e.pageX - offset.left;
-                y = e.pageY - offset.top;
-                canvas.toggleClass('hand', seed.hover(x, y));
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
             });
+          }
+          const mobileMenu = document.getElementById("mobile-menu");
+          if (!mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.innerHTML =
+              '<i data-lucide="menu" class="w-6 h-6"></i>';
+            lucide.createIcons();
+          }
+        });
+      });
 
-            var seedAnimate = eval(Jscex.compile("async", function () {
-                seed.draw();
-                while (hold) {
-                    $await(Jscex.Async.sleep(10));
-                }
-                while (seed.canScale()) {
-                    seed.scale(0.95);
-                    $await(Jscex.Async.sleep(10));
-                }
-                while (seed.canMove()) {
-                    seed.move(0, 2);
-                    foot.draw();
-                    $await(Jscex.Async.sleep(10));
-                }
-            }));
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        if (isHidden) {
+          mobileMenuButton.innerHTML =
+            '<i data-lucide="menu" class="w-6 h-6"></i>';
+        } else {
+          mobileMenuButton.innerHTML =
+            '<i data-lucide="x" class="w-6 h-6"></i>';
+        }
+        lucide.createIcons();
+      });
 
-            var growAnimate = eval(Jscex.compile("async", function () {
-                do {
-                    tree.grow();
-                    $await(Jscex.Async.sleep(10));
-                } while (tree.canGrow());
-            }));
+      const navbar = document.getElementById("navbar");
+      let lastScrollTop = 0;
+      window.addEventListener(
+        "scroll",
+        () => {
+          let scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > 50) {
+            navbar.classList.add("h-16");
+            navbar.classList.remove("h-20");
+          } else {
+            navbar.classList.add("h-20");
+            navbar.classList.remove("h-16");
+          }
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        },
+        false
+      );
 
-            var flowAnimate = eval(Jscex.compile("async", function () {
-                do {
-                    tree.flower(2);
-                    $await(Jscex.Async.sleep(10));
-                } while (tree.canFlower());
-            }));
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
 
-            var moveAnimate = eval(Jscex.compile("async", function () {
-                tree.snapshot("p1", 240, 0, 610, 680);
-                while (tree.move("p1", 500, 0)) {
-                    foot.draw();
-                    $await(Jscex.Async.sleep(10));
-                }
-                foot.draw();
-                tree.snapshot("p2", 500, 0, 610, 680);
+      const projectsData = [
+        {
+          id: "visitor-management",
+          title: "访客预约管理系统小程序",
+          category: "企业管理",
+          short_description:
+            "专为企业设计的访客管理工具，简化预约流程，提高接待效率。二维码快速登记，内部审批保障安全。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/njlNpYkXdSaiGOA.jpg",
+            "https://cdn.sa.net/2025/05/30/UcbvHwrdXn5BV4m.jpg",
+            "https://cdn.sa.net/2025/05/30/deUGiXv3sMKjpau.jpg",
+          ],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">程序介绍</h4>
+                    <p class="mb-4">访客预约管理系统是一款专为企业设计的访客管理工具，旨在简化访客预约流程，提高访客接待效率。通过数字化手段，实现访客信息的快速录入、审批与追溯，提升企业整体形象与管理水平。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">主要功能</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>预约码生成与管理：</strong>系统自动为每次预约生成独特的访客预约码。访客可通过扫描二维码快速完成个人信息的登记，操作便捷，减少等待时间。</li>
+                        <li><strong>内部员工信息录入与审批：</strong>企业内部员工可在此系统内为访客录入相关信息并提交审批。审批流程确保了访客信息的准确性，并加强了企业安全管理。</li>
+                        <li><strong>预约记录查询与管理：</strong>系统详细记录所有预约信息，包括访客姓名、联系方式、来访事由、来访时间、被访人等关键数据，方便管理人员随时查询、统计和分析。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">使用场景</h4>
+                    <p class="mb-4">广泛适用于各类有访客接待需求的企业、政府机构、产业园区、写字楼等。可有效应用于前台接待管理、安保门禁系统联动、会议访客管理等多种场景，全面提升访客管理效率和安全性。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">特色优势</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li>界面设计简洁直观，用户友好，易于上手操作，无需复杂培训。</li>
+                        <li>内置严格的审批流程，有效控制访客进出，保障企业内部信息和财产安全。</li>
+                        <li>完善的访客记录与查询系统，便于信息追溯和数据分析，为管理决策提供支持。</li>
+                    </ul>
+                    <p>通过访客预约管理系统，企业能够实现访客管理的规范化、智能化转型，不仅为访客提供更加便捷、高效的服务体验，同时也确保了企业内部环境的安全有序。</p>
+                `,
+          isFeatured: true,
+        },
+        {
+          id: "engineering-maintenance",
+          title: "工程维保管理系统小程序",
+          category: "企业管理",
+          short_description:
+            "专为工程设备维护打造的高效管理应用，助力企业实现维保流程的数字化与智能化管理。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/SosjkczW61NG8A5.jpg",
+            "https://cdn.sa.net/2025/05/30/vKZRksmdgD5x3rJ.jpg",
+            "https://cdn.sa.net/2025/05/30/lnzeXmtqf83U9Jw.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">这是一款专为工程设备维护打造的高效管理应用，旨在助力企业实现维保流程的数字化、移动化与智能化，提升整体运营效率与服务质量。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">功能概览</h4>
+                    <p class="font-medium my-2">主界面概览</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>工单统计：</strong>实时、清晰地展示总工单、待派工单、在途工单、维保完成、已确认工单、预警工单等多维度数据，让管理者对维保工作的全局状态一目了然。</li>
+                        <li><strong>功能快捷入口：</strong>提供巡检任务、维保工单创建与管理、维保执行跟踪、维保记录查询、工单审核等核心功能的快速访问通道，简化操作流程。</li>
+                        <li><strong>地图可视化：</strong>在地图上直观呈现待派工单、在途工单、维保完成工单的地理分布，并支持实时定位与导航功能，方便维保人员规划路线，快速响应。</li>
+                    </ul>
+                    <p class="font-medium my-2">维保执行模块</p>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>工单详情：</strong>详细展示工单编号、任务名称、设备信息、问题类型、紧急程度、上报员及上报时间等关键信息，确保信息传递准确无误。</li>
+                        <li><strong>工单分类处理：</strong>智能区分 "巡检上报" 与 "客户上报" 等不同来源的工单，并支持针对性地进行 "接收"、"执行"、"转派" 等操作，确保各类维保任务得到高效落实。</li>
+                        <li><strong>实时状态更新：</strong>清晰标识工单当前所处的各个阶段（如 "待派发"、"在途中"、"维保中"、"已完成"），支持一键拨打电话与客户或上报人沟通，保障维保流程顺畅推进。</li>
+                    </ul>
+                    <p class="font-medium my-2">巡检任务模块</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>人员信息展示：</strong>清晰呈现巡检员姓名、职位、联系方式及所属公司等信息，增强团队管理的透明度与协同效率。</li>
+                        <li><strong>个人中心功能：</strong>集成编辑个人资料、查看公司公告、联系客服、提交意见反馈、进行个性化设置等实用功能，方便用户管理账户与获取支持。</li>
+                        <li><strong>安全退出保障：</strong>提供一键安全退出功能，确保用户账户信息的安全与个人隐私的保护。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">设计风格</h4>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>简洁直观：</strong>采用蓝白为主色调的现代化界面设计，搭配清晰易懂的图标与文字说明，让操作流程简单易懂，降低学习成本。</li>
+                        <li><strong>高效布局：</strong>合理规划各功能模块的位置与信息展示方式，最大化利用屏幕空间，减少不必要的跳转，提升工作效率。</li>
+                        <li><strong>专业可靠：</strong>整体风格专业规范，细节处理严谨，体现工程维保管理的严谨性与可靠性，为用户提供更安心、高效的使用体验。</li>
+                    </ul>
+                    <p>这款工程维保管理系统小程序，通过全面覆盖工程维保的各个环节，从任务创建、分配到执行跟踪、结果反馈，帮助企业和维保人员实现工作流程的规范化、精细化和高效化管理，是工程设备维护领域的得力助手，有效提升服务响应速度和客户满意度。</p>
+                `,
+          isFeatured: true,
+        },
+        {
+          id: "sheng-nuo-jia-smart-building",
+          title: "晟诺佳智慧楼宇系统小程序及后台",
+          category: "智慧楼宇",
+          short_description:
+            "全域数字化楼宇管理平台，实现楼宇资源可视化管控、租务全流程数字化及物业服务智能化闭环。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/UKIF2okhEnqZCBf.jpg",
+            "https://cdn.sa.net/2025/05/30/JWwuqpUtma8RlY6.jpg",
+            "https://cdn.sa.net/2025/05/30/OijUWv8qPDxFXMQ.jpg",
+            "https://cdn.sa.net/2025/05/30/FWTKZAI7SONVhvc.jpg",
+            "https://cdn.sa.net/2025/05/30/hML2tbZ9YdBNzaF.jpg",
+            "https://cdn.sa.net/2025/05/30/lBqVnZrPiau9JGS.jpg",
+            "https://cdn.sa.net/2025/05/30/FogNyMl576kYnpT.jpg",
+          ],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统定位</h4>
+                    <p class="mb-4">晟诺佳智慧楼宇系统是面向现代化物业管理需求而精心打造的SaaS（软件即服务）解决方案。它通过PC端强大的数据驾驶舱与移动端便捷的服务平台的深度协同作业，致力于实现楼宇内各类资源的可视化、精细化管控，推动租务管理全流程的数字化转型，并构建起物业服务的智能化闭环管理体系。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能架构</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-2 pl-4">
+                        <li><strong>三维可视化资源管理</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>动态销控看板：实时展示楼宇各楼层、各单元房源的租赁状态（如已租、待租、预定中），并支持按区域（如低区、中区、高区）进行快速筛选与查看。</li>
+                                <li>楼宇数字档案：结构化存储楼宇的详细参数，包括精装修标准、电梯分层控制策略、双系统空调配置等关键设施设备数据，形成完整的数字资产。</li>
+                                <li>移动端空间检索：用户可在移动端根据面积需求（例如225-2333平方米）、租金价格（例如每日每平方米2.5元起）等条件智能筛选目标房源。</li>
+                            </ul>
+                        </li>
+                        <li><strong>智能租务引擎</strong>
+                             <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>移动预约看房：提供时段化（如上午、下午、晚上）的在线看房预约管理功能，同时注重租户信息的脱敏处理，保护用户隐私。</li>
+                                <li>智能合约系统：支持灵活配置租金分期支付协议、租金递增规则（例如按每日每平方米100元标准逐年递增）等复杂合同条款。</li>
+                                <li>电子合同跟踪：在PC数据驾驶舱中实时监控电子合同的签署进度及开票状态（如待开票、已开票），并提供一键复制开票资料的便捷功能。</li>
+                            </ul>
+                        </li>
+                        <li><strong>物业运营中枢</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>工单闭环处理：支持租户或物业人员通过移动端发起报修工单（如照明损坏报修、电梯故障上报），实现工单从创建、派发、处理到完结的全流程跟踪管理。</li>
+                                <li>安全预警体系：集成陌生人进出动态监控与预警功能，提升楼宇安全防范等级。</li>
+                                <li>服务意见反馈：实时响应业主或租户的服务诉求，未处理消息以红点强提醒方式确保及时跟进。</li>
+                            </ul>
+                        </li>
+                         <li><strong>多角色协同平台</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>物业人员端：为物业管理人员集成销售订单管理、在线支付确认、维修记录查询等八大核心工作模块，提升工作效率。</li>
+                                <li>租户服务端：为租户提供在线查看合同、预约用水配送服务、接收开票提醒等一系列便捷的线上服务功能。</li>
+                                <li>决策支持端：为管理层提供楼宇出租率、空置房源统计、服务响应效率等关键运营指标的可视化分析图表，辅助科学决策。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">技术亮点</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li>双端数据实时同步：确保房源状态、工单处理进度等信息在PC管理端与移动服务端之间实现秒级更新，信息同步无延迟。</li>
+                        <li>完善的隐私保护机制：系统自动对租户的联系方式等敏感信息进行脱敏处理（例如显示为138****1234），保障用户数据安全。</li>
+                        <li>智能化的预警体系：结合AI陌生人识别技术与服务工单超时提醒机制（如图中红点提示），主动防范风险，提升服务质量。</li>
+                    </ul>
+                     <h4 class="text-xl font-semibold mb-2 mt-4">实测效能</h4>
+                    <p class="mb-4">根据晟诺佳智慧物业2025年度运营报告数据显示，系统上线后：工单响应效率提升 <span class="text-green-500 font-semibold">40%</span>，平均出租转化周期缩短 <span class="text-green-500 font-semibold">25%</span>，业主及租户综合满意度达到 <span class="text-green-500 font-semibold">98%</span>。</p>
+                `,
+          isFeatured: true,
+        },
+        {
+          id: "smart-construction-site",
+          title: "智慧工地运管中心系统小程序",
+          category: "智慧工地",
+          short_description:
+            "全方位、智能化的建筑工地运营管理平台，提升工地运营效率与安全保障水平。实时监控，数据驱动决策。",
+          images: ["https://cdn.sa.net/2025/05/30/JKwjgZ4ILEPRSXF.jpg"],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统概述</h4>
+                    <p class="mb-4">智慧工地运管中心系统是一款集成了物联网、大数据、云计算及移动应用技术的全方位、智能化建筑工地运营管理平台。它旨在为建筑企业提供实时、高效、精准的工地管理解决方案，从而显著提升工地的整体运营效率、安全保障水平和资源利用率。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能模块</h4>
+                    <p class="font-medium my-2">设备监控与统计</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>全面覆盖与状态监控：</strong>对工地内的各类关键设备，如监控摄像头（例如总数1673台，在线226台）、人脸识别门禁系统（例如总数583套，在线457套）、智能烟感探测器（例如总数402个，在线278个）、环境空气质量检测设备（例如总数87台，在线14台）等，进行实时的运行状态监控与数据统计，确保各类设备正常运行，覆盖率以直观的进度条形式清晰展示。</li>
+                        <li><strong>异常预警与维护管理：</strong>当任意监控设备出现故障、离线或数据异常时，系统能够自动触发警报机制，并通过短信、App推送等方式及时通知相关管理人员进行维护处理，有效保障工地安全生产和设备正常运转。</li>
+                    </ul>
+                    <p class="font-medium my-2">人员管理与考勤</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>工种人员精准统计：</strong>通过柱状图等可视化方式，直观展示工地内不同工种的人员数量分布（例如木工132人、泥工28人、电工67人、焊工287人、水工74人、杂工36人），实时掌握总人数（例如605人），便于合理安排施工任务与调配人力资源。</li>
+                        <li><strong>动态考勤与出入管理：</strong>系统详细记录每日出勤总人数（例如今日出勤564人，总人数605人）、临时访客数量（例如58人）、登记访车次数（例如45车次）、车辆实际进出次数（例如进场165车次，出场194车次），实现对工地人员及车辆流动的精准管控，提升工地现场管理效率。</li>
+                    </ul>
+                     <p class="font-medium my-2">项目进度追踪</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>多维度项目状态展示：</strong>以直观的卡片化或列表形式，清晰呈现当前管理的所有项目的总数（例如169个），以及处于不同阶段的项目数量，如未开工项目（20个）、施工中项目（50个）、验收中项目（56个）、已完工项目（43个），让管理者对项目整体进度一目了然。</li>
+                        <li><strong>项目详细信息查询：</strong>支持点击具体项目，深入查看其投资总额（例如23478万元）、已完成投资金额（例如10639.4万元，注意单位可能为笔误，应与总额协调）、计划及实际开工日期（例如2023年07月03日）、当前施工进度状态（例如施工中）、项目负责人以及项目简介等详细信息，便于管理者及时调整项目计划与优化资源配置。</li>
+                    </ul>
+                    <p class="font-medium my-2">物料管理与成本控制</p>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>主要物料库存监控：</strong>实时统计并展示工地主要建筑材料如管材（例如库存3738吨）、木材（例如库存72829吨）、钢材（例如库存6372吨）等的当前库存量。同时，通过图表直观展示本月各类物料的新增采购数量及其占总采购量的比例（例如管材新增372吨，占比18%；木材新增1919吨，占比18%；钢材新增3286吨，占比18%），帮助管理者合理安排物料采购计划与控制现场使用。</li>
+                        <li><strong>项目成本控制与分析：</strong>系统记录并统计项目相关的各项花费，例如总花费已达2457万元，为项目成本核算与预算执行管理提供准确的数据支持，助力企业优化成本结构，提高盈利能力。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统优势</h4>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>智能化管理：</strong>充分借助物联网（IoT）、大数据分析、人工智能（AI）等前沿信息技术，实现对工地设备、人员、项目进度、物料消耗、资金流转等全方位的智能化、自动化管理，显著提升管理效率与决策的科学性。</li>
+                        <li><strong>实时性与准确性：</strong>工地现场的所有关键数据能够做到实时采集、实时更新并同步展示，确保管理人员获取的信息及时、准确、无误，从而能够快速掌握工地动态，迅速响应各类突发情况，保障工地运营的高效性与安全性。</li>
+                        <li><strong>可视化呈现：</strong>系统广泛采用直观的图表（如柱状图、折线图、饼图）、图形化进度条、交互式地图等多种可视化方式来展示复杂的工地数据和管理信息，使信息更易于被各级管理人员理解和分析，便于快速把握关键要点，做出明智的运营决策。</li>
+                        <li><strong>全面性与集成性：</strong>平台深度整合了设备监控、人员实名制管理、项目进度跟踪、物料追溯与管控、资金支付与管理、视频实时监控、安全巡检等众多核心功能模块，形成一个有机的、协同工作的整体，有效打破传统管理模式下的信息孤岛，实现工地管理的全方位覆盖与高效协同，从而提升建筑企业的整体运营管理水平和市场竞争力。</li>
+                    </ul>
+                    <p>该智慧工地运管中心系统凭借其强大的功能集成、智能化的管理特点以及全面的数据覆盖优势，为现代建筑企业提供了一个高效、便捷、精准的工地一体化管理平台，有力地推动施工项目的精细化管理，助力企业提升核心竞争力，在日趋激烈的建筑行业市场中脱颖而出。</p>
+                `,
+          isFeatured: true,
+        },
+        {
+          id: "zhenhai-experimental-school-info",
+          title: "镇海实验小学放学信息公示系统数字大屏",
+          category: "教育系统",
+          short_description:
+            "为学校打造的放学场景专用信息展示平台，实时监控设备，智能管理能耗，确保校园安全有序。",
+          images: ["https://cdn.sa.net/2025/05/30/OyvcwSNPY17fFQr.jpg"],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统概述</h4>
+                    <p class="mb-4">镇海实验小学放学信息公示系统是一款专为提升校园放学时段管理效率与安全性的数字化大屏解决方案。它集成了设备远程控制、能耗监控、操作记录查询及设备精确定位等核心功能，旨在为学校管理者提供一个直观、高效的综合管理工具。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能</h4>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>设备实时监控与控制：</strong>支持远程控制校园内的空调、灯光等相关设备开关；提供一键切换“上课模式”与“下课模式”等预设场景，方便快速调整设备状态；大屏实时可视化展示各类设备的在线/离线数量及具体状态。</li>
+                        <li><strong>能耗智能管理：</strong>对空调等主要耗能设备进行能耗数据采集、统计与分析；生成设备使用时长统计报表，为节能降耗提供数据依据；当检测到设备能耗异常时，系统自动发出预警提示。</li>
+                        <li><strong>操作记录追溯：</strong>支持管理人员按操作者姓名、设备状态、操作时间等多种条件筛选查询操作记录；系统完整记录所有设备开关等操作日志，确保操作行为可追溯；历史操作明细支持分页展示，方便查阅。</li>
+                        <li><strong>精准设备定位与查找：</strong>提供多级筛选功能（例如按学校楼栋 -> 场所类型 -> 设备具体类型）快速定位设备；结合校园设备分布平面图进行导航指引；支持通过设备名称或编号快速检索目标设备。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">设计亮点</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li>设备状态与控制指令实时同步显示，确保信息准确无误。</li>
+                        <li>运用多种图表和可视化元素，实现多维度数据的直观展示与分析。</li>
+                        <li>内置分级权限管理体系，保障系统操作的安全性与规范性。</li>
+                        <li>采用响应式界面设计，能够良好适配多种不同尺寸的终端显示设备。</li>
+                    </ul>
+                    <p>通过本系统，学校能够更科学、高效地管理校园设施，优化能源使用，并为师生营造一个更安全、舒适的放学环境。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "forest-fire-prevention",
+          title: "镇海区森林防火监管系统数字大屏",
+          category: "智慧政务",
+          short_description:
+            "整合实时地图监控、气象预警、客流分析等功能，为森林防火提供智能化决策支持。",
+          images: ["https://cdn.sa.net/2025/05/30/cPnT72hdCiwOfet.jpg"],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统核心功能概览</h4>
+                    <p class="mb-4">镇海区森林防火监管系统数字大屏是一个集多源信息于一体的综合指挥调度平台，旨在通过科技手段提升森林火灾的预防、监测和应急处置能力。其核心功能模块深度融合了GIS地理信息、气象数据、实时监控和人流统计等技术。</p>
+                    <ol class="list-decimal list-inside mb-4 space-y-2 pl-4">
+                        <li><strong>实时地图监控与预警：</strong>在电子地图上动态展示镇海区全域范围内的森林防火监控点位分布。如图中所示，系统能够高亮标记出当前存在异常情况（例如设备故障、疑似火点）的监控点（例如图中有两处高亮提示），提示管理人员需进行紧急核查与处理。</li>
+                        <li><strong>气象火险等级预警：</strong>实时接入并展示关键气象数据，例如当前空气湿度为67%，风力达到5级，风向为偏北风。基于这些气象因子，系统会综合评估并显示当前的森林火险等级（例如目前为A级，代表低风险）。同时，界面内置了从1级到5级（或类似标准）的火险等级说明，并提醒管理者需密切关注气象动态变化对火险等级的潜在影响。</li>
+                        <li><strong>客流统计与人流分析：</strong>通过柱状图与折线图结合的方式，动态展示特定区域（如主要景区入口、重点防火区域）本周或指定时间段内的客流量变化趋势。例如，系统显示6月21日的客流量达到峰值800人次。此类数据有助于管理部门在人流高峰期提前部署防火力量，加强巡查和宣传，辅助进行有效的人流管控。</li>
+                        <li><strong>防火智能联动模块：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>实时视频监控：支持多路监控视频画面轮巡展示（示例中显示A1监控点位的实时画面），或按需调取特定点位的视频。</li>
+                                <li>智能语音宣传与播报：系统可配置在特定区域（例如山脚树林旁的A2区域）进行防火预警语音的自动或手动播报，提醒游客注意防火安全。</li>
+                                <li>录像回溯与取证：支持对历史监控录像进行回放查询，所有录像均带有精确的时间戳（例如标注的07月13日13:32），便于事后调查取证。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">重点关注与决策支持项</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>异常告警处置：</strong>地图中高亮标记的异常监控点位需要指挥中心立即调度人员进行现场核查和应急处置。</li>
+                        <li><strong>气象风险评估：</strong>当前的5级偏北风天气条件可能会加速火势蔓延，防火指挥部门需据此加强重点区域的巡查频次和力度。</li>
+                        <li><strong>人流高峰应对：</strong>结合周末及晴好天气的预报，预计人流密集区域的火灾风险将增加，需要提前规划并部署充足的防火力量和应急物资。</li>
+                    </ul>
+                    <p>该系统采用科技感强烈的深蓝色调界面设计，有效地整合了多维度数据信息，为森林防火工作提供了强有力的实时决策支持和高效的指挥调度能力，是构建智慧林业、平安镇海的重要组成部分。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "venue-reservation-system",
+          title: "场地预约管理系统数字大屏",
+          category: "企业管理",
+          short_description:
+            "高效管理会议室、教室等公共场地预约，日历视图清晰展示，规则明确，提升资源利用率。",
+          images: ["https://cdn.sa.net/2025/05/30/jOaJ2CwsTxuv5lR.jpg"],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统概述</h4>
+                    <p class="mb-4">场地预约管理系统是一款专为高效管理各类公共场地（如会议室、培训教室、活动中心等）的预约、排程与信息展示而设计的数字化解决方案。该系统通过直观易用的界面和强大的后台管理功能，帮助场地管理者实现对场地资源的合理调配、高效利用，并为用户提供便捷的预约体验。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">功能特点</h4>
+                    <p class="font-medium my-2">预约信息实时展示</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>多场地统一视图：</strong>系统支持同时管理和展示多个不同类型场地的预约情况，例如可以同时查看会议室1至会议室5、教室1至教室3等多个场地的实时使用状态，满足不同规模机构的场地管理需求。</li>
+                        <li><strong>详细预约记录呈现：</strong>对于选定的日期（例如2024年11月11日），系统能够清晰、详细地展示每个场地在各个时间段（例如08:30-10:30、10:30-12:30、13:00-14:30）的预约单位或使用人（例如社教中心、街道党校、张碶社区等），方便管理人员快速了解各场地的具体使用安排。</li>
+                    </ul>
+                    <p class="font-medium my-2">便捷的日期选择与管理</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>直观日历视图：</strong>系统提供用户友好的日历界面，支持查看特定月份（例如2024年11月）全月的日期分布。当前选中的日期（例如11月11日）会以醒目的方式进行标注，方便用户快速定位和选择。</li>
+                        <li><strong>灵活的月份切换：</strong>通过日历界面上方的月份导航控件（例如显示为“<< 2024年11月 >>”的标题），用户可以便捷地向前或向后切换查看其他月份的场地预约情况，实现跨月份的场地使用规划与管理。</li>
+                    </ul>
+                    <p class="font-medium my-2">完善的场地信息与规则管理</p>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>场地基础信息展示：</strong>明确标注场地所在的详细地址（例如招宝山街道社区教育中心三楼）以及场地预约事务的负责人联系方式（例如李苏维），方便有预约需求的用户进行咨询与沟通，确保预约流程的顺畅进行。</li>
+                        <li><strong>详细预约规则说明：</strong>系统清晰列出并展示场地使用的各项预约规则和注意事项。例如，限定工作日的预约时间范围（如8:30-16:30）；针对不同类型的场地设置不同的提前预约天数要求（如会议室需提前三天预约，教室需提前五天预约）；以及明确不接受第三方线上预约等特殊规定。这些规则有助于用户了解并遵守预约规范，从而提升场地管理的整体效率和公平性。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">设计风格</h4>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>现代科技感界面：</strong>整体采用深蓝色作为主色调，并巧妙搭配具有科技感的边框设计、动态光效与装饰元素，营造出现代化、专业化的视觉效果，非常符合智慧管理类系统的设计趋势与用户审美。</li>
+                        <li><strong>清晰的模块化布局：</strong>系统将不同场地的预约信息、日历选择视图、场地详细信息、预约规则说明等内容进行了合理的区域划分与模块化展示。这种布局使得界面看起来整洁有序，信息层级分明，极大地便利了用户快速查找和获取所需内容。</li>
+                        <li><strong>强调直观易用性：</strong>整体设计高度注重用户体验，操作流程力求简洁明了，信息展示方式追求清晰直观。用户即使没有经过复杂的操作培训，也能够快速上手使用，从而有效提升场地管理人员的工作效率和场地预约者的使用便捷性。</li>
+                    </ul>
+                    <p>该场地预约管理系统凭借其全面的功能设计、直观友好的用户界面以及便捷高效的操作流程，为各类机构的场地管理工作提供了强有力的数字化解决方案。它能有效确保场地资源得到最合理的配置与利用，充分满足各类会议、培训、教学及社区活动等对场地的多样化需求，是社区教育中心、街道党校、企事业单位等机构进行场地智慧化管理的理想选择。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "changrong-hr-ops",
+          title: "长荣人力资源运管中心系统",
+          category: "企业管理",
+          short_description:
+            "Web数据可视化大屏，实时展示HR关键指标，监控和优化人力资源服务，提升运营效率。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/Bv6jVmZakQbnXGl.jpg",
+            "https://cdn.sa.net/2025/05/30/2Tw79FbvgAecJVD.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">长荣人力资源运管中心系统是一个先进的基于Web技术的数据可视化大屏解决方案，专为现代企业的人力资源运营管理而设计。系统采用富有科技感的深蓝色界面风格，能够实时、动态地展示各项关键人力资源指标（KPIs），帮助企业高效监控和持续优化其人力资源服务流程与效能。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>核心数据概览：</strong>集中展示企业人力资源的关键统计数据，例如累计服务人才总数（如56,321人）、下属子公司数量（如11家）、企业当前总员工人数（如7,516人）等宏观指标。</li>
+                        <li><strong>客户与项目管理：</strong>有效跟踪并展示服务的客户信息（如总客户数702个）、正在执行或已完成的合作项目数量（如624个）、当前派遣员工总数（如537名），并能通过饼图等可视化工具对客户所在行业分布等进行直观分析。</li>
+                        <li><strong>丰富的可视化元素：</strong>系统集成了多种可视化组件，例如可在中国地图上标注分支机构或服务覆盖区域的位置点，以及动态更新的客户管理列表（例如展示与华为等重要客户的合作项目概况），确保数据呈现生动直观。</li>
+                        <li><strong>企业信息与业务展示：</strong>清晰展示公司的主要服务项目（如七大核心服务）、已获得的荣誉资质（如十七项行业认证与奖项）以及各项具体业务的关键数据，全面体现企业实力。</li>
+                    </ul>
+                    <p>该系统主要适用于企业人力资源部门的日常运营监控和战略决策支持，通过数据的实时洞察，有效提升人力资源管理的整体运营效率和科学决策水平。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "zhanghexiang-school-screen",
+          title: "张和祥小学数字大屏系统",
+          category: "教育系统",
+          short_description:
+            "综合性校园数字化展示平台，全方位呈现学校教育教学成果、师生风采与校园动态。",
+          images: ["https://cdn.sa.net/2025/05/30/VEJgPZz3istSahU.jpg"],
+          full_description: `
+                    <h4 class="text-xl font-semibold mb-2 mt-4">系统概览</h4>
+                    <p class="mb-4">张和祥小学数字大屏系统是一款集学校荣誉展示、学生成长记录、教师发展跟踪、以及校园各类信息管理于一体的综合性校园数字化展示平台。该系统旨在通过现代化信息技术手段，全方位、多角度地呈现学校在教育教学方面所取得的丰硕成果以及丰富多彩的校园生活动态，从而营造一个积极向上、充满活力的校园文化氛围。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">功能模块详解</h4>
+                    <p class="font-medium my-2">一、荣誉展示区</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>教师荣誉榜：</strong>以滚动字幕或卡片轮播等形式，展示获得例如“省一级教师”等重要荣誉称号的优秀教师的照片、姓名及其个人教育格言（如李秋平老师的“以心血浇灌祖国的花朵！”），以此激励全体教师追求卓越教学，并彰显学校雄厚的师资力量。</li>
+                        <li><strong>学生荣誉榜：</strong>集中呈现荣获例如“市三好学生”等荣誉称号的优秀学生的风采，通常包括学生的照片、姓名、所在班级以及个人座右铭（如二年4班李美萍同学的“不积跬步无以至千里”），以此树立学生身边的榜样，激发广大学生的进取精神和学习热情。</li>
+                    </ul>
+                    <p class="font-medium my-2">二、成长记录区</p>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>教师成长栏：</strong>详细记录并展示教师在专业发展道路上的重要成长轨迹，例如李秋平老师在2024年05月16日多次获得省级二级资格奖项的具体信息。这些记录可以时间轴等形式展现教师持续学习、不断进步的历程，有力促进教师的专业发展和能力提升。</li>
+                        <li><strong>学生成长栏：</strong>追踪并记录学生在校期间的各类成长亮点和重要成就，例如二年1班的李美萍同学在2024年12月16日获得了期末考试一等奖等。系统为学生的个性化成长提供了可视化的记录与展示，有助于学校实施更精准的个性化培养方案。</li>
+                    </ul>
+                    <p class="font-medium my-2">三、学生综合素质评价区</p>
+                     <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>关键数据概览：</strong>集中展示学校基本规模数据，如教师总人数（774人）、学生总人数（4126人）、班级总数（111个）。同时，动态更新学生评价相关数据，如今日评价量（0条）、昨日评价量（0条）、本周评价量（1条）、上周评价量（4条）、本月评价量（25条）、上月评价量（30条）、本学期累计评价量（111条）。</li>
+                        <li><strong>各年级学生人数分布：</strong>通过直观的条形图或柱状图，清晰呈现一至六年级各年级学生的人数情况（示例中各年级均为128人，可能需要根据实际数据调整），展示学校各年级规模的均衡性或特点。</li>
+                        <li><strong>近一周评价量动态趋势：</strong>运用折线图等方式，生动反映每日学生评价量的波动情况，例如最高时单日评价量可达100余条，最低时接近0条。这有助于管理者掌握评价活动的整体活跃度变化趋势，并据此进行相应调整。</li>
+                        <li><strong>学生具体评价详情记录：</strong>系统能够记录学生获得的具体评价内容，例如五年3班的叶天容同学在1月21日9:38获得了多张“语文普通卡”等。这些详细记录能够追踪学生的日常学习表现与成长瞬间，为综合评价提供依据。</li>
+                        <li><strong>今日积分排行榜：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>学生积分榜：实时展示当日积分排名前列的学生名单（示例中前3名均为“某某某”，应替换为实际数据或动态生成），以此激发学生的竞争意识和积极性。</li>
+                                <li>教师点评活跃榜：展示当日点评最为活跃的教师名单（示例中前7名均为“某某某”），以此鼓励教师积极参与到学生评价工作中，加强师生互动。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">设计风格与优势</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>现代化科技感界面：</strong>系统整体采用深蓝色作为主色调，巧妙融合富有科技感的边框设计、流畅的曲线线条以及细腻的光影效果，营造出时尚、专业且具有前瞻性的视觉体验，完美契合现代化数字校园的建设理念。</li>
+                        <li><strong>强大的信息可视化能力：</strong>广泛运用各类图表（如柱状图、折线图、饼图等）、信息卡片、动态列表等多种先进的可视化元素，将原本复杂、抽象的校园数据转化为直观、易读、易懂的视觉形式，极大地便利了管理者和师生快速获取关键信息，洞察数据背后的趋势。</li>
+                        <li><strong>富有吸引力的互动性：</strong>通过图片轮播展示、荣誉榜滚动列表、数据动态更新等方式，增强了数字大屏界面的动态感与用户的交互性，有效提升了用户（包括师生、家长及访客）的参与度和使用体验，使信息传递更加生动有趣。</li>
+                        <li><strong>全面的内容集成与高度的系统整合性：</strong>平台深度整合了教师荣誉、学生成长、综合素质评价、班级竞赛、校园新闻资讯等多个维度的核心内容，将原本分散的校园信息有机地整合为一个整体。这不仅为学校的日常管理、教学效果评估、家校之间的有效沟通提供了全方位的数据支持，也为构建一个信息互通、资源共享的智慧校园展示平台奠定了坚实基础。</li>
+                    </ul>
+                    <p>该数字大屏系统以其丰富翔实的内容呈现、直观生动的展示效果和便捷高效的操作体验，已成为张和祥小学展示其教育教学成果、弘扬优秀校园文化的重要窗口。它不仅有助于显著提升学校的信息化管理水平和对外社会影响力，更能为全体师生创造一个更加开放、互动、富有生机与活力的现代化校园环境。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "wuqi-investment",
+          title: "吾七招商信息平台",
+          category: "企业管理",
+          short_description:
+            "专业的招商信息管理与服务平台，支持账号管理、项目进展跟踪和数据展示，助力高效招商。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/Y5MBk3WlyiUKrvR.jpg",
+            "https://cdn.sa.net/2025/05/30/RurNkFamEfpcUz6.jpg",
+            "https://cdn.sa.net/2025/05/30/noJqpBZifamt8CM.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">吾七招商信息平台是一款为企业、园区及各类招商机构量身打造的专业级招商信息管理工具。平台致力于通过数字化手段，为用户提供高效、便捷的招商信息收集、整理、跟踪、分析及展示等全流程服务，从而显著提升招商工作的效率与成果质量。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>安全便捷的账号管理：</strong>平台支持标准的用户账号登录、新用户注册以及密码找回等基础功能，通过多重验证机制，确保用户信息的安全性与个人隐私得到充分保护。</li>
+                        <li><strong>精细化的项目进展跟踪：</strong>系统能够详细记录每一个招商项目的当前进展状态，例如“初步洽谈中”、“方案已提交”、“已签约解决”等关键节点情况，方便用户实时了解各个项目的动态。同时，平台提供强大的项目进度搜索与筛选功能，帮助用户快速定位和查询目标项目的信息。</li>
+                        <li><strong>直观的招商数据展示：</strong>通过仪表盘、图表等可视化方式，直观呈现区域或机构的总招商对象数量、已成功入驻对象数量，以及本年度新增招商线索和实际入驻数据等核心指标，助力用户全面把握招商工作的整体情况与成效。</li>
+                        <li><strong>丰富的功能模块入口：</strong>平台集成了多个核心功能模块，包括招商引资方案管理、具体项目进展动态更新、招商政策库查询、以及可利用的招商资源（如土地、厂房、人才等）管理等，全面满足用户在招商工作中的多样化需求。</li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">使用场景</h4>
+                    <p>吾七招商信息平台广泛适用于各类有招商引资需求的企业（特别是负责拓展新业务、新市场的部门）、政府招商机构、各类产业园区管理委员会、以及专业的招商引资从业人员。无论是进行潜在客户的项目洽谈、关键项目的进度跟踪与管理、招商相关的数据统计与分析，还是进行内外部招商资源的整合与协同，本平台都能提供强有力的支持，显著提升招商工作的整体效率与最终质量。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "experimental-school-dismissal",
+          title: "实验小学放学系统",
+          category: "教育系统",
+          short_description:
+            "专为小学场景定制的数字化放学管理平台，优化教师、家长多角色协同，保障学生安全。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/ztJAVyQEXfvP6dq.jpg",
+            "https://cdn.sa.net/2025/05/30/dTvoBHaMulQx1RW.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">本系统是专为小学日常放学场景而精心定制的数字化管理与家校协同平台。其核心目标在于通过信息化手段，简化放学流程，提升管理效率，并加强家校之间的沟通与协作，确保学生安全、有序离校。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>多角色专属入口：</strong>系统为不同用户群体（如教师、家长）提供独立的、功能定制化的操作模块和界面，满足各自在放学管理中的特定需求。</li>  
+                        <li><strong>精细化学生管理：</strong>支持学校管理员或班主任方便地添加、编辑及认证学生的基本信息，包括学生所在的年级、班级、准确的入学时间等关键数据，为后续管理奠定基础。</li>  
+                        <li><strong>安全的家长信息管理：</strong>提供学生监护人（家长）信息的绑定与管理功能，并严格遵守数据隐私保护原则，确保家长个人信息的安全。</li>  
+                        <li><strong>优化的放学场景功能：</strong>针对放学这一特定场景，系统设置了独立的功能入口和操作流程，例如学生接送确认、异常情况上报等，旨在提升特定场景下的操作效率和用户体验。</li>
+                    </ul>
+                    <p>系统整体采用简洁明了、易于操作的移动端界面设计风格，充分考虑了教师和家长在移动设备上的使用习惯，致力于有效满足并优化家校协同下的现代化放学管理需求。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "internal-daily-crm",
+          title: "内部工作日报 & 客户管理系统",
+          category: "企业管理",
+          short_description:
+            "高效的企业内部管理应用，集成客户管理、工作日报、项目协同及审批流程，提升团队效率。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/7XLro8w2EuaP9fe.jpg",
+            "https://cdn.sa.net/2025/05/30/ailW7qI1rpTZwbB.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">这是一款功能强大且高效的企业内部综合管理应用，旨在通过数字化工具提升团队协作效率、优化客户关系管理、并规范日常工作流程。系统主要包含客户管理和工作日报两大核心模块，并辅以项目协同、审批流程等功能，助力企业实现精细化运营。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">一、客户管理模块 (CRM)</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>客户数据可视化分析：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>通过直观的饼图等形式，清晰展示客户类型的分布情况（例如政府客户、集成商伙伴、直接企业用户等占比）。</li>
+                                <li>在个人工作台或团队看板上，实时显示个人负责的客户数量（例如“我的客户：15位”）、本周计划拜访次数（例如6次）等关键绩效数据。</li>
+                                <li>动态跟踪客户拜访的执行状态，例如已成功拜访3次、临近计划拜访日期3次、已逾期未拜访2次，并进行相应提醒。</li>
+                            </ul>
+                        </li>
+                        <li><strong>客户关系维护与互动：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>系统可根据互动频率、合作深度等维度，智能展示“最熟悉的客户”列表，便于销售或客服人员进行重点关注和维护。</li>
+                                <li>提供“即刻拜访”或类似快速操作功能，支持用户快速记录临时拜访或响应客户的紧急需求。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">二、工作日报模块</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>项目日报与工作记录管理：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>提供项目工作简报的填写与提交功能，以及历史工作记录的便捷查询功能。</li>
+                                <li>支持用户按项目名称、提报时间、工作类型等多种条件筛选和查看项目进展详情及个人工作贡献。</li>
+                                <li>详细记录项目施工人员的具体工作内容和地点（例如富德能源项目现场工作记录）。</li>
+                                <li>支持记录人员或设备的进场/出场等关键操作信息，便于项目资源管理和工时统计。</li>
+                            </ul>
+                        </li>
+                        <li><strong>工作提醒与提交监督：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>在系统首页或个人工作台醒目位置提醒用户当前工作日报的提交状态（如“今日日报待提交”）。</li>
+                                <li>通过系统消息或通知，强调按时、准确提交工作日报的重要性，以避免信息遗漏或延误。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">三、综合管理功能特色</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>多模块高度集成：</strong>系统将工作日报、项目协同管理、客户拜访计划与记录、内部审批流程（如费用报销、请假申请）等多个常用办公模块无缝集成于一体，减少系统切换，提升操作连贯性。</li>
+                        <li><strong>首页信息聚合展示：</strong>系统首页能够智能汇总并展示用户最关心的关键数据和待办事项，实现信息一目了然，辅助用户高效安排工作。</li>
+                        <li><strong>现代化界面设计：</strong>部分界面采用城市剪影等现代化背景设计元素，不仅美观，也体现了企业追求高效、现代化的管理理念。</li>
+                    </ul>
+                    <p>该内部工作日报与客户管理系统，通过其全面的功能和友好的用户体验，能够有效帮助企业团队高效管理日常工作事务，显著提升项目执行的透明度和客户服务的响应质量，是现代企业实现内部精细化运营和提升整体竞争力的得力助手。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "luotuo-smart-management",
+          title: "骆驼街道智慧管理平台",
+          category: "智慧政务",
+          short_description:
+            "一站式街道数字化治理系统，集成综合监测、专业管理及智能指挥，提升治理效率。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/1IkQ4Plb65SLMJN.jpg",
+            "https://cdn.sa.net/2025/05/30/dTOhIzcNMsC2en6.jpg",
+            "https://cdn.sa.net/2025/05/30/bHQ3mrReUNk2pgY.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">骆驼街道智慧管理平台是一个旨在通过先进信息技术提升基层社会治理能力和公共服务水平的一站式街道数字化治理系统。该平台深度集成了多维度、多来源的数据与管理功能，致力于实现街道事务的智能化、精细化和高效化运作。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">平台核心功能模块</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-2 pl-4">
+                        <li><strong>综合监测与数据中心</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>街道概况实时展示：</strong>在大屏或管理端首页，动态展示街道的关键核心数据，如辖区内企业总数、常住及流动人口数量、社区总面积、主要基础设施分布等，为管理者提供宏观态势感知。</li>
+                                <li><strong>重点工作动态监控：</strong>实时监控并可视化展示重点项目（如民生工程、基础设施建设）的建设进度（例如总项目数、当前完成率）；动态统计并分类展示近30日内上报的各类事件（如环境卫生、公共安全、邻里纠纷等）及其处理状态；及时推送并高亮显示各类预警信息（如安全隐患、气象灾害预警等）。</li>
+                                <li><strong>“骆驼天眼”视频监控网络集成：</strong>平台无缝集成了街道部署的“骆驼天眼”公共视频监控网络，能够按需调阅覆盖车库出入口、小区主要通道、垃圾分类投放点等关键区域的实时或历史监控画面，增强可视化管理能力。</li>
+                            </ul>
+                        </li>
+                        <li><strong>专业化业务管理模块</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>招投标项目管理：</strong>提供结构化的表格或列表方式，对街道发起的各类招投标项目信息（包括项目名称、预计工期、预算金额、招标单位、中标单位等）进行统一管理，并支持按条件查询、分页展示（例如系统已记录339条以上项目信息）等功能。</li>
+                                <li><strong>事件闭环处置与跟踪：</strong>对上报的各类街道管理事件，能够按照事件类型（例如垃圾分类问题、防洪防汛应急、市容市貌管理等）进行分类统计和管理，并全程跟踪事件的处理状态（如待处理、处理中、已办结、已归档等），确保问题得到有效解决。</li>
+                            </ul>
+                        </li>
+                        <li><strong>智能化指挥与协同体系</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>GIS地图可视化指挥：</strong>在电子地图上精准标注各类事件的发生位置、资源（如应急队伍、物资仓库）的分布情况，并能与街道下辖的社区列表（例如金东社区、盛家社区等12个社区）进行联动，方便指挥调度和区域化管理。</li>
+                                <li><strong>多终端协同与数据时效性保障：</strong>平台支持PC端、移动端（如App或小程序）等多种终端登录和使用，确保管理人员随时随地可以接入系统。同时，系统界面会实时更新并显示当前时间（例如2022年10月31日 13:23），以确保所有展示数据的时效性和决策的准确性。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">平台定位与价值</h4>
+                    <p>骆驼街道智慧管理平台的核心定位在于：通过强大的数据驱动能力与友好的人机可视化交互设计，全面提升街道在日常管理、公共服务、应急响应等方面的综合治理效率和能力，构建更加智慧、安全、和谐的社区环境。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "luotuo-adult-school",
+          title: "骆驼成人学校培训",
+          category: "教育系统",
+          short_description:
+            "专为成人教育设计的在线学习与培训管理平台，提供老年大学、成人高中等多样化课程。",
+          images: ["https://cdn.sa.net/2025/05/30/2UjDv7JrQhfPOSV.jpg"],
+          full_description: `
+                    <p class="mb-4">“骆驼成人学校培训”是一款专为满足成人继续教育和终身学习需求而精心打造的在线学习与培训管理平台。该平台致力于提供丰富多样、高质量的培训课程资源，充分服务于区域内成年人的知识更新、技能提升和兴趣拓展。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心服务内容</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>多样化的课程体系：</strong>平台目前重点提供包括老年大学相关课程（如健康养生、书画艺术、智能手机应用等）、成人高中学历提升辅导课程、以及特定职业技能培训（如保安员上岗培训）等在内的热门和实用课程。未来还将根据社会需求和学员反馈，持续拓展和优化课程类目。</li>
+                        <li><strong>简洁易用的用户界面：</strong>系统界面设计充分考虑到成人学习者的使用习惯，力求简洁明了、操作便捷。用户可以轻松浏览课程目录，查看课程详情，并快速完成报名和学习等操作。</li>
+                        <li><strong>个性化的学习支持：</strong>平台支持用户快速访问“我的课程”、“学习进度”、“个人中心”等功能模块，方便学员管理自己的学习计划，跟踪学习成效，并获取必要的学习支持服务。</li>
+                    </ul>
+                    <p>通过“骆驼成人学校培训”平台，我们希望帮助每一位有学习意愿的成年人都能便捷地获取优质教育资源，不断提升个人综合素质和职业竞争力，享受学习带来的乐趣与成就。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "jiulonghu-command-platform",
+          title: "九龙湖镇“长治九安”实景指挥平台",
+          category: "智慧政务",
+          short_description:
+            "基层社会治理的数字化指挥中枢，整合监控、网格、事件、应急等功能，强化平安建设。",
+          images: ["https://cdn.sa.net/2025/05/30/9fhaEw2lHDW8noZ.jpg"],
+          full_description: `
+                    <p class="mb-4">九龙湖镇“长治九安”实景指挥平台是为提升基层社会治理现代化水平而构建的核心数字化工具，它通过整合各类信息资源和技术手段，旨在打造一个集日常管理、应急响应、指挥调度于一体的综合性指挥中枢，有力强化九龙湖镇的平安建设基础和快速应急响应能力。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能模块</h4>  
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>全域视频监控综合管理：</strong>实时展示并管理辖区内所有高位监控点、主要交通卡口监控的地理位置分布及其当前设备运行状态（如在线、离线、故障等），支持按需调阅实时视频流。</li>  
+                        <li><strong>网格化精细社会治理：</strong>动态呈现全镇划分的各个网格及其责任区域范围，清晰展示每位网格员（例如当前共有6名网格员）的基本信息（包括姓名、联系方式、照片，甚至年龄）、以及其所管辖的村落或社区单元，实现责任到人、管理到格。</li>  
+                        <li><strong>事件闭环高效处置：</strong>对各类上报或发现的社会治理事件（如治安事件、环境问题、民生诉求等），进行全流程的可视化跟踪管理，清晰显示事件从“已发布/待受理”、“处理中/已派单”到“已办结/已归档”的各个环节状态，确保问题得到及时有效解决。</li>  
+                        <li><strong>一体化应急指挥与调度：</strong>平台集成“总指挥”决策操作入口，提供多维度的数据看板（如实时警力分布、应急资源状态、事件热力图等），辅助指挥人员在突发事件发生时进行科学决策和高效指挥调度。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">平台设计特点</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li>采用科技感强烈的深色主题大屏界面设计，适合指挥中心环境，信息展示清晰突出。</li>
+                        <li>深度融合地理信息系统（GIS）与各类业务数据，实现空间信息与管理信息的直观结合。</li>
+                        <li>构建并支持多层级的网格化管理体系，确保管理触角延伸至基层末梢。</li>
+                        <li>对关键管理指标（如在线人员、待办事件、监控设备在线率等）进行实时统计与动态更新。</li>
+                        <li>支持按日、周、月、年等不同时间维度对各类数据进行统计分析与趋势研判。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">应用价值与目标</h4>
+                    <p>“长治九安”实景指挥平台致力于为九龙湖镇的基层社会治理工作提供一个“一屏统览全局、一键调度资源”的强大数字化指挥中枢，通过技术赋能，全面提升九龙湖镇在平安建设、风险防控、民生服务和应急响应等方面的综合能力和治理效能。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "jiulonghu-anti-fraud",
+          title: "九龙湖大平安",
+          category: "智慧政务",
+          short_description:
+            "专注于反诈宣传与教育的平台，通过知识题库、模拟场景等方式提升居民防范意识。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/iDFMesgwRqKNI1d.jpg",
+            "https://cdn.sa.net/2025/05/30/SLTGsigfZQonkHr.jpg",
+            "https://cdn.sa.net/2025/05/30/bFCpZK9kJEDTw3m.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">“九龙湖大平安”是一个以提升全民反诈防骗意识和能力为核心目标的在线宣传与学习平台。面对日益严峻和花样翻新的电信网络诈骗形势，本平台致力于通过互动化、场景化的教育方式，帮助广大居民增强对各类诈骗手段的识别与防范能力，从而有效守护个人及家庭的财产安全。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">主要功能与特色</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>反诈知识题库与在线练习：</strong>平台内置了丰富的反诈知识题库，涵盖各类常见及新型诈骗手法、防范要点、法律法规等内容。用户可以通过在线答题、模拟测试等方式进行学习和巩固，检验自身掌握程度。</li>
+                        <li><strong>模拟场景互动体验：</strong>提供模拟接听可疑电话、识别诈骗短信/链接等互动场景练习。用户在模拟环境中体验诈骗过程，学习在真实情况下应如何正确应对，从而提高实战防范技能。</li>
+                        <li><strong>防范意识提升：</strong>通过图文、短视频、案例分析等多种形式，生动揭示各类诈骗手段的套路和危害，帮助用户全面增强主动防范意识。</li>
+                        <li><strong>个人学习进度管理：</strong>设有用户登录功能，方便用户记录和管理自己的学习进度、错题回顾等，实现个性化学习和持续提升。</li>
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">平台目标</h4>
+                    <p>“九龙湖大平安”旨在通过广泛的宣传教育和精准的技能培训，推动形成全民反诈的良好氛围，努力提升区域内居民整体的识骗、防骗能力，为构建平安和谐的九龙湖贡献力量。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "guangzhi-ai-management",
+          title: "广知科技AI管理系统",
+          category: "智慧工业",
+          short_description:
+            "基于AI技术的智慧化工厂监控平台，实现生产全维度智能管理、风险预警与数据决策。",
+          images: ["https://cdn.sa.net/2025/05/30/AvgL8ZS1crsBtJ7.jpg"],
+          full_description: `
+                    <p class="mb-4">广知科技AI管理系统是一款专为现代化工厂（尤其是化工厂区）设计的智慧化监控与管理平台。该系统深度融合了人工智能（AI）、物联网（IoT）、大数据分析及VR/AR等前沿技术，旨在实现对厂区生产运营全维度的智能感知、精准监控、风险预警和优化决策，从而提升生产效率、保障安全生产、降低运营成本。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能模块</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>实时精准生产监控：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>对关键生产环节的采样点温度、压力等工艺参数进行毫秒级的高频监测，确保数据采集的实时性和准确性（例如，定位精度可达0.1米或特定设备级别）。</li>
+                                <li>对各类生产设备（如泵、阀、压缩机、反应釜等）的运行状态（如开/停、转速、振动、电流等）进行动态追踪和可视化展示。</li>
+                            </ul>
+                        </li>
+                        <li><strong>AI赋能的智能风险预警与安全防护：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>通过AI视觉识别技术，对厂区内人员的违规行为（如未佩戴安全帽、进入危险区域、动火作业不规范等）进行自动识别、抓拍和记录。</li>
+                                <li>对关键安全设施（如安全阀、可燃/有毒气体探测器、紧急断路器等）的异常状态或超限参数进行实时报警，并联动应急预案。</li>
+                            </ul>
+                        </li>
+                        <li><strong>数据驱动的决策分析中枢：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>对历史和实时的生产数据（如产品产量、原料消耗、能源消耗、设备故障率、发电量等）进行多维度、深层次的统计分析与挖掘。</li>
+                                <li>通过直观的仪表盘、趋势图、对比图等可视化方式，清晰呈现各项关键绩效指标（KPIs），为管理层提供数据洞察和决策支持。</li>
+                            </ul>
+                        </li>
+                        <li><strong>VR/AR增强的实景化管理与巡检：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>支持基于厂区三维数字孪生模型的VR（虚拟现实）可视化巡检，管理人员可远程“漫游”厂区，查看设备详情和运行参数。</li>
+                                <li>结合AR（增强现实）技术，现场维护人员可通过移动设备扫描设备二维码或识别设备外观，即可获取设备档案、历史维修记录、操作规程等信息，提升维护效率。</li>
+                                <li>清晰管理和展示设备在不同层段或区域的分布情况，便于快速定位和查找。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>系统采用科技蓝为主色调的现代化界面设计，有效地整合了生产过程监控、设备健康管理、安全环保防护、能源效率管理等全流程业务，致力于为镇海炼化等大型能源化工企业提供一套先进、可靠、高效的智慧运维整体解决方案，助力企业实现智能化转型升级。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "guangming-future-village",
+          title: "光明村未来乡村系统",
+          category: "智慧乡村",
+          short_description:
+            "综合性未来乡村管理服务平台，整合党建、医疗、教育、商业及村务公开等功能，提升乡村治理水平。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/TAZSVuUrJzEbFPm.jpg",
+            "https://cdn.sa.net/2025/05/30/L8dElnNqIfF23rw.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">光明村未来乡村综合管理系统是一款旨在通过数字化、智能化手段全面提升乡村治理能力和服务水平的综合性平台。该系统致力于整合乡村的各类资源和服务，为村民提供更便捷的生活体验，为村干部提供更高效的管理工具，共同建设宜居、宜业、和谐的未来乡村。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">主要功能模块与界面布局</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>左侧功能模块分类导航：</strong>清晰列出乡村核心服务与管理功能模块，例如设有“智慧医疗”（可链接至村卫生室信息、在线咨询等）、“党建引领”（展示党建活动动态、学习资料等）、“乡村教育”（关联学校信息、教育资源等）、“便民商圈”（整合村内商铺、农产品销售等信息）等板块。用户点击相应模块即可查看或进入对应的具体信息和服务页面。</li>
+                        <li><strong>右侧上方信息展示区：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>光明村概况介绍：</strong>展示光明村的基本情况、历史文化、发展特色等文字或图文介绍。</li>
+                                <li><strong>村干部信息公开：</strong>公示村主要干部的概况信息，通常包括姓名、照片、出生年月、所任职务、联系方式等，方便村民了解和联系。</li>
+                                <li><strong>重要公告发布板块：</strong>用于发布村委会的各类通知、政策宣传、活动预告等重要公告内容，确保信息及时传达给村民。</li>
+                            </ul>
+                        </li>
+                        <li><strong>右侧下方村务公开与查询区：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>村务公开：</strong>集中公示村级重要事务的决策过程、执行情况等，如重大项目建设、惠民政策落实等。</li>
+                                <li><strong>财务公开：</strong>定期公开村集体经济收支、各项补贴发放等财务信息，接受村民监督。</li>
+                                <li>用户可在此区域对已公开的村务活动、财务信息等进行在线查询和了解。</li>
+                            </ul>
+                        </li>
+                        <li><strong>中央地图可视化展示区：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>通过电子地图直观展示光明村的整体空间布局、主要道路、以及各核心功能点（如村委会、学校、医院、文化中心等）的准确地理位置。</li>
+                                <li>支持地图交互操作，例如点击地图上的某个功能点（如“光明中心幼儿园”），即可在地图上弹出包含该点详细信息的浮窗或侧边栏，如具体位置描述、联系电话、周边相关资源（如公交站点、停车场）等。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>通过光明村未来乡村综合管理系统，用户能够全面、便捷地了解光明村的各类信息和服务动态，村委会能够显著提升乡村管理的智能化水平和工作效率，最终共同推动光明村向更加智慧、便捷、和谐的未来乡村迈进，提升村民的幸福感和获得感。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "child-friendly-home",
+          title: "儿童友好之家智慧管理平台",
+          category: "智慧社区",
+          short_description:
+            "科技赋能儿童成长空间管理，集成环境监测、人流量分析、活动发布及党建引领等功能模块。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/NVafUoKZ1ikSmb9.jpg",
+            "https://cdn.sa.net/2025/05/30/TebgatPmcAVC3fq.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">儿童友好之家智慧管理平台是一个旨在通过现代信息技术手段，为社区或特定场所的儿童友好空间（如儿童活动中心、亲子阅读区等）提供智能化、精细化运营与管理支持的综合性解决方案。平台以“科技赋能儿童健康快乐成长”为核心理念，致力于打造安全、舒适、富有吸引力的儿童成长环境。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能模块</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-2 pl-4">
+                        <li><strong>环境智能监测与调控</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>实时空气质量在线检测：</strong>持续监测空间内的PM2.5浓度、空气含氧量、环境温度、相对湿度等关键环境参数，并将数据实时展示在大屏或管理端。</li>
+                                <li><strong>环境参数超标预警：</strong>当任一环境指标超出预设的安全或舒适范围时，系统能自动触发预警机制，提醒管理人员及时采取通风、净化等措施。</li>
+                                <li><strong>空间消杀记录与管理：</strong>记录并统计空间的日常消毒、清洁等工作的执行情况，确保环境卫生达标。</li>
+                            </ul>
+                        </li>
+                        <li><strong>人流量动态分析与管理</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>分时段、分人群流量统计：</strong>能够区分统计进入空间的成人数量和儿童数量，并按不同时间段（如每小时、每日）进行汇总分析。</li>
+                                <li><strong>动态趋势图展示：</strong>通过折线图、柱状图等可视化方式，清晰展示人流量在一天内或一段时期内的高峰与低谷时段，为合理安排活动、调配资源提供依据。</li>
+                            </ul>
+                        </li>
+                        <li><strong>活动发布与管理平台</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>便捷的活动信息发布：</strong>支持管理人员在线发布各类儿童友好活动的详细信息，包括活动名称、主要内容、举办时间、参与方式、适龄范围等。</li>
+                                <li><strong>多社区/多空间联动支持：</strong>若平台服务于多个社区或空间（例如风景御园社区、东桂新苑社区、保利城社区的儿童友好之家），可支持活动的统一发布或分区域发布与管理。</li>
+                            </ul>
+                        </li>
+                        <li><strong>党建引领与资源统筹可视化</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>党建工作与社区点位集中展示：</strong>在地图或列表中清晰展示党建在该区域的工作部署、相关社区服务点位等信息，体现党建在儿童友好事业中的引领作用。</li>
+                                <li><strong>空间资源统筹与高效管理：</strong>辅助管理人员对儿童友好空间内的各类设施、设备、物资等资源进行有效的统筹规划和高效管理、合理调配。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">平台设计特色</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li>采用富有科技感的深蓝色调界面设计，视觉效果现代、专业。</li>
+                        <li>巧妙结合数据看板与立体化、形象化的图标设计，信息呈现直观易懂。</li>
+                        <li>实现多维度信息的有效集成与一体化展示，便于综合管理与决策。</li>
+                    </ul>
+                    <p>通过儿童友好之家智慧管理平台，社区和相关机构能够更科学地营造和管理儿童成长空间，提升服务质量，为孩子们的健康成长保驾护航。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "smart-canteen-ordering",
+          title: "等你下课智慧食堂点餐小程序",
+          category: "校园服务",
+          short_description:
+            "专为宁波大学师生打造的便捷校园点餐小程序，提供多餐厅选择、特价美食及订单实时跟踪。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/EKd3pAoh95VLHTi.jpg",
+            "https://cdn.sa.net/2025/05/30/V5gST2doxeMinY4.jpg",
+            "https://cdn.sa.net/2025/05/30/JduQbIx1aCXO9q8.jpg",
+            "https://cdn.sa.net/2025/05/30/KE891dDMZmxykwa.png",
+          ],
+          full_description: `
+                    <p class="mb-4">“等你下课”智慧食堂点餐小程序是专为宁波大学（或其他指定高校）的师生群体量身定制的一款便捷、高效的校园在线点餐系统。该小程序旨在通过移动互联网技术，优化传统食堂就餐体验，让师生随时随地都能轻松完成点餐、支付和取餐等操作。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能与用户体验</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li><strong>多餐厅与菜品浏览选择：</strong>用户可以通过这款小程序，方便地查看和选择校内各个合作餐厅（例如新宇餐厅、江徽餐厅等）提供的丰富美食菜品，每个菜品通常配有图片、价格和简介。</li>
+                        <li><strong>特价美食与优惠推荐：</strong>首页或特定版块会展示食堂推出的特价美食、优惠套餐或热门推荐菜品，帮助用户发现高性价比的选择。</li>
+                        <li><strong>实时订单状态跟踪：</strong>用户在下单支付后，可以实时查看订单的当前状态，例如“待支付”、“已支付/制作中”、“待取餐/已送达”、“已完成”或“退款处理中”等，全程掌握订单动态。</li>
+                        <li><strong>个性化首页与快速点餐：</strong>首页界面通常会清晰展示餐厅分类（如按食堂楼层、风味类型等）、特价美食推荐区域、以及根据用户喜好或销量排列的热门商家列表，让用户能够快速找到心仪的餐食并进入点餐流程。</li>
+                        <li><strong>便捷的订单管理与取餐：</strong>点餐成功后，用户可以在“我的订单”页面查看订单的详细信息，包括所点菜品、总金额、预计出餐时间、以及用于取餐的唯一取餐码或二维码等信息，极大地方便了食堂取餐环节的效率和准确性。</li>
+                        <li><strong>完善的个人中心功能：</strong>在个人中心模块，用户可以方便地管理自己的常用收货地址（若支持外送）、查看历史订单记录、进行账户相关的设置（如修改密码、绑定支付方式等），并可能包含优惠券管理、积分兑换等增值服务。</li>
+                    </ul>
+                    <p>这款“等你下课”智慧食堂点餐小程序，凭借其简洁明了的操作界面设计和全面实用的功能组合，致力于为广大师生提供一个更加便捷、高效、有序的校园点餐与就餐服务新体验，让“舌尖上的校园”更加触手可及。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "chuzhou-chamber-commerce",
+          title: "宁波市滁州商会小程序",
+          category: "商会服务",
+          short_description:
+            "为在甬滁州籍企业家打造的综合性服务平台，涵盖商会中心、活动生态、档案查询及会员名片等。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/CjorwDizbLhQSJd.jpg",
+            "https://cdn.sa.net/2025/05/30/hn2BUw1bGSPYaFD.jpg",
+            "https://cdn.sa.net/2025/05/30/PZTCvGcdOJKsItR.jpg",
+            "https://cdn.sa.net/2025/05/30/nNrvDsHuRELSXwQ.jpg",
+            "https://cdn.sa.net/2025/05/30/B9aMUJrQC1AWgKT.jpg",
+            "https://cdn.sa.net/2025/05/30/L4UcEgCaSejWfxB.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">“滁心甬聚，筑梦三江”——宁波市滁州商会小程序是专为服务在宁波发展的广大滁州籍企业家和工商界人士而精心打造的一个集信息发布、会员服务、活动组织、资源对接于一体的综合性数字化服务平台。该平台旨在通过便捷的移动端应用，加强商会与会员之间的联系，促进会员之间的交流合作，助力会员企业发展壮大。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心功能模块</h4>
+                    <ol class="list-decimal list-inside mb-4 space-y-2 pl-4">
+                        <li><strong>商会中心 (管理与服务枢纽)</strong>  
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>轮值工作在线管理、商会日常事务处理与通知发布。</li>
+                                <li>提供会员全生命周期服务功能：包括在线提交入会申请、会员等级晋升申请、会费在线缴纳、以及办理退会手续等。</li>
+                                <li>方便会员查阅商会各项规章制度、提交意见建议或建言献策、以及按要求提交年度工作报告或相关材料。</li>
+                            </ul>
+                        </li>
+                        <li><strong>活动生态 (组织与参与平台)</strong>  
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>商会各类活动（如政策宣讲会、行业论坛、摄影大赛、联谊活动等）的在线发布与详细信息展示。</li>
+                                <li>支持会员在线报名参与活动，并能实时查看活动报名截止日期的倒计时提醒。</li>
+                                <li>提供活动联系人信息，方便咨询；部分活动可能公示已报名参与人员名单（需注意隐私保护）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>商会档案 (历史与文化沉淀)</strong>  
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>以时间轴等形式展示商会发展历程中的重要事件和“大事记”，可包含图文记录。</li>
+                                <li>方便会员在线查询商会章程、组织架构图、以及各项管理办法等重要文件。</li>
+                                <li>展示商会现任领导班子成员介绍以及完整的会员名录信息（通常需权限控制）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>电子会员名片 (形象展示与社交拓展)</strong>  
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>支持会员自定义创建和编辑个人电子名片，可包含姓名、职务、所在企业、联系方式（电话、邮箱、微信等）、企业简介、主营业务等信息。</li>
+                                <li>提供灵活的隐私权限设置选项，会员可自主决定名片中哪些信息对不同人群可见。</li>
+                                <li>支持一键分享个人电子名片到微信好友、微信群或朋友圈，方便商务社交和业务拓展。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">特色增值服务</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">
+                        <li>设有供需信息互助专区，鼓励会员发布供应信息和采购需求，促进会员企业之间的商业合作与资源对接。</li>
+                        <li>实时更新并推送最新的相关政策解读（“政策吹风”）、党建工作动态与学习资料。</li>
+                        <li>为会员企业提供特色产品或服务的推广展示通道，助力品牌宣传和市场拓展。</li>
+                    </ul>
+                    <p>宁波市滁州商会小程序在界面设计上巧妙融入了代表滁州地域文化的徽派山水等元素，整体风格简洁清爽，操作流程便捷高效，致力于为广大会员提供一个优质、高效、便捷的数字化商会服务新体验，更好地凝聚滁商力量，共谋发展大计。</p>
+                `,
+          isFeatured: false,
+        },
+        {
+          id: "contractor-management-system",
+          title: "承包商管理系统",
+          category: "工业管理",
+          short_description:
+            "面向工业场景的移动端承包商全流程管理平台，覆盖准入、开工、现场到退场，强化安全管控。",
+          images: [
+            "https://cdn.sa.net/2025/05/30/XPBZcGprQeDRLf8.jpg",
+            "https://cdn.sa.net/2025/05/30/uo1rXd78eKtqBES.jpg",
+            "https://cdn.sa.net/2025/05/30/fpdgmEwCN5aS8Iz.jpg",
+            "https://cdn.sa.net/2025/05/30/vhwTd2WM8Dj3bfi.jpg",
+          ],
+          full_description: `
+                    <p class="mb-4">本系统是一款专为工业生产场景（如化工厂、制造企业、能源基地等）设计的移动端承包商全流程精细化管理平台。它旨在通过数字化、移动化的手段，对进入厂区作业的承包商及其人员、设备、活动进行全生命周期的规范管理与风险控制，确保生产安全和作业合规。</p>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">核心亮点与功能</h4>
+                    <ul class="list-disc list-inside mb-4 space-y-2 pl-4">
+                        <li><strong><i data-lucide="shield-check" class="inline-block mr-2 text-sky-600"></i>全生命周期闭环管理：</strong>
+                        系统全面覆盖承包商从资格预审与准入、入场前安全培训与交底、作业许可与开工审批、作业过程中的现场监督与检查、直至作业完成后的退场清点与评价等所有关键环节，形成闭环管理。
+                        </li>
+                        <li><strong><i data-lucide="alert-triangle" class="inline-block mr-2 text-red-600"></i>智能化安全风险管控：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>内置事故事件预警机制，例如对高风险作业、历史不良记录承包商等进行重点关注，并在系统中以醒目的红色标识（⚠️）进行警示。</li>
+                                <li>集成在线安全培训模块、应急预案查阅与演练支持等功能，提升承包商人员安全意识和应急处置能力。</li>
+                            </ul>
+                        </li>
+                        <li><strong><i data-lucide="file-text" class="inline-block mr-2 text-sky-600"></i>数字化档案与资质管理：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>支持对承包商企业资质、特种作业人员证书、施工机具合格证等信息进行电子化管理与查验。</li>
+                                <li>建立承包商及其人员的电子化档案，记录其历史作业表现、安全培训记录，并支持进行信用评价。</li>
+                            </ul>
+                        </li>
+                        <li><strong><i data-lucide="smartphone-cog" class="inline-block mr-2 text-sky-600"></i>移动化便捷现场办公：</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li>提供移动端发起停工/复工申请、安全问题整改追踪与闭环、以及作业票在线审批等现场管理功能。</li>
+                                <li>支持通过扫描二维码等方式，快速核验承包商人员身份、确认进出厂区权限，提升现场管理效率。</li>
+                            </ul>
+                        </li>  
+                    </ul>
+                    <h4 class="text-xl font-semibold mb-2 mt-4">特色功能与理念</h4>  
+                    <ul class="list-disc list-inside mb-4 space-y-1 pl-4">  
+                        <li>引入承包商安全信用评分与分级管理体系（例如，通过绿码认证的合格人员方可入场作业）。</li>  
+                        <li>支持在线进行安全技术交底和岗前安全培训，并记录培训结果。</li>  
+                        <li>建立多层级、快速响应的事故事件上报与处置机制。</li>  
+                        <li>所有关键流程均支持移动端电子化审批，减少纸质单据，提高审批效率。</li>
+                    </ul>
+                    <p>本承包商管理系统秉承“健康工作，安全二道门”等先进安全管理理念，致力于通过技术手段实现对承包商作业活动管理的标准化、可视化、动态化以及风险的闭环控制，从而有效降低安全事故发生概率，保障企业生产运营的持续稳定。</p>
+                `,
+          isFeatured: false,
+        },
+      ];
 
-                // 会有闪烁不得意这样做, (＞﹏＜)
-                canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-                canvas.css("background", "#ffc0cb");
-                $await(Jscex.Async.sleep(300));
-                canvas.css("background", "none");
-            }));
+      const projectModal = document.getElementById("project-modal");
+      const closeModalBtn = document.getElementById("close-modal-btn");
+      const modalImageContainer = document.getElementById(
+        "modal-image-container"
+      );
+      const modalTitle = document.getElementById("modal-title");
+      const modalCategory = document.getElementById("modal-category");
+      const modalDescription = document.getElementById("modal-description");
+      const prevImageBtn = document.getElementById("prev-image-btn");
+      const nextImageBtn = document.getElementById("next-image-btn");
+      let currentProjectImages = [];
+      let currentImageIndex = 0;
 
-            var jumpAnimate = eval(Jscex.compile("async", function () {
-                var ctx = tree.ctx;
-                while (true) {
-                    tree.ctx.clearRect(0, 0, width, height);
-                    tree.jump();
-                    foot.draw();
-                    $await(Jscex.Async.sleep(25));
-                }
-            }));
+      function updateModalImage() {
+        const imgSlider = modalImageContainer.parentNode;
+        if (currentProjectImages && currentProjectImages.length > 0) {
+          modalImageContainer.innerHTML = `<img src="${
+            currentProjectImages[currentImageIndex]
+          }" alt="${modalTitle.textContent} Screenshot ${
+            currentImageIndex + 1
+          }" class="w-full h-64 md:h-80 object-contain rounded-md">`;
+          imgSlider
+            .querySelector("#prev-image-btn")
+            .classList.toggle(
+              "hidden",
+              currentProjectImages.length <= 1 || currentImageIndex === 0
+            );
+          imgSlider
+            .querySelector("#next-image-btn")
+            .classList.toggle(
+              "hidden",
+              currentProjectImages.length <= 1 ||
+                currentImageIndex === currentProjectImages.length - 1
+            );
+        } else {
+          modalImageContainer.innerHTML =
+            '<p class="text-center text-slate-500 py-10">暂无预览图片</p>';
+          imgSlider.querySelector("#prev-image-btn").classList.add("hidden");
+          imgSlider.querySelector("#next-image-btn").classList.add("hidden");
+        }
+      }
 
-            var textAnimate = eval(Jscex.compile("async", function () {
-                var together = new Date();
-                together.setFullYear(2001, 02, 25);
-                together.setHours(0);
-                together.setMinutes(0);
-                together.setSeconds(0);
-                together.setMilliseconds(0);
+      modalImageContainer.parentNode
+        .querySelector("#prev-image-btn")
+        .addEventListener("click", () => {
+          if (currentImageIndex > 0) {
+            currentImageIndex--;
+            updateModalImage();
+          }
+        });
 
-                $("#code").show().typewriter();
-                $("#clock-box").fadeIn(500);
-                while (true) {
-                    timeElapse(together);
-                    $await(Jscex.Async.sleep(1000));
-                }
-            }));
+      modalImageContainer.parentNode
+        .querySelector("#next-image-btn")
+        .addEventListener("click", () => {
+          if (currentImageIndex < currentProjectImages.length - 1) {
+            currentImageIndex++;
+            updateModalImage();
+          }
+        });
 
-            var runAsync = eval(Jscex.compile("async", function () {
-                $await(seedAnimate());
-                $await(growAnimate());
-                $await(flowAnimate());
-                $await(moveAnimate());
+      function openModal(project) {
+        modalTitle.textContent = project.title;
+        modalCategory.innerHTML = `<span class="inline-block text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-full font-medium">${project.category}</span>`;
+        modalDescription.innerHTML = project.full_description;
+        currentProjectImages = project.images;
+        currentImageIndex = 0;
+        updateModalImage();
+        projectModal.classList.remove("opacity-0", "pointer-events-none");
+        projectModal
+          .querySelector(".modal-content")
+          .classList.remove("scale-95");
+        document.body.style.overflow = "hidden";
+        // Re-render icons if any were added in modal description
+        setTimeout(() => lucide.createIcons(), 0);
+      }
 
-                textAnimate().start();
+      function closeModal() {
+        projectModal.classList.add("opacity-0", "pointer-events-none");
+        projectModal.querySelector(".modal-content").classList.add("scale-95");
+        document.body.style.overflow = "";
+      }
 
-                $await(jumpAnimate());
-            }));
+      closeModalBtn.addEventListener("click", closeModal);
+      projectModal.addEventListener("click", (e) => {
+        if (e.target === projectModal) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !projectModal.classList.contains("opacity-0"))
+          closeModal();
+      });
 
-            runAsync().start();
-        })();
+      const featuredProjectsGrid = document.getElementById(
+        "featured-projects-grid"
+      );
+      const allProjectsGrid = document.getElementById("all-projects-grid");
+      const projectFiltersContainer =
+        document.getElementById("project-filters");
+      const noProjectsMessage = document.getElementById("no-projects-message");
+
+      const uniqueCategories = [
+        "all",
+        ...new Set(projectsData.map((p) => p.category)),
+      ];
+
+      uniqueCategories.forEach((category) => {
+        if (category === "all") return;
+        const button = document.createElement("button");
+        button.className =
+          "filter-btn font-medium py-2 px-5 rounded-lg transition-all duration-200 bg-slate-200 hover:bg-slate-300 text-slate-700";
+        button.dataset.filter = category;
+        button.textContent = category;
+        projectFiltersContainer.appendChild(button);
+      });
+
+      function createProjectCard(project, index) {
+        const card = document.createElement("div");
+        card.className = `bg-white rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 animate-on-scroll group`; // Added group for image scale
+        card.style.setProperty("--delay", `${index * 0.05}s`);
+
+        const imageSrc =
+          project.images && project.images.length > 0
+            ? project.images[0]
+            : "https://cdn.sa.net/2025/05/30/xZ6koGbK5HRcuUq.jpg";
+
+        card.innerHTML = `
+                <div class="aspect-[16/10] overflow-hidden">
+                    <img src="${imageSrc}" alt="${project.title} screenshot" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="p-5 sm:p-6 flex-grow flex flex-col">
+                    <span class="inline-block text-xs bg-sky-100 text-sky-600 px-3 py-1 rounded-full font-semibold mb-3 self-start">${project.category}</span>
+                    <h3 class="text-lg sm:text-xl font-semibold text-slate-800 mb-2 leading-tight">${project.title}</h3>
+                    <p class="text-slate-600 text-sm mb-4 flex-grow leading-relaxed line-clamp-3">${project.short_description}</p> 
+                    <button class="mt-auto bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium py-2.5 px-4 rounded-md transition-colors duration-200 self-start open-modal-btn flex items-center">
+                        查看详情 <i data-lucide="arrow-right-circle" class="ml-2 w-4 h-4"></i>
+                    </button>
+                </div>
+            `;
+        card.querySelector(".open-modal-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          openModal(project);
+        });
+        return card;
+      }
+
+      function displayProjects(filter = "all") {
+        allProjectsGrid.innerHTML = "";
+        let displayedCount = 0;
+        projectsData.forEach((project, index) => {
+          if (filter === "all" || project.category === filter) {
+            const card = createProjectCard(project, displayedCount);
+            allProjectsGrid.appendChild(card);
+            displayedCount++;
+          }
+        });
+        noProjectsMessage.classList.toggle("hidden", displayedCount > 0);
+        observeAnimations();
+        lucide.createIcons();
+      }
+
+      projectsData
+        .filter((p) => p.isFeatured)
+        .slice(0, 3)
+        .forEach((project, index) => {
+          const card = createProjectCard(project, index);
+          featuredProjectsGrid.appendChild(card);
+        });
+
+      projectFiltersContainer.addEventListener("click", (e) => {
+        if (
+          e.target.tagName === "BUTTON" &&
+          e.target.classList.contains("filter-btn")
+        ) {
+          projectFiltersContainer
+            .querySelectorAll(".filter-btn")
+            .forEach((btn) => {
+              btn.classList.remove("active", "bg-sky-600", "text-white");
+              btn.classList.add(
+                "bg-slate-200",
+                "hover:bg-slate-300",
+                "text-slate-700"
+              );
+            });
+          e.target.classList.add("active", "bg-sky-600", "text-white");
+          e.target.classList.remove(
+            "bg-slate-200",
+            "hover:bg-slate-300",
+            "text-slate-700"
+          );
+          displayProjects(e.target.dataset.filter);
+        }
+      });
+
+      displayProjects();
+
+      function observeAnimations() {
+        const animatedElements =
+          document.querySelectorAll(".animate-on-scroll");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const delay =
+                  parseFloat(entry.target.style.getPropertyValue("--delay")) ||
+                  0;
+                setTimeout(() => {
+                  entry.target.classList.add("is-visible");
+                }, delay * 1000);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
+      }
+      observeAnimations();
+
+      const canvas = document.getElementById("hero-canvas");
+      const ctx = canvas.getContext("2d");
+      let particlesArray = [];
+      const numberOfParticles = 50;
+
+      function initCanvas() {
+        if (!canvas) return; // Ensure canvas exists
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        particlesArray = [];
+        for (let i = 0; i < numberOfParticles; i++) {
+          let size = Math.random() * 2 + 1;
+          let x = Math.random() * (canvas.width - size * 2) + size;
+          let y = Math.random() * (canvas.height - size * 2) + size;
+          let directionX = Math.random() * 0.4 - 0.2;
+          let directionY = Math.random() * 0.4 - 0.2;
+          let color = "rgba(255,255,255,0.5)";
+          particlesArray.push({ x, y, directionX, directionY, size, color });
+        }
+      }
+
+      function connectHeroParticles() {
+        if (!ctx || particlesArray.length === 0) return;
+        let opacityValue = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+          for (let b = a; b < particlesArray.length; b++) {
+            let distance =
+              (particlesArray[a].x - particlesArray[b].x) *
+                (particlesArray[a].x - particlesArray[b].x) +
+              (particlesArray[a].y - particlesArray[b].y) *
+                (particlesArray[a].y - particlesArray[b].y);
+            if (
+              distance < (canvas.width / 7) * (canvas.height / 7) &&
+              distance < 10000
+            ) {
+              opacityValue = 1 - distance / 10000;
+              ctx.strokeStyle = "rgba(255,255,255," + opacityValue * 0.3 + ")";
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+              ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animateHeroCanvas() {
+        if (!ctx) return;
+        requestAnimationFrame(animateHeroCanvas);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+          let particle = particlesArray[i];
+          particle.x += particle.directionX;
+          particle.y += particle.directionY;
+          if (
+            particle.x + particle.size > canvas.width ||
+            particle.x - particle.size < 0
+          ) {
+            particle.directionX = -particle.directionX;
+          }
+          if (
+            particle.y + particle.size > canvas.height ||
+            particle.y - particle.size < 0
+          ) {
+            particle.directionY = -particle.directionY;
+          }
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2, false);
+          ctx.fillStyle = particle.color;
+          ctx.fill();
+        }
+        connectHeroParticles();
+      }
+
+      // Debounce resize for canvas
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          initCanvas();
+        }, 250); // Adjust delay as needed
+      });
+
+      initCanvas(); // Initial call
+      if (canvas) animateHeroCanvas();
+
+      const contactForm = document.getElementById("contact-form");
+      const formStatus = document.getElementById("form-status");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let isValid = true;
+        formStatus.textContent = "";
+
+        contactForm
+          .querySelectorAll("[data-form-error]")
+          .forEach((el) => el.classList.add("hidden"));
+
+        const nameVal = document.getElementById("name").value.trim();
+        const emailVal = document.getElementById("email").value.trim();
+        const messageVal = document.getElementById("message").value.trim();
+
+        if (nameVal === "") {
+          document
+            .querySelector('[data-form-error="name"]')
+            .classList.remove("hidden");
+          isValid = false;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailVal)) {
+          document
+            .querySelector('[data-form-error="email"]')
+            .classList.remove("hidden");
+          isValid = false;
+        }
+        if (messageVal === "") {
+          document
+            .querySelector('[data-form-error="message"]')
+            .classList.remove("hidden");
+          isValid = false;
+        }
+
+        if (!isValid) {
+          formStatus.innerHTML =
+            '<p class="text-red-600">请检查表单并修正错误。</p>';
+          return;
+        }
+
+        formStatus.innerHTML = '<p class="text-sky-600">正在发送...</p>';
+
+        setTimeout(() => {
+          formStatus.innerHTML =
+            '<p class="text-green-600">感谢您的留言！我们已收到您的信息，并将尽快与您联系。</p>';
+          contactForm.reset();
+          contactForm
+            .querySelectorAll("[data-form-error]")
+            .forEach((el) => el.classList.add("hidden"));
+        }, 1500);
+      });
     </script>
-
-
-
-</body>
-
+  </body>
 </html>
