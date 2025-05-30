@@ -21,7 +21,7 @@
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/003">
-            <p align="center">003</p>
+            <p align="center">甬想官网谷歌gemini0508版本</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
         </a>
     </td>
