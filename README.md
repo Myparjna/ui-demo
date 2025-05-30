@@ -10,19 +10,19 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/001">
             <p align="center">甬想官网黑色版本Deepseek0528</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/EO2mNYzDFnxZqXf.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/002">
             <p align="center">甬想官网白色版本Deepseek0528</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/zEo7T1RMGgpY5y3.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/003">
             <p align="center">甬想官网谷歌gemini0508版本</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/JUEnBVs8tiqTPCw.jpg"/>
         </a>
     </td>
     </tr>
