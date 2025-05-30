@@ -1,121 +1,1284 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>小孙同学</title>
-    <meta name="language" content="zh-CN" />
-    <meta name="title" content="小孙同学" />
-    <meta
-      name="github"
-      content="https://github.com/sun0225SUN/Awesome-Love-Code"
-    />
-    <meta
-      name="describe"
-      content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! "
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png"
-    />
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宁波甬想科技 - 专业的软件服务开发定制解决方案</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Anime.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
     <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background: rgb(255, 192, 203);
-      }
-
-      .container {
-        color: white;
-        text-align: center;
-        width: 500px;
-        height: 600px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <canvas id="c"></canvas>
-      <script>
-        var b = document.body;
-        var c = document.getElementsByTagName("canvas")[0];
-        var a = c.getContext("2d");
-        document.body.clientWidth;
-      </script>
-      <script>
-        with ((m = Math)) (C = cos), (S = sin), (P = pow), (R = random);
-        c.width = c.height = f = 600;
-        h = -250;
-        function p(a, b, c) {
-          if (c > 60)
-            return [
-              S(a * 7) * (13 + 5 / (0.2 + P(b * 4, 4))) - S(b) * 50,
-              b * f + 50,
-              625 + C(a * 7) * (13 + 5 / (0.2 + P(b * 4, 4))) + b * 400,
-              a * 1 - b / 2,
-              a,
-            ];
-          A = a * 2 - 1;
-          B = b * 2 - 1;
-          if (A * A + B * B < 1) {
-            if (c > 37) {
-              n = (j = c & 1) ? 6 : 4;
-              o = 0.5 / (a + 0.01) + C(b * 125) * 3 - a * 300;
-              w = b * h;
-              return [
-                o * C(n) + w * S(n) + j * 610 - 390,
-                o * S(n) - w * C(n) + 550 - j * 350,
-                1180 + C(B + A) * 99 - j * 300,
-                0.4 -
-                  a * 0.1 +
-                  P(1 - B * B, -h * 6) * 0.15 -
-                  a * b * 0.4 +
-                  C(a + b) / 5 +
-                  P(C((o * (a + 1) + (B > 0 ? w : -w)) / 25), 30) *
-                    0.1 *
-                    (1 - B * B),
-                o / 1e3 + 0.7 - o * w * 3e-6,
-              ];
-            }
-            if (c > 32) {
-              c = c * 1.16 - 0.15;
-              o = a * 45 - 20;
-              w = b * b * h;
-              z = o * S(c) + w * C(c) + 620;
-              return [
-                o * C(c) - w * S(c),
-                28 + C(B * 0.5) * 99 - b * b * b * 60 - z / 2 - h,
-                z,
-                (b * b * 0.3 + P(1 - A * A, 7) * 0.15 + 0.3) * b,
-                b * 0.7,
-              ];
-            }
-            o = A * (2 - b) * (80 - c * 2);
-            w =
-              99 -
-              C(A) * 120 -
-              C(b) * (-h - c * 4.9) +
-              C(P(1 - b, 7)) * 50 +
-              c * 2;
-            z = o * S(c) + w * C(c) + 700;
-            return [
-              o * C(c) - w * S(c),
-              B * 99 - C(P(b, 7)) * 50 - c / 3 - z / 1.35 + 450,
-              z,
-              (1 - b / 1.2) * 0.9 + a * 0.1,
-              P(1 - b, 20) / 4 + 0.05,
-            ];
-          }
+        @font-face {
+            font-family: 'HarmonyOS Sans';
+            src: url('https://cdn.jsdelivr.net/gh/liuzhengfonts/HarmonyOS_Sans@latest/HarmonyOS_Sans_Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
-        setInterval(
-          'for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}',
-          0
-        );
-      </script>
+        
+        body {
+            font-family: 'HarmonyOS Sans', 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            overflow-x: hidden;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+            border-radius: 3px;
+        }
+        
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        /* 日间模式服务卡片颜色 */
+        .service-card-1 {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .service-card-2 {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        .service-card-3 {
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        /* 项目详情模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1.5rem;
+            max-width: 900px;
+            margin: 5% auto;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            color: #334155;
+            transform: rotate(90deg);
+        }
+        
+        .modal-image {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .modal-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+            padding: 2rem;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #0ea5e9;
+        }
+        
+        /* 项目卡片动效 */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.05), rgba(14, 165, 233, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        .project-card img {
+            transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .project-card .view-details {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .project-card .view-details i {
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .view-details i {
+            transform: translateX(5px);
+        }
+        
+        /* 英雄区域文字效果 */
+        .hero-text {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(90deg, #3b82f6, #0ea5e9, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        /* 浮动动画 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* 按钮样式 */
+        .btn-primary {
+            background: linear-gradient(90deg, #3b82f6, #0ea5e9);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #3b82f6;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 导航栏样式 */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: #f1f5f9;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        /* 表单样式 */
+        input, textarea {
+            background: white;
+            border: 1px solid #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            outline: none;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#0ea5e9',
+                        accent: '#06b6d4',
+                        light: '#f8fafc',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+    <!-- Three.js Particles Background -->
+    <div id="particles-container" class="particles-container"></div>
+    
+    <!-- Header -->
+    <header class="fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://cdn.sa.net/2025/05/30/K9En12xj6Iz4YDd.png" alt="甬想科技" class="h-12 w-auto floating">
+                <span class="ml-3 text-xl font-bold text-slate-800">甬想科技</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-slate-600 hover:text-primary transition">首页</a>
+                <a href="#services" class="text-slate-600 hover:text-primary transition">服务领域</a>
+                <a href="#projects" class="text-slate-600 hover:text-primary transition">项目案例</a>
+                <a href="#about" class="text-slate-600 hover:text-primary transition">关于我们</a>
+                <a href="#contact" class="text-slate-600 hover:text-primary transition">联系我们</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-600 hover:text-primary">
+                    <i class="ti ti-menu-2 text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 absolute w-full shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="text-slate-600 hover:text-primary transition py-2">首页</a>
+                <a href="#services" class="text-slate-600 hover:text-primary transition py-2">服务领域</a>
+                <a href="#projects" class="text-slate-600 hover:text-primary transition py-2">项目案例</a>
+                <a href="#about" class="text-slate-600 hover:text-primary transition py-2">关于我们</a>
+                <a href="#contact" class="text-slate-600 hover:text-primary transition py-2">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - 仅文字 -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-20">
+            <div class="text-center">
+                <div class="mb-8">
+                    <div class="inline-block bg-blue-50 rounded-full px-4 py-1 mb-6">
+                        <span class="text-primary font-medium">数字化解决方案的创新引领者</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-800 mb-6 hero-text">
+                    <span class="hero-gradient">智慧科技</span> 驱动未来
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto">
+                    宁波甬想科技专注于提供智慧化、定制化的软件服务开发解决方案，助力企业实现数字化转型与智能化升级。
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="px-8 py-4 btn-primary rounded-full font-medium text-lg flex items-center justify-center">
+                        <i class="ti ti-apps mr-2"></i>
+                        查看案例
+                    </a>
+                    <a href="#contact" class="px-8 py-4 btn-secondary rounded-full font-medium text-lg flex items-center justify-center">
+                        <i class="ti ti-phone mr-2"></i>
+                        联系我们
+                    </a>
+                </div>
+                
+                <div class="mt-16 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full filter blur-2xl opacity-70"></div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-100 rounded-full filter blur-2xl opacity-70"></div>
+                        <div class="relative grid grid-cols-3 gap-6">
+                            <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+                                <div class="text-3xl font-bold text-primary mb-2">50+</div>
+                                <div class="text-slate-600">专业人才</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+                                <div class="text-3xl font-bold text-secondary mb-2">200+</div>
+                                <div class="text-slate-600">企业客户</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+                                <div class="text-3xl font-bold text-accent mb-2">300+</div>
+                                <div class="text-slate-600">成功项目</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 section-title">核心服务领域</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">我们提供全方位的软件定制开发服务，助力企业实现数字化转型</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card-1 p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ti ti-building-skyscraper text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">智慧楼宇解决方案</h3>
+                    <p class="text-slate-600 mb-4">
+                        集三维可视化、智能租务、物业运营于一体的楼宇管理平台，实现楼宇资源可视化管控和物业服务智能化闭环。
+                    </p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-primary mt-1 mr-2"></i>
+                            <span>三维可视化资源管理</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-primary mt-1 mr-2"></i>
+                            <span>智能租务引擎</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-primary mt-1 mr-2"></i>
+                            <span>物业运营中枢</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card-2 p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ti ti-tools text-3xl text-indigo-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">工程维保管理系统</h3>
+                    <p class="text-slate-600 mb-4">
+                        专为工程设备维护打造的高效管理应用，实现维保流程的数字化与智能化，覆盖工单管理、巡检任务等核心功能。
+                    </p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-indigo-500 mt-1 mr-2"></i>
+                            <span>工单统计与派发</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-indigo-500 mt-1 mr-2"></i>
+                            <span>地图可视化导航</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-indigo-500 mt-1 mr-2"></i>
+                            <span>维保执行与记录</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card-3 p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-violet-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ti ti-building-warehouse text-3xl text-violet-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">智慧工地管理系统</h3>
+                    <p class="text-slate-600 mb-4">
+                        全方位智能化的建筑工地运营管理平台，提供设备监控、人员管理、项目进度追踪等一体化解决方案。
+                    </p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-violet-500 mt-1 mr-2"></i>
+                            <span>设备监控与异常预警</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-violet-500 mt-1 mr-2"></i>
+                            <span>人员精准统计与考勤</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-check text-violet-500 mt-1 mr-2"></i>
+                            <span>项目进度多维度展示</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 section-title">精选项目案例</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">我们为各行业提供专业的定制化解决方案</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card rounded-2xl overflow-hidden card-hover" data-id="1">
+                    <img src="https://cdn.sa.net/2025/05/30/UKIF2okhEnqZCBf.jpg" alt="晟诺佳智慧楼宇系统" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">晟诺佳智慧楼宇系统</h3>
+                            <span class="px-3 py-1 bg-blue-100 text-primary text-sm rounded-full">智慧楼宇</span>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            面向现代化物业管理的SaaS解决方案，通过PC端数据驾驶舱与移动端服务平台深度协同，实现楼宇资源可视化管控。
+                        </p>
+                        <div class="view-details text-primary font-medium flex items-center group">
+                            查看详情
+                            <i class="ti ti-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="project-card rounded-2xl overflow-hidden card-hover" data-id="2">
+                    <img src="https://cdn.sa.net/2025/05/30/SosjkczW61NG8A5.jpg" alt="工程维保管理系统" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">工程维保管理系统</h3>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-500 text-sm rounded-full">设备维保</span>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            专为工程设备维护打造的高效管理应用，助力企业实现维保流程的数字化与智能化，提升工作效率。
+                        </p>
+                        <div class="view-details text-primary font-medium flex items-center group">
+                            查看详情
+                            <i class="ti ti-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="project-card rounded-2xl overflow-hidden card-hover" data-id="3">
+                    <img src="https://cdn.sa.net/2025/05/30/JKwjgZ4ILEPRSXF.jpg" alt="智慧工地运管中心" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">智慧工地运管中心</h3>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-500 text-sm rounded-full">智慧工地</span>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            全方位智能化的建筑工地运营管理平台，提供实时、高效、精准的工地管理解决方案。
+                        </p>
+                        <div class="view-details text-primary font-medium flex items-center group">
+                            查看详情
+                            <i class="ti ti-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 4 -->
+                <div class="project-card rounded-2xl overflow-hidden card-hover" data-id="4">
+                    <img src="https://cdn.sa.net/2025/05/30/OyvcwSNPY17fFQr.jpg" alt="放学信息公示系统" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">放学信息公示系统</h3>
+                            <span class="px-3 py-1 bg-cyan-100 text-cyan-500 text-sm rounded-full">智慧教育</span>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            为小学场景定制的数字化管理平台，提供教师、家长专属模块，优化放学管理流程。
+                        </p>
+                        <div class="view-details text-primary font-medium flex items-center group">
+                            查看详情
+                            <i class="ti ti-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 5 -->
+                <div class="project-card rounded-2xl overflow-hidden card-hover" data-id="5">
+                    <img src="https://cdn.sa.net/2025/05/30/cPnT72hdCiwOfet.jpg" alt="森林防火监管系统" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">森林防火监管系统</h3>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-500 text-sm rounded-full">公共安全</span>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            镇海区森林防火监管系统，提供实时地图监控、气象火险预警、客流统计分析等功能。
+                        </p>
+                        <div class="view-details text-primary font-medium flex items-center group">
+                            查看详情
+                            <i class="ti ti-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 6 -->
+                <div class="project-card rounded-2xl overflow-hidden card-hover" data-id="6">
+                    <img src="https://cdn.sa.net/2025/05/30/jOaJ2CwsTxuv5lR.jpg" alt="场地预约管理系统" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">场地预约管理系统</h3>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-500 text-sm rounded-full">资源管理</span>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            专为场地预约管理设计的高效系统，主要用于会议室、教室等公共场地的预约安排与展示。
+                        </p>
+                        <div class="view-details text-primary font-medium flex items-center group">
+                            查看详情
+                            <i class="ti ti-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-slate-200 text-slate-600 rounded-full hover:bg-slate-50 transition">
+                    <span>查看更多项目</span>
+                    <i class="ti ti-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full filter blur-2xl opacity-70"></div>
+                        <div class="relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+                            <img src="https://cdn.sa.net/2025/05/30/gpW5Ji1lBk9oAxr.jpg" alt="关于甬想科技" class="w-full h-auto rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-6 section-title">关于甬想科技</h2>
+                    <p class="text-slate-600 mb-6">
+                        宁波甬想科技有限公司是一家专注于软件和信息技术服务的高新技术企业，致力于为各行业提供专业的定制化软件开发解决方案。
+                    </p>
+                    <p class="text-slate-600 mb-6">
+                        公司成立于2018年，总部位于浙江省宁波市镇海区，拥有一支经验丰富、技术精湛的研发团队。我们始终坚持以技术创新为核心，以客户需求为导向，为客户提供高质量的软件定制开发服务。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="ti ti-code text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">专业领域</h4>
+                                <p class="text-sm text-slate-600">软件开发与定制</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="ti ti-users text-xl text-cyan-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">团队规模</h4>
+                                <p class="text-sm text-slate-600">50+ 专业人才</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="ti ti-building-community text-xl text-violet-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">服务客户</h4>
+                                <p class="text-sm text-slate-600">200+ 企业客户</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="ti ti-award text-xl text-emerald-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">行业认证</h4>
+                                <p class="text-sm text-slate-600">高新技术企业</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 btn-primary rounded-full font-medium">
+                        联系我们
+                        <i class="ti ti-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4 section-title">联系我们</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">有任何问题或需求，请随时与我们联系</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6">公司信息</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="ti ti-building text-xl text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-600">公司名称</h4>
+                                    <p class="text-slate-800">宁波甬想科技有限公司</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="ti ti-map-pin text-xl text-cyan-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-600">公司地址</h4>
+                                    <p class="text-slate-800">浙江省宁波市镇海区骆驼街道荣骆路238号钟毓轩4号大楼9层</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 bg-violet-100 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="ti ti-phone text-xl text-violet-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-600">联系电话</h4>
+                                    <p class="text-slate-800">135 6659 4660</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="ti ti-mail text-xl text-emerald-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-600">电子邮箱</h4>
+                                    <p class="text-slate-800">wuxin@nbgztech.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="ti ti-clock text-xl text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-slate-600">工作时间</h4>
+                                    <p class="text-slate-800">周一至周五: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6">发送消息</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-slate-600 mb-2">姓名</label>
+                                    <input type="text" id="name" class="w-full rounded-lg px-4 py-3 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-slate-600 mb-2">邮箱</label>
+                                    <input type="email" id="email" class="w-full rounded-lg px-4 py-3 focus:outline-none">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-slate-600 mb-2">电话</label>
+                                <input type="tel" id="phone" class="w-full rounded-lg px-4 py-3 focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-slate-600 mb-2">主题</label>
+                                <input type="text" id="subject" class="w-full rounded-lg px-4 py-3 focus:outline-none">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-slate-600 mb-2">消息内容</label>
+                                <textarea id="message" rows="4" class="w-full rounded-lg px-4 py-3 focus:outline-none"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-3 btn-primary rounded-lg font-medium">
+                                发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="https://cdn.sa.net/2025/05/30/K9En12xj6Iz4YDd.png" alt="甬想科技" class="h-10 w-auto">
+                        <span class="ml-3 text-xl font-bold text-slate-800">甬想科技</span>
+                    </div>
+                    <p class="text-slate-600 mb-6">
+                        专注于提供智慧化、定制化的软件服务开发解决方案，助力企业实现数字化转型与智能化升级。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-white hover:bg-primary transition">
+                            <i class="ti ti-brand-wechat"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-white hover:bg-primary transition">
+                            <i class="ti ti-brand-dingtalk"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:text-white hover:bg-primary transition">
+                            <i class="ti ti-brand-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-6">服务领域</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-600 hover:text-primary transition">智慧楼宇解决方案</a></li>
+                        <li><a href="#" class="text-slate-600 hover:text-primary transition">工程维保管理系统</a></li>
+                        <li><a href="#" class="text-slate-600 hover:text-primary transition">智慧工地管理系统</a></li>
+                        <li><a href="#" class="text-slate-600 hover:text-primary transition">教育管理系统</a></li>
+                        <li><a href="#" class="text-slate-600 hover:text-primary transition">公共安全系统</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-slate-600 hover:text-primary transition">首页</a></li>
+                        <li><a href="#services" class="text-slate-600 hover:text-primary transition">服务领域</a></li>
+                        <li><a href="#projects" class="text-slate-600 hover:text-primary transition">项目案例</a></li>
+                        <li><a href="#about" class="text-slate-600 hover:text-primary transition">关于我们</a></li>
+                        <li><a href="#contact" class="text-slate-600 hover:text-primary transition">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-6">联系方式</h4>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start">
+                            <i class="ti ti-map-pin mt-1 mr-3"></i>
+                            <span>浙江省宁波市镇海区骆驼街道荣骆路238号钟毓轩4号大楼9层</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-phone mt-1 mr-3"></i>
+                            <span>135 6659 4660</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ti ti-mail mt-1 mr-3"></i>
+                            <span>wuxin@nbgztech.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-200 mt-12 pt-8 text-center text-slate-500">
+                <p>© 2025 宁波甬想科技有限公司 版权所有 | 浙ICP备XXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 项目详情模态框 -->
+    <div id="project-modal" class="modal">
+        <div class="close-modal">&times;</div>
+        <div class="modal-content">
+            <div id="modal-image" class="modal-image">
+                <div class="modal-overlay">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span id="modal-category" class="feature-badge bg-blue-100 text-primary"></span>
+                        <span class="feature-badge bg-cyan-100 text-cyan-500">定制开发</span>
+                        <span class="feature-badge bg-violet-100 text-violet-500">SaaS平台</span>
+                    </div>
+                    <h2 id="modal-title" class="text-3xl font-bold text-slate-800"></h2>
+                </div>
+            </div>
+            <div class="p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">项目概述</h3>
+                        <p id="modal-description" class="text-slate-600 mb-6"></p>
+                        
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">核心功能</h3>
+                        <ul id="modal-features" class="feature-list text-slate-600 mb-6"></ul>
+                        
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">技术亮点</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="ti ti-cloud text-primary"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800">云端架构</h4>
+                                </div>
+                                <p class="text-slate-500 text-sm">基于微服务的分布式架构，支持高并发访问</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="ti ti-braille text-cyan-500"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800">三维可视化</h4>
+                                </div>
+                                <p class="text-slate-500 text-sm">WebGL技术实现楼宇三维模型展示</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="ti ti-shield-lock text-violet-500"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800">安全防护</h4>
+                                </div>
+                                <p class="text-slate-500 text-sm">多层次安全机制，保障数据安全</p>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mr-3">
+                                        <i class="ti ti-device-mobile text-emerald-500"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800">多端适配</h4>
+                                </div>
+                                <p class="text-slate-500 text-sm">响应式设计，完美适配PC和移动端</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-slate-50 rounded-xl p-6 mb-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-4">项目信息</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-slate-500 text-sm mb-1">开发周期</h4>
+                                    <p class="text-slate-800">4-6个月</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-500 text-sm mb-1">技术栈</h4>
+                                    <p class="text-slate-800">Vue3 + Spring Boot + MySQL</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-500 text-sm mb-1">部署方式</h4>
+                                    <p class="text-slate-800">私有云/公有云部署</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-slate-500 text-sm mb-1">客户反馈</h4>
+                                    <div class="flex items-center text-amber-400">
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <span class="text-slate-800 ml-2">5.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-50 rounded-xl p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-4">项目成果</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-slate-500 text-sm">管理效率提升</span>
+                                        <span class="text-slate-800">+45%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-slate-500 text-sm">运营成本降低</span>
+                                        <span class="text-slate-800">-30%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-200 rounded-full h-2">
+                                        <div class="bg-cyan-500 h-2 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-slate-500 text-sm">用户满意度</span>
+                                        <span class="text-slate-800">98%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-200 rounded-full h-2">
+                                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 98%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <script>
+        // 项目数据
+        const projects = [
+            {
+                id: 1,
+                title: "晟诺佳智慧楼宇系统",
+                category: "智慧楼宇",
+                image: "https://cdn.sa.net/2025/05/30/UKIF2okhEnqZCBf.jpg",
+                description: "面向现代化物业管理的SaaS解决方案，通过PC端数据驾驶舱与移动端服务平台的深度协同，实现楼宇资源可视化管控、租务全流程数字化及物业服务智能化闭环。系统集成了三维可视化资源管理、智能租务引擎和物业运营中枢三大核心模块，为楼宇管理提供全方位支持。",
+                features: [
+                    "三维可视化资源管理：动态销控看板实时展示楼层级房源状态，支持分区筛选",
+                    "智能租务引擎：移动预约看房管理，支持时段化预约和租户信息脱敏保护",
+                    "物业运营中枢：工单闭环处理系统，支持报修工单移动端发起和进度跟踪",
+                    "多角色协同平台：为物业人员、租户和管理者提供定制化工作界面",
+                    "智能预警体系：陌生人进出动态监控与预警，服务超时提醒功能"
+                ]
+            },
+            {
+                id: 2,
+                title: "工程维保管理系统",
+                category: "设备维保",
+                image: "https://cdn.sa.net/2025/05/30/SosjkczW61NG8A5.jpg",
+                description: "专为工程设备维护打造的高效管理应用，助力企业实现维保流程的数字化与智能化。系统提供工单统计与派发、地图可视化导航、维保执行与记录等核心功能，覆盖设备巡检、维护、保养全流程。通过移动端应用，维保人员可实时接收任务、上报进度，管理人员可随时掌握设备状态和维保情况。",
+                features: [
+                    "工单智能派发：根据设备位置、维保人员位置智能分配任务",
+                    "地图可视化：直观展示待派工单、在途工单的地理分布",
+                    "维保执行跟踪：支持工单分类处理，区分巡检上报与客户上报来源",
+                    "实时状态更新：清晰标识工单所处阶段，支持一键拨打电话沟通",
+                    "移动巡检任务：人员信息展示，支持巡检路线规划和任务分配"
+                ]
+            },
+            {
+                id: 3,
+                title: "智慧工地运管中心",
+                category: "智慧工地",
+                image: "https://cdn.sa.net/2025/05/30/JKwjgZ4ILEPRSXF.jpg",
+                description: "全方位智能化的建筑工地运营管理平台，为建筑企业提供实时、高效、精准的工地管理解决方案。系统集成了设备监控、人员管理、项目进度追踪、物料管理和资金管理等核心功能，通过物联网、大数据和人工智能技术，实现工地管理的数字化、智能化。",
+                features: [
+                    "设备全面监控：对监控设备、人脸识别系统、烟感探测器等进行实时监控",
+                    "人员精准管理：通过柱状图直观展示不同工种人员数量，记录每日出勤情况",
+                    "项目进度追踪：多维度展示项目状态，支持查看投资总额、开工日期等详细信息",
+                    "物料智能管理：实时统计管材、木材、钢材等主要物料库存量",
+                    "资金数据分析：通过柱状图对比计划投资与实际投资情况，辅助财务规划"
+                ]
+            },
+            {
+                id: 4,
+                title: "放学信息公示系统",
+                category: "智慧教育",
+                image: "https://cdn.sa.net/2025/05/30/OyvcwSNPY17fFQr.jpg",
+                description: "为小学场景定制的数字化管理平台，提供教师、家长专属模块，优化放学管理流程。系统通过数字化大屏实时展示设备状态、能耗数据和操作记录，支持多级筛选和精准设备定位，为学校提供高效、安全的放学管理解决方案。",
+                features: [
+                    "设备实时监控：远程控制空调、灯光等设备，一键切换上课/下课场景模式",
+                    "能耗智能管理：空调能耗数据统计分析，异常耗电设备预警提示",
+                    "操作记录追溯：支持按姓名、状态、时间筛选操作记录",
+                    "精准设备定位：多级筛选（学校→场所→设备类型），设备分布平面图导航",
+                    "状态实时同步：多维度数据可视化，分级权限管理体系"
+                ]
+            },
+            {
+                id: 5,
+                title: "森林防火监管系统",
+                category: "公共安全",
+                image: "https://cdn.sa.net/2025/05/30/cPnT72hdCiwOfet.jpg",
+                description: "镇海区森林防火监管系统，提供实时地图监控、气象火险预警、客流统计分析等功能。系统通过深蓝色调界面整合多维数据，结合GIS地理信息系统和物联网技术，为森林防火提供实时决策支持，有效提升森林火灾预防和应急响应能力。",
+                features: [
+                    "实时地图监控：显示全域监控点，异常区域高亮提示",
+                    "气象火险预警：实时监测湿度、风力、风向数据，评估火险等级",
+                    "客流统计分析：柱状折线图显示客流峰值，辅助人流管控",
+                    "防火联动模块：支持实时监控、语音宣传和录像回溯功能",
+                    "智能预警体系：结合气象数据和监控画面，提前预警火灾风险"
+                ]
+            },
+            {
+                id: 6,
+                title: "场地预约管理系统",
+                category: "资源管理",
+                image: "https://cdn.sa.net/2025/05/30/jOaJ2CwsTxuv5lR.jpg",
+                description: "专为场地预约管理设计的高效系统，主要用于会议室、教室等公共场地的预约安排与展示。系统提供多场地查看、详细预约记录、日历视图和预约规则说明等功能，帮助管理者实现场地资源的合理调配与高效利用，提升场地使用效率和管理水平。",
+                features: [
+                    "预约信息展示：支持同时查看多个场地的预约情况",
+                    "详细预约记录：清晰展示每个场地的具体预约时间段及预约单位",
+                    "日历视图：提供直观的日历界面，支持查看全月日期分布",
+                    "月份切换：便捷切换查看其他月份的场地预约情况",
+                    "预约规则管理：明确标注场地预约规则，包括限工作日预约时间等"
+                ]
+            }
+        ];
+
+        // 初始化Three.js粒子背景
+        function initParticles() {
+            const container = document.getElementById('particles-container');
+            
+            // 场景、相机和渲染器
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            
+            // 创建粒子
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 1500;
+            
+            const posArray = new Float32Array(particlesCount * 3);
+            const colorArray = new Float32Array(particlesCount * 3);
+            
+            for(let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 10;
+                colorArray[i] = Math.random();
+            }
+            
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+            
+            // 粒子材质
+            const particlesMaterial = new THREE.PointsMaterial({
+                size: 0.02,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.6,
+                color: 0x3b82f6
+            });
+            
+            // 粒子系统
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+            
+            camera.position.z = 5;
+            
+            // 动画循环
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                particlesMesh.rotation.x += 0.0005;
+                particlesMesh.rotation.y += 0.001;
+                
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+            
+            // 响应窗口大小变化
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+        
+        // 初始化页面动画
+        function initAnimations() {
+            // 导航链接动画
+            anime({
+                targets: 'nav a',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                delay: anime.stagger(100),
+                duration: 800,
+                easing: 'easeOutExpo'
+            });
+            
+            // 英雄区域动画
+            anime({
+                targets: '#home h1, #home p',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                delay: 300,
+                duration: 1000,
+                easing: 'easeOutExpo'
+            });
+            
+            anime({
+                targets: '#home a',
+                opacity: [0, 1],
+                translateY: [30, 0],
+                delay: 800,
+                duration: 1000,
+                easing: 'easeOutExpo'
+            });
+            
+            // 服务卡片动画
+            anime({
+                targets: '.service-card-1, .service-card-2, .service-card-3',
+                opacity: [0, 1],
+                translateY: [50, 0],
+                delay: anime.stagger(100),
+                duration: 800,
+                easing: 'easeOutExpo'
+            });
+            
+            // 项目卡片动画
+            anime({
+                targets: '.project-card',
+                opacity: [0, 1],
+                translateY: [50, 0],
+                delay: anime.stagger(100, {start: 300}),
+                duration: 800,
+                easing: 'easeOutExpo'
+            });
+        }
+        
+        // 移动菜单切换
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 如果是移动菜单，点击后关闭菜单
+                    const menu = document.getElementById('mobile-menu');
+                    if (!menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // 项目详情模态框功能
+        const modal = document.getElementById('project-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCategory = document.getElementById('modal-category');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+        const modalFeatures = document.getElementById('modal-features');
+        
+        // 关闭模态框
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        // 点击模态框外部关闭
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // 项目卡片点击事件
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = parseInt(card.getAttribute('data-id'));
+                const project = projects.find(p => p.id === projectId);
+                
+                if (project) {
+                    // 填充模态框内容
+                    modalTitle.textContent = project.title;
+                    modalCategory.textContent = project.category;
+                    modalImage.style.backgroundImage = `url(${project.image})`;
+                    modalDescription.textContent = project.description;
+                    
+                    // 清空并填充功能列表
+                    modalFeatures.innerHTML = '';
+                    project.features.forEach(feature => {
+                        const li = document.createElement('li');
+                        li.textContent = feature;
+                        modalFeatures.appendChild(li);
+                    });
+                    
+                    // 显示模态框
+                    modal.style.display = 'block';
+                }
+            });
+        });
+        
+        // 页面加载完成后初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            initParticles();
+            initAnimations();
+        });
+    </script>
+</body>
 </html>
