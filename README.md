@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>都是AI设计的HTML网页<br>用于快速预览效果</h1> 
+    <h1>AI设计的网页DEMO，用于快速预览效果</h1> 
 </div>
 
 # Web
