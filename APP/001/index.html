@@ -1,0 +1,1008 @@
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贝果潮玩定制商城</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        .brutalist-shadow {
+            box-shadow: 8px 8px 0px #000000;
+        }
+        .brutalist-button {
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+        }
+        .brutalist-button:hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+        .glitch-text {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        .rough-border {
+            border-radius: 15px 25px 20px 10px;
+        }
+        .custom-font-mix {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+        .shake-animation {
+            animation: shake 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0px) rotate(-1deg); }
+            100% { transform: translateX(2px) rotate(1deg); }
+        }
+        .app-container {
+            width: 390px;
+            height: 844px;
+            margin: 0 auto;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        body {
+            background: #333;
+            margin: 0;
+            padding: 20px 0;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        html {
+            scrollbar-width: none;
+        }
+        .parallax-bg {
+            background: linear-gradient(135deg, #FFD700 0%, #FF1493 25%, #00BFFF 50%, #32CD32 75%, #FF69B4 100%);
+            background-size: 200% 200%;
+            animation: colorShift 3s ease-in-out infinite;
+        }
+        @keyframes colorShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+        }
+        .slide-in-right {
+            animation: slideInRight 0.3s ease-out;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        .pulse-custom {
+            animation: pulse-custom 2s infinite;
+        }
+        @keyframes pulse-custom {
+            0%, 100% { transform: scale(1) rotate(-1deg); }
+            50% { transform: scale(1.05) rotate(1deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container" x-data="appData()">
+        <!-- 状态栏 -->
+        <div class="flex justify-between items-center px-6 py-2 bg-black text-white text-sm">
+            <span class="font-bold">21:39</span>
+            <div class="flex items-center space-x-1">
+                <div class="w-4 h-2 bg-white rounded-sm"></div>
+                <div class="w-1 h-1 bg-white rounded-full"></div>
+                <div class="w-6 h-3 border border-white rounded-sm">
+                    <div class="w-4 h-1 bg-white rounded-xs mt-0.5 ml-0.5"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 首页内容 -->
+        <div class="h-full bg-white relative overflow-hidden" x-show="currentPage === 'home'" style="height: 740px;">
+            <!-- 头部区域 -->
+            <div class="relative p-4 parallax-bg">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-4xl font-black text-black custom-font-mix glitch-text transform -rotate-3">
+                        BAGEL
+                    </h1>
+                    <button class="w-12 h-12 bg-black text-white rounded-full brutalist-button flex items-center justify-center">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 滚动内容区域 -->
+            <div class="h-full overflow-y-auto pb-20" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <!-- 四个大板块 -->
+                <div class="p-4 grid grid-cols-2 gap-4">
+                    <div class="bg-yellow-400 p-6 rough-border brutalist-shadow transform rotate-2 hover:rotate-0 transition-all">
+                        <img src="https://cdn.sa.net/2025/06/03/ln49KMy2FxvtpZj.jpg" class="w-16 h-16 object-cover rounded-lg mb-3">
+                        <h3 class="font-black text-xl text-black">饰品</h3>
+                        <p class="text-sm font-bold">个性定制</p>
+                    </div>
+                    <div class="bg-red-500 p-6 rough-border brutalist-shadow transform -rotate-1 hover:rotate-1 transition-all">
+                        <img src="https://cdn.sa.net/2025/06/03/rUVHBiLbZqoMOQC.jpg" class="w-16 h-16 object-cover rounded-lg mb-3">
+                        <h3 class="font-black text-xl text-white">画作</h3>
+                        <p class="text-sm font-bold text-white">艺术创作</p>
+                    </div>
+                    <div class="bg-blue-500 p-6 rough-border brutalist-shadow transform rotate-1 hover:-rotate-2 transition-all">
+                        <img src="https://cdn.sa.net/2025/06/03/IsqmiLSDB3Cn81p.jpg" class="w-16 h-16 object-cover rounded-lg mb-3">
+                        <h3 class="font-black text-xl text-white">宠物毛毡</h3>
+                        <p class="text-sm font-bold text-white">萌宠装扮</p>
+                    </div>
+                    <div class="bg-green-400 p-6 rough-border brutalist-shadow transform -rotate-2 hover:rotate-3 transition-all">
+                        <img src="https://cdn.sa.net/2025/06/03/vqTagyotSnsrLz3.jpg" class="w-16 h-16 object-cover rounded-lg mb-3">
+                        <h3 class="font-black text-xl text-black">贴纸</h3>
+                        <p class="text-sm font-bold">创意表达</p>
+                    </div>
+                </div>
+
+                <!-- 最近浏览 -->
+                <div class="p-4">
+                    <h2 class="text-2xl font-black mb-4 transform -rotate-1 custom-font-mix">最近浏览</h2>
+                    <div class="flex space-x-4 overflow-x-auto">
+                        <div class="min-w-40 bg-pink-300 p-3 rough-border brutalist-shadow cursor-pointer" @click="openProductCustom('复古戒指')">
+                            <img src="https://cdn.sa.net/2025/06/03/8uP9tYbvrI5yOdl.jpg" class="w-full h-20 object-cover rounded-lg mb-2">
+                            <h4 class="font-bold text-sm">复古戒指</h4>
+                            <p class="text-xs">￥ 128</p>
+                            <button class="w-6 h-6 bg-red-500 text-white rounded-full text-xs mt-1">♥</button>
+                        </div>
+                        <div class="min-w-40 bg-cyan-300 p-3 rough-border brutalist-shadow cursor-pointer" @click="openProductCustom('银质项链')">
+                            <img src="https://cdn.sa.net/2025/06/03/cfUJTk8lwxjZs5n.jpg" class="w-full h-20 object-cover rounded-lg mb-2">
+                            <h4 class="font-bold text-sm">银质项链</h4>
+                            <p class="text-xs">￥ 298</p>
+                            <button class="w-6 h-6 bg-red-500 text-white rounded-full text-xs mt-1">♥</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 运营海报 -->
+                <div class="p-4">
+                    <div class="relative h-32 bg-black rough-border brutalist-shadow overflow-hidden">
+                        <img src="https://cdn.sa.net/2025/06/03/HIbq8LgCRT75UGn.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-60"></div>
+                        <div class="absolute bottom-4 right-4 text-white">
+                            <h3 class="font-black text-lg shake-animation">限时特惠</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 店铺展示 -->
+                <div class="p-4">
+                    <h2 class="text-2xl font-black mb-4 transform rotate-1 custom-font-mix">热门店铺</h2>
+                    
+                    <!-- 店铺1 - 可滑动商品 -->
+                    <div class="bg-purple-200 p-4 mb-4 rough-border brutalist-shadow transform -rotate-1">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-3 cursor-pointer" @click="openShop('艺术工坊')">
+                                <img src="https://cdn.sa.net/2025/06/03/ohHz5MqL9WSnlYx.jpg" class="w-12 h-12 rounded-full border-2 border-black">
+                                <div>
+                                    <h3 class="font-black text-lg">艺术工坊</h3>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm">★★★★★</span>
+                                        <span class="text-sm">月销 234</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 bg-black text-white rounded-full text-sm font-bold">关注</button>
+                                <button class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3 overflow-x-auto">
+                            <div class="min-w-32 bg-white p-2 rounded-lg brutalist-shadow cursor-pointer" @click="openProductCustom('复古耳环')">
+                                <div class="bg-red-500 text-white text-xs px-2 py-1 rounded mb-2 w-fit">-20%</div>
+                                <img src="https://cdn.sa.net/2025/06/03/zTKH7ImpFNRx1lr.jpg" class="w-full h-24 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs mb-1">复古耳环</h4>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-400 line-through text-xs">￥160</span>
+                                        <p class="font-bold text-sm text-red-500">￥128</p>
+                                    </div>
+                                    <button class="w-6 h-6 bg-pink-400 text-white rounded-full text-xs">♥</button>
+                                </div>
+                            </div>
+                            <div class="min-w-32 bg-white p-2 rounded-lg brutalist-shadow cursor-pointer" @click="openProductCustom('时尚手镯')">
+                                <div class="bg-green-500 text-white text-xs px-2 py-1 rounded mb-2 w-fit">-15%</div>
+                                <img src="https://cdn.sa.net/2025/06/03/5jI6fbX7ouhApyN.jpg" class="w-full h-24 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs mb-1">时尚手镯</h4>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-400 line-through text-xs">￥200</span>
+                                        <p class="font-bold text-sm text-red-500">￥170</p>
+                                    </div>
+                                    <button class="w-6 h-6 bg-pink-400 text-white rounded-full text-xs">♥</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 店铺2 - 固定4个商品 -->
+                    <div class="bg-yellow-200 p-4 mb-4 rough-border brutalist-shadow transform rotate-1">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-3 cursor-pointer" @click="openShop('创意画廊')">
+                                <img src="https://cdn.sa.net/2025/06/03/P6xNEMQVGqdusbc.jpg" class="w-12 h-12 rounded-full border-2 border-black">
+                                <div>
+                                    <h3 class="font-black text-lg">创意画廊</h3>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm">★★★★☆</span>
+                                        <span class="text-sm">月销 156</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 bg-black text-white rounded-full text-sm font-bold">关注</button>
+                                <button class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="bg-white p-2 rounded-lg brutalist-shadow cursor-pointer" @click="openProductCustom('抽象画作')">
+                                <img src="https://cdn.sa.net/2025/06/03/xp1hMEfqB6rQoS4.jpg" class="w-full h-20 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs">抽象画作</h4>
+                                <p class="font-bold text-sm text-red-500">￥380</p>
+                            </div>
+                            <div class="bg-white p-2 rounded-lg brutalist-shadow cursor-pointer" @click="openProductCustom('风景油画')">
+                                <img src="https://cdn.sa.net/2025/06/03/KAoJ9DPMX42QxaN.jpg" class="w-full h-20 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs">风景油画</h4>
+                                <p class="font-bold text-sm text-red-500">￥520</p>
+                            </div>
+                            <div class="bg-white p-2 rounded-lg brutalist-shadow cursor-pointer" @click="openProductCustom('人物画')">
+                                <img src="https://cdn.sa.net/2025/06/03/XV7hqMUPbcDHNCm.jpg" class="w-full h-20 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs">人物画</h4>
+                                <p class="font-bold text-sm text-red-500">￥450</p>
+                            </div>
+                            <div class="bg-white p-2 rounded-lg brutalist-shadow cursor-pointer" @click="openProductCustom('现代艺术')">
+                                <img src="https://cdn.sa.net/2025/06/03/BUincvL9elPkQw4.jpg" class="w-full h-20 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs">现代艺术</h4>
+                                <p class="font-bold text-sm text-red-500">￥680</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分类/搜索页面 -->
+        <div class="h-full bg-white relative overflow-hidden" x-show="currentPage === 'search'" style="height: 740px; display: none;">
+            <!-- 搜索头部 -->
+            <div class="p-4 bg-gradient-to-r from-purple-400 to-pink-400">
+                <div class="relative">
+                    <input type="text" x-model="searchQuery" placeholder="搜索你想要的潮玩..." class="w-full p-3 rounded-full border-4 border-black font-bold">
+                    <button class="absolute right-2 top-2 w-8 h-8 bg-black text-white rounded-full">
+                        <svg class="w-4 h-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="h-full overflow-y-auto pb-20">
+                <!-- 分类标签 -->
+                <div class="p-4">
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-4 py-2 bg-yellow-400 text-black font-black rounded-full brutalist-shadow transform -rotate-1" :class="selectedCategory === '首饰' ? 'ring-4 ring-black' : ''" @click="selectedCategory = '首饰'">首饰</button>
+                        <button class="px-4 py-2 bg-red-500 text-white font-black rounded-full brutalist-shadow transform rotate-2" :class="selectedCategory === '送礼' ? 'ring-4 ring-white' : ''" @click="selectedCategory = '送礼'">送礼</button>
+                        <button class="px-4 py-2 bg-blue-500 text-white font-black rounded-full brutalist-shadow transform -rotate-2" :class="selectedCategory === '创意艺术' ? 'ring-4 ring-white' : ''" @click="selectedCategory = '创意艺术'">创意艺术</button>
+                        <button class="px-4 py-2 bg-green-400 text-black font-black rounded-full brutalist-shadow transform rotate-1" :class="selectedCategory === '潮玩设备' ? 'ring-4 ring-black' : ''" @click="selectedCategory = '潮玩设备'">潮玩设备</button>
+                        <button class="px-4 py-2 bg-purple-400 text-white font-black rounded-full brutalist-shadow transform -rotate-1" :class="selectedCategory === '宠物' ? 'ring-4 ring-white' : ''" @click="selectedCategory = '宠物'">宠物</button>
+                        <button class="px-4 py-2 bg-pink-400 text-black font-black rounded-full brutalist-shadow transform rotate-3" :class="selectedCategory === '更多' ? 'ring-4 ring-black' : ''" @click="selectedCategory = '更多'">更多</button>
+                    </div>
+                </div>
+
+                <!-- 运营轮播图 -->
+                <div class="p-4">
+                    <div class="h-24 bg-black rounded-lg brutalist-shadow overflow-hidden">
+                        <img src="https://cdn.sa.net/2025/06/03/xQtSvAOUIWDrnz6.jpg" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- 商品瀑布流 -->
+                <div class="p-4 grid grid-cols-2 gap-4">
+                    <div class="bg-cyan-200 p-3 rough-border brutalist-shadow transform rotate-1 cursor-pointer" @click="openProductCustom('精美吊坠')">
+                        <img src="https://cdn.sa.net/2025/06/03/78LG6JqmkU5WtCr.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">精美吊坠</h4>
+                        <p class="text-xs text-gray-600 mb-2">个性定制 | 限量版</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 258</span>
+                            <button class="w-8 h-8 bg-pink-500 text-white rounded-full">♥</button>
+                        </div>
+                    </div>
+                    <div class="bg-orange-200 p-3 rough-border brutalist-shadow transform -rotate-2 cursor-pointer" @click="openProductCustom('复古胸针')">
+                        <img src="https://cdn.sa.net/2025/06/03/KXfP4zQhD6LOvEN.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">复古胸针</h4>
+                        <p class="text-xs text-gray-600 mb-2">手工制作 | 独一无二</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 188</span>
+                            <button class="w-8 h-8 bg-pink-500 text-white rounded-full">♥</button>
+                        </div>
+                    </div>
+                    <div class="bg-lime-200 p-3 rough-border brutalist-shadow transform rotate-2 cursor-pointer" @click="openProductCustom('艺术贴纸')">
+                        <img src="https://cdn.sa.net/2025/06/03/MTYxnlQsz5hJFuq.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">艺术贴纸</h4>
+                        <p class="text-xs text-gray-600 mb-2">创意表达 | 防水材质</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 58</span>
+                            <button class="w-8 h-8 bg-pink-500 text-white rounded-full">♥</button>
+                        </div>
+                    </div>
+                    <div class="bg-violet-200 p-3 rough-border brutalist-shadow transform -rotate-1 cursor-pointer" @click="openProductCustom('宠物围巾')">
+                        <img src="https://cdn.sa.net/2025/06/03/98MPvjBtxqEhw1o.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">宠物围巾</h4>
+                        <p class="text-xs text-gray-600 mb-2">温暖舒适 | 多色可选</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 88</span>
+                            <button class="w-8 h-8 bg-pink-500 text-white rounded-full">♥</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 我的页面 -->
+        <div class="h-full bg-white relative overflow-hidden" x-show="currentPage === 'profile'" style="height: 740px; display: none;">
+            <div class="h-full overflow-y-auto pb-20">
+                <!-- 用户信息区域 -->
+                <div class="p-4 bg-gradient-to-br from-indigo-400 to-purple-600 text-white">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://cdn.sa.net/2025/06/03/bRfq51yLIgGA8aE.jpg" class="w-16 h-16 rounded-full border-4 border-white brutalist-shadow">
+                        <div>
+                            <h2 class="text-xl font-black">潮玩达人</h2>
+                            <p class="text-sm opacity-80">热爱创意，追求个性</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 今日寄语 -->
+                    <div class="bg-white bg-opacity-20 p-3 rounded-lg brutalist-shadow mb-4">
+                        <h3 class="font-bold mb-2">🌟 今日寄语</h3>
+                        <p class="text-sm">"创意无极限，个性有态度"</p>
+                    </div>
+                    
+                    <!-- 颜色推荐和幸运指数 -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-yellow-400 text-black p-3 rounded-lg brutalist-shadow">
+                            <h4 class="font-bold text-sm">今日幸运色</h4>
+                            <div class="w-8 h-8 bg-pink-500 rounded-full mt-2 border-2 border-black"></div>
+                            <p class="text-xs mt-1">活力粉</p>
+                        </div>
+                        <div class="bg-green-400 text-black p-3 rounded-lg brutalist-shadow">
+                            <h4 class="font-bold text-sm">幸运指数</h4>
+                            <p class="text-2xl font-black mt-1">88%</p>
+                            <p class="text-xs">超级幸运日</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的订单 -->
+                <div class="p-4">
+                    <h3 class="text-xl font-black mb-3 transform -rotate-1">我的订单</h3>
+                    <div class="bg-gray-100 p-4 rounded-lg brutalist-shadow">
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-red-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">3</div>
+                                <div class="text-xs">待付款</div>
+                            </div>
+                            <div class="bg-orange-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">1</div>
+                                <div class="text-xs">待发货</div>
+                            </div>
+                            <div class="bg-blue-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">2</div>
+                                <div class="text-xs">待收货</div>
+                            </div>
+                            <div class="bg-green-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">5</div>
+                                <div class="text-xs">待评价</div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center mt-2">
+                            <div class="bg-purple-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">0</div>
+                                <div class="text-xs">退款</div>
+                            </div>
+                            <div class="bg-pink-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">1</div>
+                                <div class="text-xs">售后</div>
+                            </div>
+                            <div class="bg-gray-500 text-white p-2 rounded-lg">
+                                <div class="text-lg font-bold">∞</div>
+                                <div class="text-xs">全部</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的定制 -->
+                <div class="p-4">
+                    <h3 class="text-xl font-black mb-3 transform rotate-1">我的定制</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-cyan-300 p-3 rounded-lg brutalist-shadow transform -rotate-1">
+                            <h4 class="font-bold mb-2">想要清单</h4>
+                            <div class="flex items-center space-x-2">
+                                <img src="https://cdn.sa.net/2025/06/03/UJbWPxGvfeLmTF3.jpg" class="w-12 h-12 object-cover rounded">
+                                <div>
+                                    <p class="text-sm font-bold">12 件商品</p>
+                                    <p class="text-xs text-gray-600">总价值 ￥2,456</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-lime-300 p-3 rounded-lg brutalist-shadow transform rotate-2">
+                            <h4 class="font-bold mb-2">收藏店铺</h4>
+                            <div class="flex items-center space-x-2">
+                                <img src="https://cdn.sa.net/2025/06/03/VxQ6FlsOIEUez41.jpg" class="w-12 h-12 object-cover rounded-full">
+                                <div>
+                                    <p class="text-sm font-bold">8 家店铺</p>
+                                    <p class="text-xs text-gray-600">创意工坊等</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 最近浏览店铺 -->
+                <div class="p-4">
+                    <h3 class="text-xl font-black mb-3 transform -rotate-2">最近浏览店铺</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 bg-purple-100 p-3 rounded-lg brutalist-shadow cursor-pointer" @click="openShop('潮流设计室')">
+                            <img src="https://cdn.sa.net/2025/06/03/ldYZHikhtEOr1wL.jpg" class="w-12 h-12 rounded-full">
+                            <div class="flex-1">
+                                <h4 class="font-bold">潮流设计室</h4>
+                                <p class="text-sm text-gray-600">★★★★☆ 月销 89</p>
+                            </div>
+                            <button class="px-3 py-1 bg-black text-white rounded-full text-sm">进入</button>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-orange-100 p-3 rounded-lg brutalist-shadow cursor-pointer" @click="openShop('个性工作室')">
+                            <img src="https://cdn.sa.net/2025/06/03/Ytnm8GUFWXDjL4e.jpg" class="w-12 h-12 rounded-full">
+                            <div class="flex-1">
+                                <h4 class="font-bold">个性工作室</h4>
+                                <p class="text-sm text-gray-600">★★★★★ 月销 156</p>
+                            </div>
+                            <button class="px-3 py-1 bg-black text-white rounded-full text-sm">进入</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 商品定制页面 -->
+        <div class="h-full bg-white relative overflow-hidden" x-show="currentPage === 'productCustom'" style="height: 740px; display: none;">
+            <!-- 头部导航 -->
+            <div class="flex items-center justify-between p-4 bg-gradient-to-r from-pink-400 to-yellow-400">
+                <button @click="goBack()" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center brutalist-button">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                    </svg>
+                </button>
+                <h1 class="text-xl font-black custom-font-mix" x-text="selectedProduct + ' 定制'"></h1>
+                <button class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center brutalist-button">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="h-full overflow-y-auto pb-20">
+                <!-- 商品预览图 -->
+                <div class="p-4">
+                    <div class="relative h-64 bg-gray-100 rounded-lg brutalist-shadow overflow-hidden">
+                        <img src="https://cdn.sa.net/2025/06/03/8uP9tYbvrI5yOdl.jpg" class="w-full h-full object-cover" x-show="selectedProduct === '复古戒指'">
+                        <img src="https://cdn.sa.net/2025/06/03/cfUJTk8lwxjZs5n.jpg" class="w-full h-full object-cover" x-show="selectedProduct === '银质项链'">
+                        <img src="https://cdn.sa.net/2025/06/03/zTKH7ImpFNRx1lr.jpg" class="w-full h-full object-cover" x-show="selectedProduct === '复古耳环'">
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold pulse-custom">
+                            可定制
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 定制选项 -->
+                <div class="p-4 space-y-6">
+                    <!-- 尺寸选择 -->
+                    <div class="bg-cyan-200 p-4 rough-border brutalist-shadow transform -rotate-1">
+                        <h3 class="text-lg font-black mb-3">选择尺寸</h3>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button class="p-2 bg-white rounded-lg font-bold" :class="customOptions.size === 'S' ? 'bg-yellow-400 ring-4 ring-black' : 'bg-white'" @click="customOptions.size = 'S'">S 码</button>
+                            <button class="p-2 bg-white rounded-lg font-bold" :class="customOptions.size === 'M' ? 'bg-yellow-400 ring-4 ring-black' : 'bg-white'" @click="customOptions.size = 'M'">M 码</button>
+                            <button class="p-2 bg-white rounded-lg font-bold" :class="customOptions.size === 'L' ? 'bg-yellow-400 ring-4 ring-black' : 'bg-white'" @click="customOptions.size = 'L'">L 码</button>
+                        </div>
+                    </div>
+
+                    <!-- 颜色选择 -->
+                    <div class="bg-purple-200 p-4 rough-border brutalist-shadow transform rotate-2">
+                        <h3 class="text-lg font-black mb-3">选择颜色</h3>
+                        <div class="grid grid-cols-4 gap-3">
+                            <button class="w-12 h-12 bg-red-500 rounded-full border-4" :class="customOptions.color === 'red' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'red'"></button>
+                            <button class="w-12 h-12 bg-blue-500 rounded-full border-4" :class="customOptions.color === 'blue' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'blue'"></button>
+                            <button class="w-12 h-12 bg-green-500 rounded-full border-4" :class="customOptions.color === 'green' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'green'"></button>
+                            <button class="w-12 h-12 bg-yellow-500 rounded-full border-4" :class="customOptions.color === 'yellow' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'yellow'"></button>
+                            <button class="w-12 h-12 bg-pink-500 rounded-full border-4" :class="customOptions.color === 'pink' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'pink'"></button>
+                            <button class="w-12 h-12 bg-purple-500 rounded-full border-4" :class="customOptions.color === 'purple' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'purple'"></button>
+                            <button class="w-12 h-12 bg-gray-800 rounded-full border-4" :class="customOptions.color === 'black' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'black'"></button>
+                            <button class="w-12 h-12 bg-white rounded-full border-4" :class="customOptions.color === 'white' ? 'border-black ring-4 ring-yellow-400' : 'border-gray-300'" @click="customOptions.color = 'white'"></button>
+                        </div>
+                    </div>
+
+                    <!-- 背景选择 -->
+                    <div class="bg-green-200 p-4 rough-border brutalist-shadow transform -rotate-2">
+                        <h3 class="text-lg font-black mb-3">选择背景</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="h-20 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-lg border-4" :class="customOptions.background === 'gradient1' ? 'border-black ring-4 ring-red-500' : 'border-gray-300'" @click="customOptions.background = 'gradient1'">
+                                <span class="text-white font-bold">渐变1</span>
+                            </button>
+                            <button class="h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-lg border-4" :class="customOptions.background === 'gradient2' ? 'border-black ring-4 ring-red-500' : 'border-gray-300'" @click="customOptions.background = 'gradient2'">
+                                <span class="text-white font-bold">渐变2</span>
+                            </button>
+                            <button class="h-20 bg-black rounded-lg border-4" :class="customOptions.background === 'solid1' ? 'border-black ring-4 ring-red-500' : 'border-gray-300'" @click="customOptions.background = 'solid1'">
+                                <span class="text-white font-bold">纯色1</span>
+                            </button>
+                            <button class="h-20 bg-white rounded-lg border-4" :class="customOptions.background === 'solid2' ? 'border-black ring-4 ring-red-500' : 'border-gray-300'" @click="customOptions.background = 'solid2'">
+                                <span class="text-black font-bold">纯色2</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 印花图案 -->
+                    <div class="bg-orange-200 p-4 rough-border brutalist-shadow transform rotate-1">
+                        <h3 class="text-lg font-black mb-3">选择印花</h3>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button class="h-16 rounded-lg border-4 overflow-hidden" :class="customOptions.pattern === 'pattern1' ? 'border-black ring-4 ring-green-500' : 'border-gray-300'" @click="customOptions.pattern = 'pattern1'">
+                                <img src="https://cdn.sa.net/2025/06/03/vqTagyotSnsrLz3.jpg" class="w-full h-full object-cover">
+                            </button>
+                            <button class="h-16 rounded-lg border-4 overflow-hidden" :class="customOptions.pattern === 'pattern2' ? 'border-black ring-4 ring-green-500' : 'border-gray-300'" @click="customOptions.pattern = 'pattern2'">
+                                <img src="https://cdn.sa.net/2025/06/03/BWS6zhcaYQvu8N2.jpg" class="w-full h-full object-cover">
+                            </button>
+                            <button class="h-16 rounded-lg border-4 overflow-hidden" :class="customOptions.pattern === 'pattern3' ? 'border-black ring-4 ring-green-500' : 'border-gray-300'" @click="customOptions.pattern = 'pattern3'">
+                                <img src="https://cdn.sa.net/2025/06/03/MTYxnlQsz5hJFuq.jpg" class="w-full h-full object-cover">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 定制级别选择 -->
+                    <div class="bg-yellow-200 p-4 rough-border brutalist-shadow transform -rotate-1">
+                        <h3 class="text-lg font-black mb-3">定制级别</h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-white rounded-lg border-4" :class="customOptions.level === 'basic' ? 'border-black ring-4 ring-blue-500' : 'border-gray-300'" @click="customOptions.level = 'basic'">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold">基础定制</h4>
+                                        <p class="text-sm text-gray-600">颜色 + 尺寸</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-red-500">+￥ 50</p>
+                                        <p class="text-xs">3-5 工作日</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg border-4" :class="customOptions.level === 'premium' ? 'border-black ring-4 ring-blue-500' : 'border-gray-300'" @click="customOptions.level = 'premium'">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold">高级定制</h4>
+                                        <p class="text-sm text-gray-600">颜色 + 尺寸 + 背景</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-red-500">+￥ 120</p>
+                                        <p class="text-xs">5-7 工作日</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg border-4" :class="customOptions.level === 'ultimate' ? 'border-black ring-4 ring-blue-500' : 'border-gray-300'" @click="customOptions.level = 'ultimate'">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold">极致定制</h4>
+                                        <p class="text-sm text-gray-600">全套个性化</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-bold text-red-500">+￥ 200</p>
+                                        <p class="text-xs">7-10 工作日</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 商品详情 -->
+                    <div class="bg-pink-200 p-4 rough-border brutalist-shadow transform rotate-2">
+                        <h3 class="text-lg font-black mb-3">商品详情</h3>
+                        <div class="space-y-2 text-sm">
+                            <p>• 手工制作，每件独一无二</p>
+                            <p>• 采用优质材料，持久耐用</p>
+                            <p>• 支持 7 天无理由退换</p>
+                            <p>• 全国包邮，顺丰快递</p>
+                            <p>• 赠送精美包装盒</p>
+                        </div>
+                    </div>
+
+                    <!-- 相关推荐 -->
+                    <div class="bg-indigo-200 p-4 rough-border brutalist-shadow transform -rotate-2">
+                        <h3 class="text-lg font-black mb-3">相关推荐</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-white p-2 rounded-lg">
+                                <img src="https://cdn.sa.net/2025/06/03/5jI6fbX7ouhApyN.jpg" class="w-full h-20 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs">时尚手镯</h4>
+                                <p class="text-red-500 font-bold text-sm">￥ 170</p>
+                            </div>
+                            <div class="bg-white p-2 rounded-lg">
+                                <img src="https://cdn.sa.net/2025/06/03/78LG6JqmkU5WtCr.jpg" class="w-full h-20 object-cover rounded mb-2">
+                                <h4 class="font-bold text-xs">精美吊坠</h4>
+                                <p class="text-red-500 font-bold text-sm">￥ 258</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部购买栏 -->
+            <div class="fixed bottom-16 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-black text-white p-3">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm">定制价格</p>
+                        <p class="text-xl font-black text-yellow-400" x-text="'￥ ' + calculatePrice()"></p>
+                    </div>
+                    <button @click="addToCart()" class="px-6 py-3 bg-yellow-400 text-black font-black rounded-full brutalist-button">
+                        加入购物车
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 店铺主页 -->
+        <div class="h-full bg-white relative overflow-hidden" x-show="currentPage === 'shop'" style="height: 740px; display: none;">
+            <!-- 店铺头部 -->
+            <div class="relative bg-gradient-to-br from-purple-500 to-pink-500 text-white">
+                <div class="flex items-center justify-between p-4">
+                    <button @click="goBack()" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center brutalist-button">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                    </button>
+                    <div class="flex space-x-2">
+                        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
+                        <button class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 店铺信息 -->
+                <div class="p-4">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://cdn.sa.net/2025/06/03/ohHz5MqL9WSnlYx.jpg" x-show="selectedShop === '艺术工坊'" class="w-20 h-20 rounded-full border-4 border-white brutalist-shadow">
+                        <img src="https://cdn.sa.net/2025/06/03/P6xNEMQVGqdusbc.jpg" x-show="selectedShop === '创意画廊'" class="w-20 h-20 rounded-full border-4 border-white brutalist-shadow">
+                        <img src="https://cdn.sa.net/2025/06/03/ldYZHikhtEOr1wL.jpg" x-show="selectedShop === '潮流设计室'" class="w-20 h-20 rounded-full border-4 border-white brutalist-shadow">
+                        <img src="https://cdn.sa.net/2025/06/03/Ytnm8GUFWXDjL4e.jpg" x-show="selectedShop === '个性工作室'" class="w-20 h-20 rounded-full border-4 border-white brutalist-shadow">
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-black mb-1" x-text="selectedShop"></h2>
+                            <div class="flex items-center space-x-3 mb-2">
+                                <span class="text-sm">★★★★★ 4.9</span>
+                                <span class="text-sm">粉丝 1.2K</span>
+                                <span class="text-sm">月销 234</span>
+                            </div>
+                            <button class="px-4 py-2 bg-yellow-400 text-black font-bold rounded-full">
+                                + 关注店铺
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 店内搜索 -->
+                <div class="p-4">
+                    <div class="relative">
+                        <input type="text" placeholder="店内搜索..." class="w-full p-3 rounded-full bg-white bg-opacity-20 backdrop-blur text-white placeholder-white border-2 border-white font-bold">
+                        <button class="absolute right-2 top-2 w-8 h-8 bg-white text-black rounded-full">
+                            <svg class="w-4 h-4 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-full overflow-y-auto pb-20">
+                <!-- 商品分类 -->
+                <div class="p-4 bg-gray-50">
+                    <div class="flex space-x-2 overflow-x-auto">
+                        <button class="px-4 py-2 bg-red-500 text-white font-bold rounded-full brutalist-shadow whitespace-nowrap" :class="shopCategory === '全部' ? 'ring-4 ring-black' : ''" @click="shopCategory = '全部'">全部</button>
+                        <button class="px-4 py-2 bg-blue-500 text-white font-bold rounded-full brutalist-shadow whitespace-nowrap" :class="shopCategory === '饰品' ? 'ring-4 ring-black' : ''" @click="shopCategory = '饰品'">饰品</button>
+                        <button class="px-4 py-2 bg-green-500 text-white font-bold rounded-full brutalist-shadow whitespace-nowrap" :class="shopCategory === '画作' ? 'ring-4 ring-black' : ''" @click="shopCategory = '画作'">画作</button>
+                        <button class="px-4 py-2 bg-yellow-500 text-black font-bold rounded-full brutalist-shadow whitespace-nowrap" :class="shopCategory === '贴纸' ? 'ring-4 ring-black' : ''" @click="shopCategory = '贴纸'">贴纸</button>
+                        <button class="px-4 py-2 bg-purple-500 text-white font-bold rounded-full brutalist-shadow whitespace-nowrap" :class="shopCategory === '宠物用品' ? 'ring-4 ring-black' : ''" @click="shopCategory = '宠物用品'">宠物用品</button>
+                    </div>
+                </div>
+
+                <!-- 筛选栏 -->
+                <div class="p-4 bg-white border-b-4 border-black">
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-3">
+                            <button class="px-3 py-1 bg-gray-100 rounded-full text-sm font-bold" :class="sortBy === 'sales' ? 'bg-yellow-400' : ''" @click="sortBy = 'sales'">销量</button>
+                            <button class="px-3 py-1 bg-gray-100 rounded-full text-sm font-bold" :class="sortBy === 'price' ? 'bg-yellow-400' : ''" @click="sortBy = 'price'">价格</button>
+                            <button class="px-3 py-1 bg-gray-100 rounded-full text-sm font-bold" :class="sortBy === 'new' ? 'bg-yellow-400' : ''" @click="sortBy = 'new'">最新</button>
+                        </div>
+                        <button class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h8v-2h-8V9h8V7h-8V5h8V3h-8v2H3v2h10v2H3v2h10v2H3v2h10v2H3v2h10z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 商品瀑布流 -->
+                <div class="p-4 grid grid-cols-2 gap-4">
+                    <div class="bg-red-200 p-3 rough-border brutalist-shadow transform rotate-1 cursor-pointer" @click="openProductCustom('复古项链')">
+                        <img src="https://cdn.sa.net/2025/06/03/cfUJTk8lwxjZs5n.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">复古项链</h4>
+                        <p class="text-xs text-gray-600 mb-2">手工制作 | 限量版</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 298</span>
+                            <div class="flex items-center space-x-1">
+                                <button class="w-6 h-6 bg-pink-500 text-white rounded-full text-xs">♥</button>
+                                <span class="text-xs text-gray-500">128</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-200 p-3 rough-border brutalist-shadow transform -rotate-2 cursor-pointer" @click="openProductCustom('手工耳环')">
+                        <img src="https://cdn.sa.net/2025/06/03/zTKH7ImpFNRx1lr.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">手工耳环</h4>
+                        <p class="text-xs text-gray-600 mb-2">复古风格 | 独特设计</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 188</span>
+                            <div class="flex items-center space-x-1">
+                                <button class="w-6 h-6 bg-pink-500 text-white rounded-full text-xs">♥</button>
+                                <span class="text-xs text-gray-500">89</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-green-200 p-3 rough-border brutalist-shadow transform rotate-2 cursor-pointer" @click="openProductCustom('时尚手镯')">
+                        <img src="https://cdn.sa.net/2025/06/03/5jI6fbX7ouhApyN.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">时尚手镯</h4>
+                        <p class="text-xs text-gray-600 mb-2">现代简约 | 多色可选</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 170</span>
+                            <div class="flex items-center space-x-1">
+                                <button class="w-6 h-6 bg-pink-500 text-white rounded-full text-xs">♥</button>
+                                <span class="text-xs text-gray-500">156</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-200 p-3 rough-border brutalist-shadow transform -rotate-1 cursor-pointer" @click="openProductCustom('精美吊坠')">
+                        <img src="https://cdn.sa.net/2025/06/03/78LG6JqmkU5WtCr.jpg" class="w-full h-32 object-cover rounded-lg mb-2">
+                        <h4 class="font-bold text-sm mb-1">精美吊坠</h4>
+                        <p class="text-xs text-gray-600 mb-2">个性定制 | 工艺精湛</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-black text-red-500">￥ 258</span>
+                            <div class="flex items-center space-x-1">
+                                <button class="w-6 h-6 bg-pink-500 text-white rounded-full text-xs">♥</button>
+                                <span class="text-xs text-gray-500">203</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 购物车浮层 -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 z-50" x-show="showCart" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+            <div class="absolute right-0 top-0 w-80 h-full bg-white slide-in-right" @click.away="showCart = false">
+                <!-- 购物车头部 -->
+                <div class="flex items-center justify-between p-4 bg-gradient-to-r from-orange-400 to-red-400 text-white">
+                    <h2 class="text-xl font-black">购物车</h2>
+                    <button @click="showCart = false" class="w-8 h-8 bg-white text-black rounded-full flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- 购物车内容 -->
+                <div class="h-full overflow-y-auto pb-32" x-show="cartItems.length > 0">
+                    <div class="p-4 space-y-4">
+                        <template x-for="(item, index) in cartItems" :key="index">
+                            <div class="bg-gray-50 p-3 rounded-lg brutalist-shadow transform -rotate-1">
+                                <div class="flex items-center space-x-3">
+                                    <img :src="item.image" class="w-16 h-16 object-cover rounded-lg">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-sm" x-text="item.name"></h4>
+                                        <p class="text-xs text-gray-600" x-text="item.customText"></p>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="font-bold text-red-500" x-text="'￥ ' + item.price"></span>
+                                            <div class="flex items-center space-x-2">
+                                                <button @click="updateQuantity(index, item.quantity - 1)" class="w-6 h-6 bg-gray-300 rounded-full text-xs">-</button>
+                                                <span class="text-sm font-bold" x-text="item.quantity"></span>
+                                                <button @click="updateQuantity(index, item.quantity + 1)" class="w-6 h-6 bg-gray-300 rounded-full text-xs">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button @click="removeFromCart(index)" class="w-6 h-6 bg-red-500 text-white rounded-full text-xs">×</button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- 空购物车状态 -->
+                <div class="flex flex-col items-center justify-center h-full p-8" x-show="cartItems.length === 0">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-600 mb-2">购物车空空如也</h3>
+                    <p class="text-sm text-gray-400 text-center">快去挑选你心仪的潮玩吧～</p>
+                </div>
+
+                <!-- 购物车底部 -->
+                <div class="absolute bottom-0 left-0 right-0 bg-white border-t-4 border-black p-4" x-show="cartItems.length > 0">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-lg font-bold">总计：</span>
+                        <span class="text-2xl font-black text-red-500" x-text="'￥ ' + calculateTotal()"></span>
+                    </div>
+                    <button class="w-full py-3 bg-yellow-400 text-black font-black rounded-full brutalist-button">
+                        去结算 (<span x-text="cartItems.length"></span>)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部Tab栏 -->
+        <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-black text-white p-3 flex items-center justify-between">
+            <!-- 返回按钮 -->
+            <button @click="goBack()" class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center brutalist-button">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+            </button>
+
+            <!-- 中间三个Tab -->
+            <div class="flex bg-gray-800 rounded-full p-1">
+                <button @click="currentPage = 'home'" class="px-4 py-2 rounded-full transition-all" :class="currentPage === 'home' ? 'bg-yellow-400 text-black font-bold' : 'text-white'">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span class="text-xs">首页</span>
+                    </div>
+                </button>
+                <button @click="currentPage = 'search'" class="px-4 py-2 rounded-full transition-all" :class="currentPage === 'search' ? 'bg-yellow-400 text-black font-bold' : 'text-white'">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        <span class="text-xs">搜索</span>
+                    </div>
+                </button>
+                <button @click="currentPage = 'profile'" class="px-4 py-2 rounded-full transition-all" :class="currentPage === 'profile' ? 'bg-yellow-400 text-black font-bold' : 'text-white'">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <span class="text-xs">我的</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- 购物车按钮 -->
+            <button @click="showCart = true" class="w-12 h-12 bg-yellow-400 text-black rounded-full flex items-center justify-center brutalist-button relative">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <span class="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center" x-text="cartItems.length" x-show="cartItems.length > 0"></span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function appData() {
+            return {
+                currentPage: 'home',
+                selectedProduct: '',
+                selectedShop: '',
+                searchQuery: '',
+                selectedCategory: '首饰',
+                shopCategory: '全部',
+                sortBy: 'sales',
+                showCart: false,
+                pageHistory: [],
+                customOptions: {
+                    size: 'M',
+                    color: 'red',
+                    background: 'gradient1',
+                    pattern: 'pattern1',
+                    level: 'basic'
+                },
+                cartItems: [
+                    {
+                        name: '复古戒指',
+                        price: 178,
+                        quantity: 1,
+                        image: 'https://cdn.sa.net/2025/06/03/8uP9tYbvrI5yOdl.jpg',
+                        customText: '基础定制 | M码 | 红色'
+                    },
+                    {
+                        name: '时尚手镯',
+                        price: 220,
+                        quantity: 2,
+                        image: 'https://cdn.sa.net/2025/06/03/5jI6fbX7ouhApyN.jpg',
+                        customText: '高级定制 | L码 | 蓝色'
+                    }
+                ],
+
+                openProductCustom(productName) {
+                    this.pageHistory.push(this.currentPage);
+                    this.selectedProduct = productName;
+                    this.currentPage = 'productCustom';
+                },
+
+                openShop(shopName) {
+                    this.pageHistory.push(this.currentPage);
+                    this.selectedShop = shopName;
+                    this.currentPage = 'shop';
+                },
+
+                goBack() {
+                    if (this.pageHistory.length > 0) {
+                        this.currentPage = this.pageHistory.pop();
+                    } else {
+                        this.currentPage = 'home';
+                    }
+                },
+
+                calculatePrice() {
+                    const basePrice = 128;
+                    const levelPrices = {
+                        'basic': 50,
+                        'premium': 120,
+                        'ultimate': 200
+                    };
+                    return basePrice + levelPrices[this.customOptions.level];
+                },
+
+                addToCart() {
+                    const newItem = {
+                        name: this.selectedProduct,
+                        price: this.calculatePrice(),
+                        quantity: 1,
+                        image: 'https://cdn.sa.net/2025/06/03/8uP9tYbvrI5yOdl.jpg',
+                        customText: `${this.customOptions.level === 'basic' ? '基础定制' : this.customOptions.level === 'premium' ? '高级定制' : '极致定制'} | ${this.customOptions.size}码 | ${this.customOptions.color}`
+                    };
+                    
+                    this.cartItems.push(newItem);
+                    this.showCart = true;
+                },
+
+                updateQuantity(index, newQuantity) {
+                    if (newQuantity <= 0) {
+                        this.removeFromCart(index);
+                    } else {
+                        this.cartItems[index].quantity = newQuantity;
+                    }
+                },
+
+                removeFromCart(index) {
+                    this.cartItems.splice(index, 1);
+                },
+
+                calculateTotal() {
+                    return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
