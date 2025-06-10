@@ -138,15 +138,15 @@
     <!-- 第三行 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/007">
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/007">
             <p align="center">007</p>
-            <img width=240 src="007.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/008">
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/008">
             <p align="center">008</p>
-            <img width=240 src="008.png"/>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
