@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智慧食堂</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* 字体引入 */
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular";
+        font-weight: 400;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/tLl8Z9PmFRuw.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+        font-weight: 500;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/EMzoQWA20guR.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+        font-weight: 700;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/oHSK6bzopgxl.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+
+      /* 基础样式 */
+      body {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .font-medium {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+      }
+      .font-bold {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+      }
+
+      /* 手机模拟外壳 */
+      .mobile-shell {
+        width: 100%;
+        max-width: 420px;
+        height: 100vh;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        /* 背景: 顶部有微妙的蓝色光晕，平滑过渡到浅灰色 */
+        background: radial-gradient(ellipse at 50% 0%, #eff6ff, #f8fafc 70%);
+      }
+
+      /* 隐藏滚动条 */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* 轻微的点击动效 */
+      .btn-active-scale {
+        transition: transform 0.1s ease-in-out;
+      }
+      .btn-active-scale:active {
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 flex items-center justify-center">
+    <!-- 手机模拟外壳 -->
+    <div
+      class="mobile-shell relative mx-auto flex flex-col overflow-hidden"
+    >
+      <!-- 模拟状态栏和胶囊按钮 -->
+      <header
+        class="absolute top-0 left-0 right-0 z-50 px-4 pt-3 text-gray-900 pointer-events-none"
+      >
+        <div class="flex items-center justify-between h-[44px]">
+          <span class="font-bold text-sm">09:41</span>
+          <div class="flex items-center space-x-1">
+            <i class="ri-bar-chart-fill text-base"></i>
+            <i class="ri-wifi-fill text-base"></i>
+            <i class="ri-battery-2-charge-fill text-xl"></i>
+          </div>
+        </div>
+        <div class="absolute top-[56px] right-2.5 pointer-events-auto">
+          <div
+            class="flex items-center space-x-2 h-8 w-[88px] bg-white/70 backdrop-blur-md border border-gray-200/50 rounded-full px-1.5 shadow-sm"
+          >
+            <div class="w-1/2 h-full flex items-center justify-center">
+              <i class="ri-more-2-fill text-lg text-gray-900"></i>
+            </div>
+            <div class="w-px h-4 bg-gray-300"></div>
+            <div class="w-1/2 h-full flex items-center justify-center">
+              <i class="ri-circle-line text-xs font-bold text-gray-900"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 主内容区域 -->
+      <main
+        class="flex-grow pt-28 pb-10 px-5 space-y-6 overflow-y-auto hide-scrollbar"
+      >
+        <!-- 模块一: 用户信息 -->
+        <section class="flex items-center">
+          <div
+            class="w-16 h-16 rounded-full bg-slate-200 flex-shrink-0 flex items-center justify-center ring-4 ring-white/80 shadow-sm"
+          >
+            <i class="ri-user-3-fill text-4xl text-slate-400"></i>
+          </div>
+          <div class="ml-4 flex-grow min-w-0">
+            <h1 class="text-xl font-bold text-slate-800 truncate">李牟秒</h1>
+            <div class="flex items-center flex-wrap gap-1.5 mt-2">
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full"
+                >内部员工</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full truncate"
+                >浙能镇海电厂建筑工程厂区</span
+              >
+            </div>
+          </div>
+          <button
+            class="ml-auto flex-shrink-0 w-12 h-12 rounded-full bg-white hover:bg-slate-100 transition-colors shadow-sm border border-gray-200/80 flex items-center justify-center btn-active-scale"
+          >
+            <i class="ri-settings-3-fill text-2xl text-slate-600"></i>
+          </button>
+        </section>
+
+        <!-- 模块二: 余额和二维码 -->
+        <section>
+          <div
+            class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-5 shadow-lg shadow-blue-500/30 text-white flex items-start space-x-4 relative overflow-hidden"
+          >
+            <div
+              class="absolute -top-8 -right-8 w-28 h-28 bg-white/10 rounded-full"
+            ></div>
+            <div
+              class="absolute bottom-4 left-16 w-16 h-16 bg-white/5 rounded-full"
+            ></div>
+            <div class="flex-grow z-10">
+              <div class="opacity-80 text-sm font-medium">当前余额 (元)</div>
+              <div class="text-4xl font-bold mt-1 tracking-tight">1,638.50</div>
+              <div class="flex items-center justify-between mt-4">
+                <span class="opacity-80 text-xs font-medium"
+                  >补贴余额: 350.00 元</span
+                >
+                <button
+                  class="flex items-center space-x-1 bg-white/20 hover:bg-white/30 transition text-white text-xs font-medium py-1.5 px-3 rounded-full btn-active-scale"
+                >
+                  <span>账户信息</span>
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </div>
+            </div>
+            <div class="flex-shrink-0 z-10">
+              <div class="bg-white p-1 rounded-lg shadow-md">
+                <img
+                  src="https://cdn.sa.net/2025/06/10/7IUHGBbAatprVeO.jpg"
+                  alt="消费二维码"
+                  class="w-24 h-24 rounded-md"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 模块三: 功能入口 -->
+        <section>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <a
+              href="#"
+              class="p-2 flex flex-col items-center justify-center space-y-2 rounded-xl hover:bg-white/60 transition-colors btn-active-scale"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-sky-500/30"
+              >
+                <i class="ri-wallet-3-fill text-3xl"></i>
+              </div>
+              <span class="text-sm text-slate-700 font-medium">自助充值</span>
+            </a>
+            <a
+              href="#"
+              class="p-2 flex flex-col items-center justify-center space-y-2 rounded-xl hover:bg-white/60 transition-colors btn-active-scale"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-500/30"
+              >
+                <i class="ri-bill-fill text-3xl"></i>
+              </div>
+              <span class="text-sm text-slate-700 font-medium">充值明细</span>
+            </a>
+            <a
+              href="#"
+              class="p-2 flex flex-col items-center justify-center space-y-2 rounded-xl hover:bg-white/60 transition-colors btn-active-scale"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-amber-500/30"
+              >
+                <i class="ri-booklet-fill text-3xl"></i>
+              </div>
+              <span class="text-sm text-slate-700 font-medium">账户明细</span>
+            </a>
+            <a
+              href="#"
+              class="p-2 flex flex-col items-center justify-center space-y-2 rounded-xl hover:bg-white/60 transition-colors btn-active-scale"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-500 to-rose-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-red-500/30"
+              >
+                <i class="ri-alarm-warning-fill text-3xl"></i>
+              </div>
+              <span class="text-sm text-slate-700 font-medium">卡片挂失</span>
+            </a>
+            <a
+              href="#"
+              class="p-2 flex flex-col items-center justify-center space-y-2 rounded-xl hover:bg-white/60 transition-colors btn-active-scale"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-yellow-500/30"
+              >
+                <i class="ri-star-smile-fill text-3xl"></i>
+              </div>
+              <span class="text-sm text-slate-700 font-medium">餐厅评价</span>
+            </a>
+            <a
+              href="#"
+              class="p-2 flex flex-col items-center justify-center space-y-2 rounded-xl hover:bg-white/60 transition-colors btn-active-scale"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-purple-500/30"
+              >
+                <i class="ri-message-3-fill text-3xl"></i>
+              </div>
+              <span class="text-sm text-slate-700 font-medium">消息</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- 模拟iPhone底部安全区域和指示条 -->
+      <footer class="w-full h-8 flex-shrink-0">
+        <div
+          class="w-32 h-1.5 bg-black rounded-full mx-auto mt-2 opacity-80"
+        ></div>
+      </footer>
+    </div>
+  </body>
+</html>
