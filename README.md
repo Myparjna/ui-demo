@@ -56,19 +56,19 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/001">
             <p align="center">商城001</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/002">
             <p align="center">商城002</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/003">
             <p align="center">商城003</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     </tr>
@@ -98,13 +98,13 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/007人脸识别页">
             <p align="center">007人脸识别页</p>
-            <img width=240 src="https://cdn.sa.net/2025/06/11/itkAmOcM2Vbp3sj.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/06/11/itkAmOcM2Vbp3sj.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/008食堂首页">
             <p align="center">008食堂首页</p>
-            <img width=240 src="https://cdn.sa.net/2025/06/11/ZSnwGprfD3T7uaK.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/06/11/ZSnwGprfD3T7uaK.jpg"/>
         </a>
     </td>
     <td valign="top">
