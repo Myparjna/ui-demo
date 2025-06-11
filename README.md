@@ -9,19 +9,19 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/001">
-            <p align="center">甬想官网黑色版本Deepseek0528</p>
+            <p align="center">官网黑色版本Deepseek0528</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/EO2mNYzDFnxZqXf.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/002">
-            <p align="center">甬想官网白色版本Deepseek0528</p>
+            <p align="center">官网白色版本Deepseek0528</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/zEo7T1RMGgpY5y3.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/003">
-            <p align="center">甬想官网谷歌gemini0508版本</p>
+            <p align="center">官网谷歌gemini0508版本</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/JUEnBVs8tiqTPCw.jpg"/>
         </a>
     </td>
@@ -47,48 +47,6 @@
         </a>
     </td>
     </tr>
-    <!-- 第三行 -->
-    <tr>
-    <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/007">
-            <p align="center">007</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
-        </a>
-    </td>
-    <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/008">
-            <p align="center">008</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
-        </a>
-    </td>
-    <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/009">
-            <p align="center">009</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg"/>
-        </a>
-    </td>
-    </tr>
-    <!-- 第四行 -->
-    <tr>
-    <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/010">
-            <p align="center">010</p>
-            <img width=240 src="[010.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
-        </a>
-    </td>
-    <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/011">
-            <p align="center">011</p>
-            <img width=240 src="[011.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
-        </a>
-    </td>
-    <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/012">
-            <p align="center">012</p>
-            <img width=240 src="[012.jpg](https://cdn.sa.net/2025/05/30/pEy93scY5r7Ziao.jpg)"/>
-        </a>
-    </td>
-    </tr>
 
 # APP
 
@@ -97,19 +55,19 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/001">
-            <p align="center">001</p>
+            <p align="center">商城001</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/002">
-            <p align="center">002</p>
+            <p align="center">商城002</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/003">
-            <p align="center">003</p>
+            <p align="center">商城003</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
@@ -118,20 +76,20 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/004">
-            <p align="center">004</p>
+            <p align="center">商城004</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/005食堂登录页">
             <p align="center">005食堂登录页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/06/11/vEtXafUdxHFhp8r.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/006食堂信息录入页">
             <p align="center">006食堂信息录入页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/06/11/DIVcGMUqX6ePlK8.jpg"/>
         </a>
     </td>
     </tr>
@@ -140,13 +98,13 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/007人脸识别页">
             <p align="center">007人脸识别页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/06/11/itkAmOcM2Vbp3sj.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/008食堂首页">
             <p align="center">008食堂首页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/06/11/ZSnwGprfD3T7uaK.jpg"/>
         </a>
     </td>
     <td valign="top">
