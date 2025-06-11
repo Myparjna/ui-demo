@@ -83,13 +83,13 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/005食堂登录页">
             <p align="center">005食堂登录页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/06/11/vEtXafUdxHFhp8r.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/006食堂信息录入页">
             <p align="center">006食堂信息录入页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/06/11/DIVcGMUqX6ePlK8.jpg"/>
         </a>
     </td>
     </tr>
@@ -98,13 +98,13 @@
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/007人脸识别页">
             <p align="center">007人脸识别页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/06/11/itkAmOcM2Vbp3sj.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/008食堂首页">
             <p align="center">008食堂首页</p>
-            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+            <img width=240 src="https://cdn.sa.net/2025/06/11/ZSnwGprfD3T7uaK.jpg"/>
         </a>
     </td>
     <td valign="top">
