@@ -9,19 +9,19 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/001">
-            <p align="center">甬想官网黑色版本Deepseek0528</p>
+            <p align="center">官网黑色版本Deepseek0528</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/EO2mNYzDFnxZqXf.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/002">
-            <p align="center">甬想官网白色版本Deepseek0528</p>
+            <p align="center">官网白色版本Deepseek0528</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/zEo7T1RMGgpY5y3.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/Web/003">
-            <p align="center">甬想官网谷歌gemini0508版本</p>
+            <p align="center">官网谷歌gemini0508版本</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/JUEnBVs8tiqTPCw.jpg"/>
         </a>
     </td>
@@ -97,19 +97,19 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/001">
-            <p align="center">001</p>
+            <p align="center">商城001</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/002">
-            <p align="center">002</p>
+            <p align="center">商城002</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/003">
-            <p align="center">003</p>
+            <p align="center">商城003</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
@@ -118,7 +118,7 @@
     <tr>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/004">
-            <p align="center">004</p>
+            <p align="center">商城004</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
