@@ -2,24 +2,15 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <!-- 设置 viewport 以确保在移动设备上正确缩放和渲染 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>智慧食堂 - 账户信息</title>
-    <!-- 引入 Tailwind CSS 框架，用于快速构建UI -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Remixicon 图标库 -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
     <style>
-      /* --- 自定义字体和全局样式 --- */
-
-      /* 
-       * 通过 @font-face 引入阿里巴巴普惠体，提供更优美的中文字体展示。
-       * 分别引入了 Regular(400), Medium(500), Bold(700) 三种字重。
-       * font-display: swap; 是一种性能优化策略，允许浏览器在自定义字体加载完成前先显示后备字体。
-       */
+      /* 字体引入 */
       @font-face {
         font-family: "阿里巴巴普惠体 2.0 55 Regular";
         font-weight: 400;
@@ -42,18 +33,14 @@
         font-display: swap;
       }
 
-      /* 基础样式定义 */
+      /* 基础样式 */
       body {
-        /* 设置默认字体栈，优先使用自定义字体 */
         font-family: "阿里巴巴普惠体 2.0 55 Regular", -apple-system,
           BlinkMacSystemFont, "Segoe UI", sans-serif;
-        /* 开启字体平滑，使文本在某些屏幕上看起来更清晰 */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        /* 设置默认字体颜色 */
         color: #333333;
       }
-      /* 为 Medium 和 Bold 字重创建独立的工具类 */
       .font-medium {
         font-family: "阿里巴巴普惠体 2.0 65 Medium";
       }
@@ -61,63 +48,46 @@
         font-family: "阿里巴巴普惠体 2.0 85 Bold";
       }
 
-      /* --- 页面布局和组件样式 --- */
-      
-      /* 手机模拟器外壳样式 */
+      /* 手机模拟外壳 */
       .mobile-shell {
         width: 100%;
         max-width: 420px;
-        height: 100vh; /* 占满整个视口高度 */
-        /* 添加细微的阴影以模拟物理设备的感觉 */
+        height: 100vh;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-        /* 设置一个从上到下的径向渐变背景，增加页面的精致感 */
         background: radial-gradient(ellipse at 50% 0%, #eff6ff, #f8fafc 80%);
       }
       
-      /* 隐藏滚动条的工具类，兼容不同浏览器 */
+      /* 隐藏滚动条 */
       .hide-scrollbar::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none;
       }
       .hide-scrollbar {
-        -ms-overflow-style: none;  /* IE, Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
       
-      /* 按钮点击时的交互效果，通过缩放提供即时反馈 */
       .btn-active-scale {
         transition: transform 0.1s ease-in-out;
       }
       .btn-active-scale:active {
-        transform: scale(0.97); /* 点击时缩小到97% */
+        transform: scale(0.97);
       }
     </style>
   </head>
   <body class="bg-gray-800 flex items-center justify-center">
-    <!-- 
-      手机模拟器外壳容器 
-      - relative: 作为内部绝对定位元素的参照物
-      - flex/flex-col: 使内部元素垂直排列
-      - overflow-hidden: 隐藏超出容器的内容，配合圆角等效果
-    -->
+    <!-- 手机模拟外壳 -->
     <div
       class="mobile-shell relative mx-auto flex flex-col overflow-hidden"
     >
-      <!-- 
-        页面头部区域
-        - absolute/top/left/right/z-50: 使其固定在顶部并覆盖在内容之上
-        - bg-white/50 backdrop-blur-sm: 创建一个半透明的毛玻璃效果，提升UI质感
-      -->
+      <!-- 模拟状态栏和导航栏 -->
        <header
         class="absolute top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-sm"
       >
-        <!-- 模拟状态栏 -->
+        <!-- 状态栏 -->
         <div class="px-4 pt-3 text-gray-900">
            <div class="flex items-center justify-between h-[44px]">
-             <!-- 时间 -->
              <span class="font-bold text-sm w-16">12:00</span>
-             <!-- 中间留空 -->
              <div class="flex-grow text-center"></div>
-             <!-- 右侧图标：信号、Wi-Fi、电量 -->
              <div class="flex items-center justify-end space-x-1 w-16">
                <i class="ri-bar-chart-fill text-base"></i>
                <i class="ri-wifi-fill text-base"></i>
@@ -127,45 +97,34 @@
         </div>
          <!-- 导航栏 -->
         <div class="relative flex items-center justify-center h-11 px-4">
-             <!-- 返回按钮 -->
              <a href="#" class="absolute left-2 top-1/2 -translate-y-1/2 p-2">
                 <i class="ri-arrow-left-s-line text-2xl text-gray-800"></i>
             </a>
-            <!-- 页面标题 -->
             <h1 class="text-base font-medium text-gray-900">账户信息</h1>
         </div>
       </header>
 
-      <!-- 
-        主要内容滚动区域
-        - flex-grow: 占据剩余的全部空间
-        - pt-[125px]: 留出顶部header的空间，防止内容被遮挡
-        - overflow-y-auto hide-scrollbar: 允许垂直滚动并隐藏滚动条
-      -->
+      <!-- 主内容区域 -->
       <main class="w-full flex-grow pt-[125px] overflow-y-auto hide-scrollbar pb-6 px-5">
         
-        <!-- 主卡信息卡片 -->
-        <section 
-          style="background-image: linear-gradient(to bottom right, #2866EC, #5EA3F9);" 
-          class="text-white p-6 rounded-2xl shadow-lg shadow-[#5EA3F9]/30 space-y-4 relative overflow-hidden">
-            <!-- 装饰性元素：透明圆环，增加视觉层次感 -->
+        <!-- 主卡信息 -->
+        <section style="background-image: linear-gradient(to bottom right, #2866EC, #5EA3F9);" class="text-white p-6 rounded-2xl shadow-lg shadow-[#5EA3F9]/30 space-y-4 relative overflow-hidden">
+            <!-- 透明圆环 -->
             <div class="absolute -top-10 -right-10 w-32 h-32 border-4 border-white/10 rounded-full"></div>
             <div class="absolute bottom-5 left-5 w-16 h-16 border-2 border-white/10 rounded-full"></div>
 
-            <!-- 卡片标题和卡号 -->
             <div class="flex justify-between items-start z-10 relative">
                 <div>
                   <span class="text-base font-medium">消费主卡：A类卡</span>
                   <p class="text-2xl font-medium tracking-wider mt-3">1253 5623 5623 5623</p>
                 </div>
             </div>
-            <!-- 卡内余额和充值按钮 -->
             <div class="flex items-end justify-between z-10 relative pt-2">
                 <div>
                   <p class="text-sm opacity-70">卡内余额</p>
                   <p class="text-3xl font-bold mt-1">¥ 1,288.50</p>
                 </div>
-                 <!-- 充值按钮：悬浮在卡片右下角 -->
+                 <!-- 充值按钮图层 -->
                 <a href="#" class="btn-active-scale flex items-center space-x-1.5 bg-white/20 hover:bg-white/30 text-white text-sm font-medium py-2 px-4 rounded-full backdrop-blur-sm transition-colors">
                   <i class="ri-wallet-3-line"></i>
                   <span>去充值</span>
@@ -173,58 +132,43 @@
             </div>
         </section>
 
-        <!-- 主卡二维码区域 -->
+        <!-- 主卡二维码 -->
         <section class="mt-4 text-center">
-            <!-- 二维码容器，白色背景和阴影使其突出 -->
             <div class="bg-white p-2 inline-block rounded-xl shadow-md">
                 <img src="https://cdn.sa.net/2025/06/10/7IUHGBbAatprVeO.jpg" alt="主卡消费二维码" class="w-48 h-48 rounded-lg"/>
             </div>
-            <!-- 提示文字 -->
             <p class="text-sm text-slate-500 mt-2">支付时请出示此码</p>
         </section>
 
         <!-- 副卡列表区域 -->
         <section class="mt-6">
-            <!-- 副卡区域标题 -->
             <h2 class="text-base font-medium text-slate-600 px-1 pb-2">消费副卡</h2>
             
-            <!-- 
-              副卡列表容器 
-              - flex/flex-col: 卡片垂直排列
-              - space-y-3: 定义卡片之间的垂直间距
-            -->
             <div class="mt-2 flex flex-col space-y-3">
-
-                <!-- 副卡1 (标准样式，无优惠) -->
+                <!-- 副卡1 (无优惠) -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden p-4">
-                    <!-- 卡片上半部分：图标、名称、卡号、余额 -->
                     <div class="flex items-center justify-between">
-                        <!-- 左侧信息 -->
                         <div class="flex items-center">
-                            <!-- 图标容器 -->
                             <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="ri-bank-card-2-line text-2xl"></i>
                             </div>
-                            <!-- 名称和卡号 -->
                             <div class="ml-4">
                                 <p class="font-medium text-slate-800">一号食堂</p>
                                 <p class="text-xs text-slate-500 tracking-wider mt-1">1253 5623 5623 1111</p>
                             </div>
                         </div>
-                        <!-- 右侧余额 -->
                         <p class="text-base font-bold text-blue-600">¥ 210.50</p>
                     </div>
-                    <!-- 卡片下半部分：充值按钮，由一条上边框分割 -->
                     <div class="mt-4 pt-4 border-t border-slate-100">
-                         <a href="#" class="w-full flex items-center justify-center space-x-2 py-2 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-lg font-medium btn-active-scale">
+                         <!-- 次级按钮样式: 边框 + 透明背景 + 悬停效果 -->
+                         <a href="#" class="w-full flex items-center justify-center space-x-2 py-2 border border-blue-500 text-blue-600 hover:bg-blue-50 transition-colors duration-200 rounded-lg font-medium btn-active-scale">
                             <i class="ri-wallet-3-line"></i><span>去充值</span>
                          </a>
                     </div>
                 </div>
 
-                <!-- 副卡2 (特殊样式，带优惠信息) -->
+                <!-- 副卡2 (有优惠) -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden p-4">
-                    <!-- 上半部分结构同上 -->
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -237,26 +181,19 @@
                         </div>
                         <p class="text-base font-bold text-blue-600">¥ 150.20</p>
                     </div>
-                    <!-- 
-                      下半部分：包含优惠信息和充值按钮
-                      - 这个区域比标准卡片多一个优惠信息框，因此卡片会更高。
-                    -->
                     <div class="mt-4 pt-4 border-t border-slate-100 flex flex-col space-y-3">
-                        <!-- 优惠信息框 -->
                         <div class="bg-orange-50 text-orange-600 text-xs font-medium rounded-md p-2 flex items-start space-x-2">
-                            <!-- 优惠图标 -->
                             <i class="ri-price-tag-3-line mt-0.5 flex-shrink-0"></i>
-                            <!-- 优惠文本 -->
                             <p class="leading-snug">* 周一、周三方与圆超市充值优惠。</p>
                         </div>
-                        <!-- 充值按钮 -->
-                        <a href="#" class="w-full flex items-center justify-center space-x-2 py-2 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-lg font-medium btn-active-scale">
+                        <!-- 次级按钮样式 -->
+                        <a href="#" class="w-full flex items-center justify-center space-x-2 py-2 border border-blue-500 text-blue-600 hover:bg-blue-50 transition-colors duration-200 rounded-lg font-medium btn-active-scale">
                            <i class="ri-wallet-3-line"></i><span>去充值</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- 副卡3 (标准样式，无优惠) -->
+                <!-- 副卡3 (无优惠) -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden p-4">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
@@ -271,17 +208,28 @@
                         <p class="text-base font-bold text-blue-600">¥ 88.00</p>
                     </div>
                     <div class="mt-4 pt-4 border-t border-slate-100">
-                         <a href="#" class="w-full flex items-center justify-center space-x-2 py-2 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-lg font-medium btn-active-scale">
+                        <!-- 次级按钮样式 -->
+                         <a href="#" class="w-full flex items-center justify-center space-x-2 py-2 border border-blue-500 text-blue-600 hover:bg-blue-50 transition-colors duration-200 rounded-lg font-medium btn-active-scale">
                             <i class="ri-wallet-3-line"></i><span>去充值</span>
                          </a>
                     </div>
                 </div>
             </div>
+            
+            <h3 class="text-sm font-medium text-slate-400 mt-8 px-1 pb-2 text-center">（以下为空状态示例）</h3>
+            <div class="mt-2 bg-white rounded-xl shadow-sm py-12 px-6 text-center flex flex-col items-center justify-center">
+                <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center">
+                     <i class="ri-file-list-3-line text-5xl text-slate-400"></i>
+                </div>
+                <p class="mt-4 font-medium text-slate-600">暂无副卡</p>
+                <p class="mt-1 text-sm text-slate-400">您可以在此管理不同商户的消费卡</p>
+            </div>
+            
         </section>
         
       </main>
 
-      <!-- 模拟 iPhone 手机底部的 Home Indicator -->
+      <!-- 模拟iPhone底部安全区域和指示条 -->
       <footer class="w-full h-8 flex-shrink-0 bg-f8fafc">
         <div
           class="w-32 h-1.5 bg-black rounded-full mx-auto mt-2 opacity-80"
