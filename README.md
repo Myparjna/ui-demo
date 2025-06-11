@@ -123,14 +123,14 @@
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/005">
-            <p align="center">005</p>
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/005食堂登录页">
+            <p align="center">005食堂登录页</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/006">
-            <p align="center">006</p>
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/006食堂信息录入页">
+            <p align="center">006食堂信息录入页</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
@@ -138,21 +138,21 @@
     <!-- 第三行 -->
     <tr>
     <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/007">
-            <p align="center">007</p>
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/007人脸识别页">
+            <p align="center">007人脸识别页</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/008">
-            <p align="center">008</p>
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/008食堂首页">
+            <p align="center">008食堂首页</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     <td valign="top">
-        <a target="_blank" href="https://github.com/sun0225SUN/Awesome-Love-Code/tree/main/Python/009">
-            <p align="center">009</p>
-            <img width=240 src="009.png"/>
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/009测试">
+            <p align="center">009测试</p>
+            <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
     </tr>
