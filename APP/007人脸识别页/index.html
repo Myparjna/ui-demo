@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智慧食堂 - 个人信息</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* 字体引入 */
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular";
+        font-weight: 400;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/tLl8Z9PmFRuw.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+        font-weight: 500;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/EMzoQWA20guR.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+        font-weight: 700;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/oHSK6bzopgxl.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+
+      /* 基础样式 */
+      body {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #333333;
+      }
+      .font-medium {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+      }
+      .font-bold {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+      }
+
+      /* 手机模拟外壳 */
+      .mobile-shell {
+        width: 100%;
+        max-width: 420px;
+        height: 100vh;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        background-color: #f7f8fa; /* wot-design-uni 页面背景色 */
+      }
+      
+      /* 隐藏滚动条 */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* 模拟 wot-design-uni button 点击效果 */
+      .wd-button-primary:active {
+          background-color: #3870dc;
+      }
+      /* 模拟 wot-design-uni cell 点击效果 */
+      .wd-cell:active {
+          background-color: #f2f3f5;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 flex items-center justify-center">
+    <!-- 手机模拟外壳 -->
+    <div
+      class="mobile-shell relative mx-auto flex flex-col overflow-hidden"
+    >
+      <!-- 模拟状态栏和导航栏 -->
+      <header
+        class="absolute top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm"
+      >
+        <!-- 状态栏 -->
+        <div class="px-4 pt-3 text-gray-900">
+           <div class="flex items-center justify-between h-[44px]">
+             <span class="font-bold text-sm w-16">09:41</span>
+             <div class="flex-grow text-center"></div>
+             <div class="flex items-center justify-end space-x-1 w-16">
+               <i class="ri-bar-chart-fill text-base"></i>
+               <i class="ri-wifi-fill text-base"></i>
+               <i class="ri-battery-2-charge-fill text-xl"></i>
+             </div>
+           </div>
+        </div>
+         <!-- 导航栏 -->
+        <div class="relative flex items-center justify-center h-11 px-4">
+             <a href="#" class="absolute left-2 top-1/2 -translate-y-1/2 p-2">
+                <i class="ri-arrow-left-s-line text-2xl text-gray-800"></i>
+            </a>
+            <h1 class="text-base font-medium text-gray-900">个人信息</h1>
+        </div>
+      </header>
+
+      <!-- 主内容区域 -->
+      <main class="w-full flex-grow pt-[125px] overflow-y-auto hide-scrollbar pb-6">
+        
+        <!-- 人脸录入组 -->
+        <div class="mx-3 bg-white rounded-lg shadow-sm overflow-hidden">
+             <a href="#" class="wd-cell flex items-center h-[48px] px-4 transition-colors">
+                <span class="text-sm font-medium text-slate-800">人脸信息录入验证</span>
+                <div class="ml-auto flex items-center space-x-1">
+                  <span class="text-sm text-blue-500">去验证</span>
+                  <i class="ri-arrow-right-s-line text-lg text-slate-400"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- 个人信息表单组 -->
+        <div class="mt-4 mx-3 bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">工号</span><span class="ml-auto text-sm text-slate-500">A-2151</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">账号</span><span class="ml-auto text-sm text-slate-500">18325252525</span>
+            </div>
+             <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">姓名</span><span class="ml-auto text-sm text-slate-500">李牟秒</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">性别</span><span class="ml-auto text-sm text-slate-500">男</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">卡片</span><span class="ml-auto text-sm text-slate-500">A类卡-25315223</span>
+            </div>
+             <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">手机号</span><span class="ml-auto text-sm text-slate-500">18325252525</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">岗位</span><span class="ml-auto text-sm text-slate-500">技术员</span>
+            </div>
+             <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">角色</span><span class="ml-auto text-sm text-slate-500">班长</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">员工类型</span><span class="ml-auto text-sm text-slate-500">内部员工</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4 border-b border-slate-100">
+                <span class="text-sm">厂区</span><span class="ml-auto text-sm text-slate-500 text-right">浙能镇海电厂建筑工程厂区</span>
+            </div>
+            <div class="flex items-center h-[48px] px-4">
+                <span class="text-sm">所属单位</span><span class="ml-auto text-sm text-slate-500 text-right">浙能镇海电厂</span>
+            </div>
+        </div>
+
+        <!-- 确定按钮 -->
+        <div class="mt-8 mx-6">
+            <button class="w-full h-[44px] bg-[#4D80F0] text-white text-base font-medium rounded-lg shadow-md shadow-blue-500/20 transition-colors wd-button-primary">
+                确 定
+            </button>
+        </div>
+        
+      </main>
+
+      <!-- 模拟iPhone底部安全区域和指示条 -->
+      <footer class="w-full h-8 flex-shrink-0 bg-f7f8fa">
+        <div
+          class="w-32 h-1.5 bg-black rounded-full mx-auto mt-2 opacity-80"
+        ></div>
+      </footer>
+    </div>
+  </body>
+</html>

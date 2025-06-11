@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智慧食堂 - 登录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* 字体引入 */
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular";
+        font-weight: 400;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/tLl8Z9PmFRuw.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+        font-weight: 500;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/EMzoQWA20guR.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+        font-weight: 700;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/oHSK6bzopgxl.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+
+      /* 基础样式 */
+      body {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #333333; /* wot-design-uni 基础颜色 */
+      }
+      .font-medium {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+      }
+      .font-bold {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+      }
+
+      /* 手机模拟外壳 */
+      .mobile-shell {
+        width: 100%;
+        max-width: 420px;
+        height: 100vh;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        background: radial-gradient(ellipse at 50% 0%, #eff6ff, #f8fafc 80%);
+      }
+      
+      /* 模拟 wot-design-uni button 点击效果 */
+      .wd-button-primary:active {
+          background-color: #3870dc; /* 主色调加深 */
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 flex items-center justify-center">
+    <!-- 手机模拟外壳 -->
+    <div
+      class="mobile-shell relative mx-auto flex flex-col overflow-hidden"
+    >
+      <!-- 模拟状态栏 -->
+      <header
+        class="absolute top-0 left-0 right-0 z-50 px-4 pt-3 text-gray-900 pointer-events-none"
+      >
+        <div class="flex items-center justify-between h-[44px]">
+          <span class="font-bold text-sm">09:41</span>
+          <div class="flex items-center space-x-1">
+            <i class="ri-bar-chart-fill text-base"></i>
+            <i class="ri-wifi-fill text-base"></i>
+            <i class="ri-battery-2-charge-fill text-xl"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- 主内容区域 -->
+      <main class="w-full flex-grow flex flex-col justify-start px-6 pt-32">
+        <!-- 标题区域 -->
+        <div class="mb-10">
+          <h1 class="text-2xl font-medium text-slate-800">欢迎登录</h1>
+          <p class="mt-1 text-sm text-slate-500">浙能镇海电厂智慧食堂</p>
+        </div>
+
+        <!-- 登录表单 (模拟 wd-cell-group) -->
+        <div class="bg-white rounded-lg shadow-sm">
+            <!-- 工号输入框 (模拟 wd-input) -->
+            <div class="flex items-center h-[50px] px-4 border-b border-slate-100">
+                <label for="job-id" class="w-16 text-sm text-slate-800">工号</label>
+                <input id="job-id" type="text" placeholder="请输入工号" class="flex-grow h-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400">
+            </div>
+
+            <!-- 密码输入框 (模拟 wd-input 带 suffix-icon) -->
+            <div class="flex items-center h-[50px] px-4">
+                <label for="password-input" class="w-16 text-sm text-slate-800">密码</label>
+                <input id="password-input" type="password" placeholder="请输入密码" class="flex-grow h-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400">
+                <i id="eye-toggle" class="ri-eye-off-line text-lg text-slate-400 cursor-pointer ml-2"></i>
+            </div>
+        </div>
+
+        <!-- 登录按钮 -->
+        <div class="mt-10 px-4">
+            <!-- 模拟 wd-button large primary -->
+            <button class="w-full h-[44px] bg-[#4D80F0] text-white text-base font-medium rounded-lg shadow-md shadow-blue-500/20 transition-colors wd-button-primary">
+                登 录
+            </button>
+        </div>
+        
+      </main>
+
+      <!-- 模拟iPhone底部安全区域和指示条 -->
+      <footer class="w-full h-8 flex-shrink-0">
+        <div
+          class="w-32 h-1.5 bg-black rounded-full mx-auto mt-2 opacity-80"
+        ></div>
+      </footer>
+    </div>
+
+    <script>
+        const eyeToggle = document.getElementById('eye-toggle');
+        const passwordInput = document.getElementById('password-input');
+
+        eyeToggle.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            // 切换输入框类型
+            passwordInput.type = isPassword ? 'text' : 'password';
+            // 切换图标
+            eyeToggle.classList.toggle('ri-eye-off-line', !isPassword);
+            eyeToggle.classList.toggle('ri-eye-line', isPassword);
+        });
+    </script>
+  </body>
+</html>
