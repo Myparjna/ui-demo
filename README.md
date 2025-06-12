@@ -116,13 +116,25 @@
      </tr>
     <!-- 第四行 -->
     <tr>
-</table>
-<td valign="top">
+    <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/010充值">
             <p align="center">010充值</p>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/011账户明细">
+            <p align="center">011账户明细</p>
+            <img width=240 height=400 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
+        </a>
+    </td>
+    <td valign="top">
+        <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/012餐厅评价">
+            <p align="center"012餐厅评价</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
+</table>
 
 # PPT
 
