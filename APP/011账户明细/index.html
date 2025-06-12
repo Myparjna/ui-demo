@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智慧食堂 - 账户明细</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* 字体引入 */
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular";
+        font-weight: 400;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/tLl8Z9PmFRuw.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+        font-weight: 500;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/EMzoQWA20guR.woff2")
+          format("woff2");
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+        font-weight: 700;
+        src: url("//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/oHSK6bzopgxl.woff2")
+          format("woff2");
+      }
+
+      /* 基础样式 */
+      body {
+        font-family: "阿里巴巴普惠体 2.0 55 Regular", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #333333;
+      }
+      .font-medium {
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+      }
+      .font-bold {
+        font-family: "阿里巴巴普惠体 2.0 85 Bold";
+      }
+
+      /* 手机模拟外壳 */
+      .mobile-shell {
+        width: 100%;
+        max-width: 420px;
+        height: 100vh;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07),
+          0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        background-color: #f7f8fa;
+      }
+
+      /* 隐藏滚动条 */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Tabs 切换样式 */
+      .tabs button.active {
+        background-color: white;
+        color: #4d80f0;
+        font-family: "阿里巴巴普惠体 2.0 65 Medium";
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+      /* 日历选中样式 */
+      .calendar-day.selected {
+        background-color: #4d80f0;
+        color: white;
+        border-radius: 0.5rem;
+      }
+      .calendar-day.in-range {
+        background-color: #ecf3fe;
+        border-radius: 0;
+      }
+      .calendar-day.range-start {
+        background-color: #4d80f0;
+        color: white;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+      }
+      .calendar-day.range-end {
+        background-color: #4d80f0;
+        color: white;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 flex items-center justify-center">
+    <!-- 手机模拟外壳 -->
+    <div class="mobile-shell relative mx-auto flex flex-col overflow-hidden">
+      <!-- 模拟状态栏和导航栏 -->
+      <header
+        class="absolute top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-sm"
+      >
+        <!-- 状态栏 -->
+        <div class="px-4 pt-3 text-gray-900">
+          <div class="flex items-center justify-between h-[44px]">
+            <span class="font-bold text-sm w-16">12:00</span>
+            <div class="flex-grow text-center"></div>
+            <div class="flex items-center justify-end space-x-1 w-16">
+              <i class="ri-bar-chart-fill text-base"></i>
+              <i class="ri-wifi-fill text-base"></i>
+              <i class="ri-battery-2-charge-fill text-xl"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 导航栏 -->
+        <div class="relative flex items-center justify-center h-11 px-4">
+          <a href="#" class="absolute left-2 top-1/2 -translate-y-1/2 p-2">
+            <i class="ri-arrow-left-s-line text-2xl text-gray-800"></i>
+          </a>
+          <h1 class="text-lg font-medium text-gray-900">账户明细</h1>
+        </div>
+        <!-- 日期筛选栏 -->
+        <div class="px-3 py-2 bg-white border-b border-slate-100">
+          <button
+            id="date-filter-btn"
+            class="w-full flex items-center bg-slate-100 rounded-lg h-10 px-4"
+          >
+            <i class="ri-calendar-2-line text-lg text-slate-500"></i>
+            <div
+              id="date-range-text"
+              class="flex-grow text-center text-base text-slate-700 font-medium"
+            >
+              2025-01-01 至 2025-06-15
+            </div>
+            <i class="ri-arrow-right-s-line text-lg text-slate-500"></i>
+          </button>
+        </div>
+        <!-- Tabs -->
+        <div class="px-3 py-2.5 bg-white">
+          <div
+            class="tabs flex items-center bg-slate-100 rounded-lg p-1 space-x-1"
+          >
+            <button
+              data-tab="recharge"
+              class="tab-btn flex-1 h-9 text-base text-slate-600 rounded-md transition-all duration-300 active"
+            >
+              充值明细
+            </button>
+            <button
+              data-tab="consumption"
+              class="tab-btn flex-1 h-9 text-base text-slate-600 rounded-md transition-all duration-300"
+            >
+              消费明细
+            </button>
+            <button
+              data-tab="subsidy"
+              class="tab-btn flex-1 h-9 text-base text-slate-600 rounded-md transition-all duration-300"
+            >
+              补贴明细
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- 主内容区域 -->
+      <main
+        class="w-full flex-grow pt-[230px] overflow-y-auto hide-scrollbar pb-6 px-3"
+      >
+        <!-- 充值明细内容 -->
+        <div id="recharge-content" class="tab-content space-y-3">
+          <!-- Card 1: 充值到主卡 -->
+          <div class="bg-white rounded-lg shadow-sm p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100"
+                >
+                  <i class="ri-wechat-pay-fill text-xl text-green-500"></i>
+                </div>
+                <div>
+                  <p class="text-base font-medium text-slate-800">A类卡-主卡</p>
+                  <p class="text-sm text-slate-400 mt-0.5">2025-04-21 14:25</p>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-slate-800">+ 700.00</p>
+            </div>
+            <div class="border-t border-slate-100 pt-2 text-sm text-slate-500">
+              支付方式: 微信支付
+            </div>
+          </div>
+          <!-- Card 2: 充值到副卡 -->
+          <div class="bg-white rounded-lg shadow-sm p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-9 h-9 flex items-center justify-center rounded-full bg-purple-100"
+                >
+                  <i class="ri-tv-2-line text-xl text-purple-500"></i>
+                </div>
+                <div>
+                  <p class="text-base font-medium text-slate-800">B类卡-副卡</p>
+                  <p class="text-sm text-slate-400 mt-0.5">2025-03-15 18:00</p>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-slate-800">+ 200.00</p>
+            </div>
+            <div class="border-t border-slate-100 pt-2 text-sm text-slate-500">
+              支付方式: 自助终端
+            </div>
+          </div>
+        </div>
+
+        <!-- 消费明细内容 (默认隐藏) -->
+        <div id="consumption-content" class="tab-content space-y-3 hidden">
+          <div class="bg-white rounded-lg shadow-sm p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-9 h-9 flex items-center justify-center rounded-full bg-orange-100"
+                >
+                  <i class="ri-restaurant-2-fill text-xl text-orange-500"></i>
+                </div>
+                <div>
+                  <p class="text-base font-medium text-slate-800">一食堂二楼</p>
+                  <p class="text-sm text-slate-400 mt-0.5">2025-06-14 12:10</p>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-red-600">- 18.50</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-sm p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-9 h-9 flex items-center justify-center rounded-full bg-cyan-100"
+                >
+                  <i class="ri-store-2-fill text-xl text-cyan-500"></i>
+                </div>
+                <div>
+                  <p class="text-base font-medium text-slate-800">方与圆超市</p>
+                  <p class="text-sm text-slate-400 mt-0.5">2025-06-12 18:33</p>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-red-600">- 35.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 补贴明细内容 (默认隐藏) -->
+        <div id="subsidy-content" class="tab-content space-y-3 hidden">
+          <div class="bg-white rounded-lg shadow-sm p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-9 h-9 flex items-center justify-center rounded-full bg-red-100"
+                >
+                  <i class="ri-temp-hot-line text-xl text-red-500"></i>
+                </div>
+                <div>
+                  <p class="text-base font-medium text-slate-800">高温补贴</p>
+                  <p class="text-sm text-slate-400 mt-0.5">2025-06-10 10:00</p>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-blue-600">+ 200.00</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-sm p-4 space-y-3">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-9 h-9 flex items-center justify-center rounded-full bg-purple-100"
+                >
+                  <i class="ri-gift-line text-xl text-purple-500"></i>
+                </div>
+                <div>
+                  <p class="text-base font-medium text-slate-800">节日慰问</p>
+                  <p class="text-sm text-slate-400 mt-0.5">2025-05-30 09:00</p>
+                </div>
+              </div>
+              <p class="text-base font-medium text-slate-800">慰问品一份</p>
+            </div>
+            <div class="border-t border-slate-100 pt-2 text-sm text-slate-500">
+              内容: 请于三日内至工会领取
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- 日历弹窗 -->
+      <div
+        id="calendar-modal"
+        class="fixed inset-0 z-50 bg-black/40 flex items-end hidden"
+      >
+        <div class="w-full bg-white rounded-t-2xl p-4">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-medium">选择日期</h3>
+            <button id="close-calendar-btn">
+              <i class="ri-close-line text-2xl text-slate-500"></i>
+            </button>
+          </div>
+          <div class="text-center text-base font-medium text-slate-700 mb-4">
+            2025年06月10日 / 2025年06月18日
+          </div>
+          <div class="grid grid-cols-7 text-center text-sm text-slate-500 mb-2">
+            <span>日</span><span>一</span><span>二</span><span>三</span
+            ><span>四</span><span>五</span><span>六</span>
+          </div>
+          <div class="grid grid-cols-7 text-center gap-y-1">
+            <!-- 日期填充 -->
+            <div class="h-10"></div>
+            <div class="h-10"></div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              1
+            </div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              2
+            </div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              3
+            </div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              4
+            </div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              5
+            </div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              6
+            </div>
+            <div
+              class="calendar-day flex items-center justify-center h-10 text-slate-400"
+            >
+              7
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              8
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              9
+            </div>
+            <div
+              class="calendar-day range-start flex items-center justify-center h-10"
+            >
+              10
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              11
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              12
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              13
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              14
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              15
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              16
+            </div>
+            <div
+              class="calendar-day in-range flex items-center justify-center h-10"
+            >
+              17
+            </div>
+            <div
+              class="calendar-day range-end flex items-center justify-center h-10"
+            >
+              18
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              19
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              20
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              21
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              22
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              23
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              24
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              25
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              26
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              27
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              28
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              29
+            </div>
+            <div class="calendar-day flex items-center justify-center h-10">
+              30
+            </div>
+          </div>
+          <button
+            id="confirm-date-btn"
+            class="w-full mt-4 h-11 bg-[#4D80F0] text-white font-medium rounded-lg"
+          >
+            确 定
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".tab-content");
+        const calendarModal = document.getElementById("calendar-modal");
+        const dateFilterBtn = document.getElementById("date-filter-btn");
+        const closeCalendarBtn = document.getElementById("close-calendar-btn");
+        const confirmDateBtn = document.getElementById("confirm-date-btn");
+
+        // Tab切换逻辑
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+            contents.forEach((c) => c.classList.add("hidden"));
+            const targetContent = document.getElementById(
+              tab.dataset.tab + "-content"
+            );
+            if (targetContent) {
+              targetContent.classList.remove("hidden");
+            }
+          });
+        });
+
+        // 日历弹窗逻辑
+        const showCalendar = () => calendarModal.classList.remove("hidden");
+        const hideCalendar = () => calendarModal.classList.add("hidden");
+
+        dateFilterBtn.addEventListener("click", showCalendar);
+        closeCalendarBtn.addEventListener("click", hideCalendar);
+        confirmDateBtn.addEventListener("click", hideCalendar);
+        calendarModal.addEventListener("click", (e) => {
+          if (e.target === calendarModal) {
+            hideCalendar();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
