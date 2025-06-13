@@ -130,7 +130,7 @@
     </td>
     <td valign="top">
         <a target="_blank" href="https://myparjna.github.io/ui-demo/APP/012餐厅评价">
-            <p align="center"012餐厅评价</p>
+            <p align="center">012餐厅评价</p>
             <img width=240 src="https://cdn.sa.net/2025/05/30/8tRl5icogQmFdwx.jpg"/>
         </a>
     </td>
