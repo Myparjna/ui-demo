@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>餐厅评价</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/tLl8Z9PmFRuw.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('//at.alicdn.com/wf/webfont/suIcLsWKn4Gq/EMzoQWA20guR.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'AlibabaPuHuiTi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #333640;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #app-container {
+            width: 100%;
+            height: 100%;
+            max-width: 420px;
+            max-height: 840px;
+            background-color: #F7F8FA; /* Standard light gray background */
+            border-radius: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 421px) {
+            #app-container {
+                aspect-ratio: 9 / 18;
+                height: 95vh;
+                max-height: 860px;
+            }
+        }
+        
+        .main-content::-webkit-scrollbar { display: none; }
+        .main-content { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Styles for tags */
+        .tag {
+            transition: background-color 0.2s, color 0.2s, transform 0.1s;
+        }
+        .tag.active {
+            background-color: #3B82F6; /* blue-500 */
+            color: white;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="bg-gray-800">
+
+    <div id="app-container">
+        
+        <header class="relative flex items-center h-14 bg-white border-b border-gray-200/75 z-10 px-4">
+            <h1 class="text-base font-semibold text-gray-900 absolute left-1/2 -translate-x-1/2">评价中心</h1>
+            <a href="#" class="absolute right-4 text-sm text-blue-500 hover:text-blue-600">历史记录</a>
+        </header>
+
+        <main class="flex-1 overflow-y-auto main-content">
+            <div class="p-4 space-y-4">
+                <form id="review-form" class="space-y-4">
+                    <!-- 餐厅选择 -->
+                    <div class="bg-white rounded-lg p-4">
+                        <h2 class="text-sm font-medium text-gray-800 mb-3">选择商户</h2>
+                        <div id="restaurant-tags" class="flex flex-wrap gap-3">
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">食堂</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">方与圆超市</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">麦多多</button>
+                        </div>
+                    </div>
+
+                    <!-- 评价方面 -->
+                    <div class="bg-white rounded-lg p-4">
+                        <h2 class="text-sm font-medium text-gray-800 mb-3">评价方面 <span class="text-gray-400 font-normal">(可多选)</span></h2>
+                        <div id="aspect-tags" class="flex flex-wrap gap-3">
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">商品种类</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">价格问题</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">食品安全</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">商品口味</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">服务态度</button>
+                            <button type="button" class="tag bg-gray-100 text-gray-700 py-2 px-4 rounded-full text-sm">卫生状况</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 评价内容 -->
+                    <div class="bg-white rounded-lg p-4">
+                         <h2 class="text-sm font-medium text-gray-800 mb-3">详细评价</h2>
+                        <div class="relative">
+                            <textarea id="review-content" rows="5" maxlength="400" placeholder="请输入更详细的评价内容..." class="w-full text-sm placeholder-gray-400 bg-transparent focus:outline-none resize-none"></textarea>
+                            <div class="text-right text-xs text-gray-400 mt-2" id="char-counter">0/400</div>
+                        </div>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="pt-4">
+                         <button type="submit" id="submit-btn" class="w-full bg-blue-500 text-white font-medium py-3 rounded-lg shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-200 active:bg-blue-700">
+                            提 交
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        
+        <footer class="bg-gray-100 pt-2 pb-4">
+            <div class="w-36 h-1.5 bg-gray-400 rounded-full mx-auto"></div>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- 餐厅标签 (单选) ---
+            const restaurantTagsContainer = document.getElementById('restaurant-tags');
+            const restaurantTags = restaurantTagsContainer.querySelectorAll('.tag');
+            restaurantTagsContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('tag')) {
+                    restaurantTags.forEach(tag => tag.classList.remove('active'));
+                    e.target.classList.add('active');
+                }
+            });
+
+            // --- 评价方面标签 (多选) ---
+            const aspectTagsContainer = document.getElementById('aspect-tags');
+            aspectTagsContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('tag')) {
+                    e.target.classList.toggle('active');
+                }
+            });
+
+            // --- 文本域字数统计 ---
+            const textarea = document.getElementById('review-content');
+            const charCounter = document.getElementById('char-counter');
+            const maxLength = textarea.getAttribute('maxlength');
+            textarea.addEventListener('input', () => {
+                const currentLength = textarea.value.length;
+                charCounter.textContent = `${currentLength}/${maxLength}`;
+            });
+
+            // --- 表单提交 ---
+            const form = document.getElementById('review-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const selectedRestaurant = restaurantTagsContainer.querySelector('.tag.active');
+                const selectedAspects = Array.from(aspectTagsContainer.querySelectorAll('.tag.active')).map(tag => tag.textContent);
+
+                if (!selectedRestaurant) {
+                    alert('请选择一个商户！');
+                    return;
+                }
+
+                let summary = `商户: ${selectedRestaurant.textContent}\n`;
+                summary += `方面: ${selectedAspects.length > 0 ? selectedAspects.join(', ') : '无'}\n`;
+                summary += `内容: ${textarea.value || '无'}`;
+                
+                alert("提交成功！\n\n" + summary);
+
+                // 重置表单
+                form.reset();
+                textarea.dispatchEvent(new Event('input'));
+                restaurantTags.forEach(tag => tag.classList.remove('active'));
+                aspectTagsContainer.querySelectorAll('.tag.active').forEach(tag => tag.classList.remove('active'));
+            });
+        });
+    </script>
+
+</body>
+</html>
