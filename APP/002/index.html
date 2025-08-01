@@ -1,934 +1,242 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bagel | 野兽派潮流定制</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FF2E00',
-                        secondary: '#0000F5',
-                        accent: '#FFF200',
-                        bgGray: '#121212',
-                        darkCard: '#1E1E1E'
-                    },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                        brutal: ['"Inter"', 'sans-serif'],
-                    },
-                    animation: {
-                        wiggle: 'wiggle 0.8s ease-in-out',
-                        jitter: 'jitter 0.5s ease-in-out',
-                    },
-                    keyframes: {
-                        wiggle: {
-                            '0%, 100%': { transform: 'rotate(-3deg)' },
-                            '50%': { transform: 'rotate(3deg)' },
-                        },
-                        jitter: {
-                            '0%, 100%': { transform: 'translate(0px, 0px)' },
-                            '25%': { transform: 'translate(-2px, 1px)' },
-                            '50%': { transform: 'translate(1px, -2px)' },
-                            '75%': { transform: 'translate(-1px, 2px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <title>智慧园区 - 园区活动</title>
+    
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/"></script>
+    
+    <!-- 引入Remix Icon图标库 -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    
+    <!-- 引入Framer Motion动效库 -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.2.10/dist/framer-motion.umd.min.js"></script>
+
     <style>
-        body {
-            background-color: #121212;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
+        /* 引入阿里巴巴普惠体3.0 */
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('https://cdn.jsdelivr.net/npm/alibabapuhuiti-3-45-light@1.0.0/AlibabaPuHuiTi-3-45-Light.woff2') format('woff2');
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('https://cdn.jsdelivr.net/npm/alibabapuhuiti-3-55-regular@1.0.0/AlibabaPuHuiTi-3-55-Regular.woff2') format('woff2');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('https://cdn.jsdelivr.net/npm/alibabapuhuiti-3-65-medium@1.0.0/AlibabaPuHuiTi-3-65-Medium.woff2') format('woff2');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('https://cdn.jsdelivr.net/npm/alibabapuhuiti-3-75-semibold@1.0.0/AlibabaPuHuiTi-3-75-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: 'AlibabaPuHuiTi';
+            src: url('https://cdn.jsdelivr.net/npm/alibabapuhuiti-3-85-bold@1.0.0/AlibabaPuHuiTi-3-85-Bold.woff2') format('woff2');
+            font-weight: 700;
+        }
+
+        /* 自定义Tailwind配置 */
+        .font-sans {
+            font-family: 'AlibabaPuHuiTi', sans-serif;
         }
         
-        .brutal-border {
-            border: 3px solid black;
-            position: relative;
-        }
-        
-        .brutal-border::after {
-            content: '';
-            position: absolute;
-            inset: -6px;
-            border: 1px solid rgba(255,255,255,0.3);
-            z-index: 2;
-        }
-        
-        .hand-drawn {
-            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-        }
-        
-        .hand-drawn-btn {
-            border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
-        }
-        
-        .rough-edge::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: inherit;
-            pointer-events: none;
-        }
-        
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        .touch-large {
-            min-width: 48px;
-            min-height: 48px;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        .floating {
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        .highlight {
-            box-shadow: 0 0 0 2px #FFF200;
-        }
-        
-        .shop-card {
-            transition: all 0.3s ease;
-        }
-        
-        .shop-card:hover {
-            transform: scale(1.02);
-            z-index: 10;
-        }
-        
-        .customize-step {
-            position: relative;
-            border: 3px solid #FFF200;
-            border-radius: 16px;
-            overflow: hidden;
-            background: #1E1E1E;
-        }
-        
-        .step-highlight {
-            position: absolute;
-            top: 极0;
-            left: 0;
-            width: 10px;
-            height: 100%;
-            background: #FFF200;
-        }
-        
-        .step-content {
-            padding: 20px 20px 20px 30px;
-        }
-        
-        .option-chip {
-            display: inline-block;
-            padding: 10px 18px;
-            border: 2px solid #FFF200;
-            border-radius: 24px;
-            margin: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .option-chip.active {
-            background: #FFF200;
-            color: #000;
-        }
-        
-        .product-waterfall {
-            column-count: 2;
-            column-gap: 16px;
-            padding: 16px 0;
-        }
-        
-        .product-card-waterfall {
-            break-inside: avoid;
-            margin-bottom: 16px;
-        }
-        
-        .cart-item {
-            transition: all 0.3s ease;
-        }
-        
-        .cart-item:hover {
-            background-color: rgba(255, 242, 0, 0.1);
-        }
-        
-        @media (max-width: 480px) {
-            .bottom-bar-button {
-                padding: 12px 16px;
-                font-size: 12px;
-            }
-            
-            .bottom-nav-button-text {
-                display: none;
-            }
-            
-            .bottom-bar-button iconify-icon {
-                margin-right: 0;
-            }
-        }
+        /* 隐藏滚动条 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="relative min-h-screen flex flex-col items-center text-white bg-bgGray">
-    <!-- 设备容器 -->
-    <div class="w-full max-w-md mx-auto bg-black min-h-screen overflow-hidden">
-        <!-- 状态栏 -->
-        <div class="flex justify-between items-center px-6 pt-4 pb-2">
-            <div class="text-xs">2025-06-02 14:28</div>
-            <div class="flex gap-1">
-                <iconify-icon icon="fluent:cellular-data-1-24-filled" width="14"></iconify-icon>
-                <iconify-icon icon="fluent:wifi-1-24-filled" width="14"></iconify-icon>
-                <iconify-icon icon="fluent:battery-2-24-filled" width="14"></iconify-icon>
-            </div>
-        </div>
+
+<body class="bg-zinc-900 flex justify-center items-start font-sans">
+    
+    <!-- 模拟手机屏幕 -->
+    <div id="app-container" class="relative w-full max-w-[420px] h-screen bg-zinc-50 overflow-hidden flex flex-col">
         
-        <!-- 页面内容容器 -->
-        <div class="flex-1 overflow-y-auto no-scrollbar px-5 pb-24">
-            
-            <!-- 首页 Tab 内容 -->
-            <div id="home-tab">
-                <!-- 顶部栏 -->
-                <div class="flex justify-between items-center py-4">
-                    <h1 class="font-brutal font-black text-3xl text-yellow-400 floating" 
-                        style="font-weight: 900; text-shadow: 2px 2px 0 #FF2E00;">
-                        BAGEL
-                    </h1>
-                    <button class="bg-white text-black py-2 px-4 font-bold hand-drawn-btn jitter-hover touch-large" 
-                            style="font-weight: 800; min-width: 80px">
-                        客服
-                    </button>
-                </div>
-                
-                <!-- 四大板块分类 -->
-                <div class="grid grid-cols-2 gap-3 my-6">
-                    <!-- 黄色卡片 -->
-                    <div class="bg-[#FFD600] p-5 text-black brutal-border hand-drawn relative rough-edge">
-                        <h3 class="font-bold text-xl mb-2" style="font-weight: 800">饰品</h3>
-                        <div class="border-2 border-black rounded-xl w-16 h-16 mx-auto bg-white bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/ln49KMy2FxvtpZj.jpg'); background-size: cover;"></div>
-                    </div>
-                    <!-- 红色卡片 -->
-                    <div class="bg-[#FF2E00] p-5 text-black brutal-border hand-drawn relative rough-edge">
-                        <h3 class="font-bold text-xl mb-2" style="font-weight: 800">画作</h3>
-                        <div class="border-2 border-black rounded-xl w-16 h-16 mx-auto bg-white bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/KAoJ9DPMX42QxaN.jpg'); background-size: cover;"></div>
-                    </div>
-                    <!-- 蓝色卡片 -->
-                    <div class="bg-[#0077FF] p-5 text-black brutal-border hand-drawn relative rough-edge">
-                        <h3 class="font-bold text-xl mb-2" style="font-weight: 800">宠物毛毡</h3>
-                        <div class="border-2 border-black rounded-xl w-16 h-16 mx-auto bg-white bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/IsqmiLSDB3Cn81p.jpg'); background-size: cover;"></div>
-                    </div>
-                    <!-- 绿色卡片 -->
-                    <div class="bg-[#00FF99] p-5 text-black brutal-border hand-drawn relative rough-edge">
-                        <h3 class="font-bold text-xl mb-2" style="font-weight: 800">贴纸</h3>
-                        <div class="border-2 border-black rounded-xl w-16 h-16 mx-auto bg-white bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/vqTagyotSnsrLz3.jpg'); background-size: cover;"></div>
-                    </div>
-                </div>
-                
-                <!-- 最近浏览 -->
-                <div class="my-8">
-                    <div class="flex justify-between items-center mb-4">
-                        <h2 class="font-bold text-xl text-white" style="font-weight: 800">最近浏览</h2>
-                        <a href="#" class="text-accent text-sm" style="min-width: 70px;">查看更多</a>
-                    </div>
-                    <div class="flex overflow-x-auto gap-4 no-scrollbar pb-4">
-                        <!-- 最近浏览商品 -->
-                        <div class="min-w-[180px] bg-black p-4 brutal-border hand-drawn relative rough-edge shop-card">
-                            <div class="relative">
-                                <div class="border-2 border-white rounded-xl w-full h-40 bg-cover bg-center" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/cfUJTk8l极wxjZs5n.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-2 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="20"></iconify-icon>
-                                </button>
-                            </div>
-                            <h3 class="font-bold mt-2 text-lg" style="font-weight: 700">手工水晶手链</h3>
-                            <div class="flex justify-between mt-1">
-                                <span class="line-through text-gray-500 text-sm">¥299</span>
-                                <span class="text-accent font-bold">¥229</span>
-                            </div>
-                        </div>
-                        <div class="min-w-[180px] bg-black p-4 brutal-border hand-drawn relative rough-edge shop-card">
-                            <div class="relative">
-                                <div class="border-2 border-white rounded-xl w-full h-40 bg-cover bg-center" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/rUVHBiLbZqoMOQC.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-2 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="20"></iconify-icon>
-                                </button>
-                            </div>
-                            <h3 class="font-bold mt-2 text-lg" style="font-weight: 700">抽象派油画</h3>
-                            <div class="flex justify-between mt-1">
-                                <span class="line-through text-gray-500 text-sm">¥850</span>
-                                <span class="text-accent font-bold">¥799</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 运营海报 -->
-                <div class="my-8">
-                    <div class="aspect-[21/9] relative brutal-border hand-drawn" style="border-width: 4px;">
-                        <div class="absolute inset-0 bg-cover bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/HIbq8LgCRT75UGn.jpg');"></div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
-                            <h3 class="font-bold text-xl text-white" style="font-weight: 800; text-shadow: 1px 1px 0 #FF2E00;">夏季新品狂欢</h3>
-                            <p class="text-sm text-white">精选饰品限时折扣</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 店铺展示 -->
-                <div class="my-8">
-                    <h2 class="font-bold text-xl mb-4 text-white" style="font-weight: 800">精选店铺</h2>
-                    
-                    <!-- 可滑动商品店铺 -->
-                    <div class="brutal-border bg-black p-4 hand-drawn relative rough-edge mb-6 shop-card" style="border-width: 4px;">
-                        <div class="flex items-center mb-4">
-                            <div class="w-14 h-14 rounded-full overflow-hidden mr-3 border-2 border-white">
-                                <img src="https://cdn.sa.net/2025/06/03/P6xNEMQVGqdusbc.jpg" alt="店铺头像" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg" style="font-weight: 700">艺术空间站</h3>
-                                <div class="flex items-center text-sm mt-1">
-                                    <iconify-icon icon="mdi:star" class="text-accent"></iconify-icon>
-                                    <span class="mx-1">4.8</span>
-                                    <span>| 售出 1272</span>
-                                </div>
-                            </div>
-                            <div class="ml-auto flex gap-2">
-                                <button class="bg-white text-black p-2 rounded-lg touch-large">
-                                    <iconify-icon icon="mdi:share-variant" width="20"></iconify-icon>
-                                </button>
-                                <button class="bg-accent text-black p-2 rounded-lg touch-large">
-                                    <iconify-icon icon="mdi:heart" width="20"></iconify-icon>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- 可滑动商品 -->
-                        <div class="flex overflow-x-auto no-scrollbar gap-4 pb-2">
-                            <div class="min-w-[140px]">
-                                <div class="relative">
-                                    <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white" 
-                                         style="background-image: url('https://cdn.sa.net/2025/06/03/ln49KMy2FxvtpZj.jpg');"></div>
-                                    <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                        <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                    </button>
-                                </div>
-                                <h4 class="font-bold mt-2 truncate">手绘耳环</h4>
-                                <div class="flex justify-between">
-                                    <span class="text-sm line-through text-gray-500">¥199</span>
-                                    <span class="text-accent">¥169</span>
-                                </div>
-                            </div>
-                            <div class="min-w-[140px]">
-                                <div class="relative">
-                                    <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white" 
-                                         style="background-image: url('https://cdn.sa.net/2025/06/03/cfUJTk8lwxjZs5n.jpg');"></div>
-                                    <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                        <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                    </button>
-                                </div>
-                                <h4 class="font-bold mt-2 truncate">水晶手链</h4>
-                                <div class="flex justify-between">
-                                    <span class="text-sm line-through text-gray-500">¥299</span>
-                                    <span class="text-accent">¥229</span>
-                                </div>
-                            </div>
-                            <!-- 更多商品... -->
-                        </div>
-                    </div>
-                    
-                    <!-- 直接展示商品店铺 -->
-                    <div class="brutal-border bg-black p-4 hand-drawn relative rough-edge shop-card" style="border-width: 4px;">
-                        <div class="flex items-center mb-4">
-                            <div class="w-14 h-14 rounded-full overflow-hidden mr-3 border-2 border-white">
-                                <img src="https://cdn.sa.net/2025/06/03/Ytnm8GUFWXDjL4e.jpg" alt="店铺头像" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg" style="font-weight: 700">萌宠工作室</h3>
-                                <div class="flex items-center text-sm mt-1">
-                                    <iconify-icon icon="mdi:star" class="text-accent"></iconify-icon>
-                                    <span class="mx-1">4.9</span>
-                                    <span>| 售出 892</span>
-                                </div>
-                            </div>
-                            <div class="ml-auto flex gap-2">
-                                <button class="bg-white text-black p-2 rounded-lg touch-large">
-                                    <iconify-icon icon="mdi:share-variant" width="20"></iconify-icon>
-                                </button>
-                                <button class="bg-accent text-black p-2 rounded-lg touch-large">
-                                    <iconify-icon icon="mdi:heart" width="20"></iconify-icon>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- 固定商品网格 -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="relative">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/IsqmiLSDB3Cn81p.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                                <h4 class="font-bold mt-2 truncate">泰迪犬服装</h4>
-                                <div class="flex justify-between">
-                                    <span class="text-sm line-through text-gray-500">¥189</span>
-                                    <span class="text-accent">¥169</span>
-                                </div>
-                            </div>
-                            <div class="relative">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/sSRjvOXGYmzFAtP.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                                <h4 class="font-bold mt-2 truncate">宠物毛毡玩偶</h4>
-                                <div class="flex justify-between">
-                                    <span class="text-sm line-through text-gray-500">¥299</span>
-                                    <span class="text-accent">¥239</span>
-                                </div>
-                            </div>
-                            <div class="relative">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/98MPvjBtxqEhw1o.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                                <h4 class="font-bold mt-2 truncate">毛毡猫窝</h4>
-                                <div class="flex justify-between">
-                                    <span class="text-sm line-through text-gray-500">¥499</span>
-                                    <span class="text-accent">¥419</span>
-                                </div>
-                            </div>
-                            <div class="relative">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/ngVtJWckCw4qxo5.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                                <h4 class="font-bold mt-2 truncate">宠物围巾</h4>
-                                <div class="flex justify-between">
-                                    <span class="text-sm line-through text-gray-500">¥159</span>
-                                    <span class="text-accent">¥129</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 搜索/分类 Tab 内容 -->
-            <div id="search-tab" class="hidden">
-                <!-- 搜索框 -->
-                <div class="mt-6 mb-8 relative brutal-border hand-drawn" style="border-width: 4px;">
-                    <div class="flex items-center p-3 bg-darkCard">
-                        <iconify-icon icon="mdi:magnify" width="24" class="text-accent"></iconify-icon>
-                        <input type="text" placeholder="探索个性化潮玩" class="ml-3 bg-transparent flex-1 text-white placeholder-accent outline-none">
-                        <button class="ml-2 text-accent text-sm" style="font-weight: 700">取消</button>
-                    </div>
-                </div>
-                
-                <!-- 商品分类 -->
-                <div class="mb-8">
-                    <h2 class="font-bold text-xl mb-4 text-accent" style="font-weight: 800">商品分类</h2>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="brutal-border bg-secondary text-white p-5 text-center hand-drawn relative rough-edge shop-card touch-large" style="height: 120px; border-width: 3px;">
-                            <div class="mx-auto w-12 h-12 mb-2">
-                                <iconify-icon icon="mdi:necklace" width="40"></iconify-icon>
-                            </div>
-                            <span class="font-bold" style="font-weight: 700">首饰</span>
-                        </div>
-                        <div class="brutal-border bg-primary text-black p-5 text-center hand-drawn relative rough-edge shop-card touch-large" style="height: 120px; border-width: 3px;">
-                            <div class="mx-auto w-12 h-12 mb-2">
-                                <iconify-icon icon="mdi:gift" width="40"></iconify-icon>
-                            </div>
-                            <span class="font-bold" style="font-weight: 700">送礼</span>
-                        </div>
-                        <div class="brutal-border bg-accent text-black p-5 text-center hand-drawn relative rough-edge shop-card touch-large" style="height: 120px; border-width: 3px;">
-                            <div class="mx-auto w-12 h-12 mb-2">
-                                <iconify-icon icon="mdi:palette" width="40"></iconify-icon>
-                            </div>
-                            <span class="font-bold" style="font-weight: 700">艺术</span>
-                        </div>
-                        <div class="brutal-border bg-yellow-500 text-black p-5 text-center hand-drawn relative rough-edge shop-card touch-large" style="height: 120px; border-width: 3px;">
-                            <div class="mx-auto w-12 h-12 mb-2">
-                                <iconify-icon icon="mdi:controller" width="40"></iconify-icon>
-                            </div>
-                            <span class="font-bold" style="font-weight: 700">潮玩</span>
-                        </div>
-                        <div class="brutal-border bg-purple-500 text-white p-5 text-center hand-drawn relative rough-edge shop-card touch-large" style="height: 120px; border-width: 3px;">
-                            <div class="mx-auto w-12 h-12 mb-2">
-                                <iconify-icon icon="mdi:paw" width="40"></iconify-icon>
-                            </div>
-                            <span class="font-bold" style="font-weight: 700">宠物</span>
-                        </div>
-                        <!-- 修复更多瓷片 - 修复类名错误: mx极-auto => mx-auto -->
-                        <div class="brutal-border bg-gray-600 text-white p-5 text-center hand-drawn relative rough-edge shop-card touch-large" style="height: 120px; border-width: 3px;">
-                            <div class="mx-auto w-12 h-12 mb-2">
-                                <iconify-icon icon="mdi:dots-horizontal" width="40"></iconify-icon>
-                            </div>
-                            <span class="font-bold" style="font-weight: 700">更多</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 运营轮播图 -->
-                <div class="mb-8">
-                    <div class="aspect-[4/1] relative brutal-border hand-drawn" style="border-width: 4px;">
-                        <div class="absolute inset-0 bg-cover bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/xJGf5vtXbuCQNsL.jpg');"></div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-3">
-                            <h3 class="font-bold text-md text-white" style="font-weight: 800">限量版艺术家合作</h3>
-                            <p class="text-xs text-white">专属定制，独一无二</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 商品瀑布流 -->
-                <div class="mb-12">
-                    <h2 class="font-bold text-xl mb-4 text-accent" style="font-weight: 800">精品推荐</h2>
-                    <div class="product-waterfall">
-                        <!-- 商品1 -->
-                        <div class="product-card-waterfall bg-black brutal-border hand-drawn relative p-4 rough-edge" style="border-width: 3px;">
-                            <div class="relative mb-3">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white w-full" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/KXfP4zQhD6LOvEN.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="font-bold mt-2 truncate text-white">手绘星空吊坠</h4>
-                            <div class="flex justify-between mt-1">
-                                <span class="text-sm line-through text-gray-500">¥199</span>
-                                <span class="text-accent">¥169</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 商品2 -->
-                        <div class="product-card-waterfall bg-black brutal-border hand-drawn relative p-4 rough-edge" style极="border-width: 3px;">
-                            <div class="relative mb-3">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white w-full" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/c7x3oHqTtGIl6v5.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="font-bold mt-2 truncate text-white">街头涂鸦贴纸</h4>
-                            <div class="flex justify-between mt-1">
-                                <span class="text-sm line-through text-gray-500">¥49</span>
-                                <span class="text-accent">¥39</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 商品3 -->
-                        <div class="product-card-waterfall bg-black brutal-border hand-drawn relative p-4 rough-edge" style="border-width: 3px;">
-                            <div class="relative mb-3">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white w-full" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/BUincvL9elPkQw4.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="font-bold mt-2 truncate text-white">城市景观雕塑</h4>
-                            <div class="flex justify-between mt-1">
-                                <span class="text-sm line-through text-gray-500">¥799</span>
-                                <span class="text-accent">¥659</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 商品4 -->
-                        <div class="product-card-waterfall bg-black brutal-border hand-drawn relative p-4 rough-edge" style="border-width: 3px;">
-                            <div class="relative mb-3">
-                                <div class="aspect-square bg-cover bg-center rounded-lg border-2 border-white w-full" 
-                                     style="background-image: url('https://cdn.sa.net/2025/06/03/ngVtJWckCw4qxo5.jpg');"></div>
-                                <button class="absolute top-2 right-2 bg-white text-black p-1 rounded-full touch-large">
-                                    <iconify-icon icon="mdi:heart" width="18"></iconify-icon>
-                                </button>
-                            </div>
-                            <h4 class="font-bold mt-2 truncate text-white">霓虹猫窝</h4>
-                            <div class="flex justify-between mt-1">
-                                <span class="text-sm line-through text-gray-500">¥459</span>
-                                <span class="text-accent">¥399</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 新增的"我的"页面独立容器 -->
-            <div id="profile-tab" class="hidden">
-                <!-- 顶部用户信息 -->
-                <div class="flex items-center py-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-accent">
-                        <img src="https://cdn.sa.net/2025/06/03/jfGQuNXvrbLanKU.jpg" alt="用户头像" class="w-full h-full object-cover">
-                    </div>
-                    <div class="ml-5">
-                        <h2 class="font-bold text-2xl text-accent" style="font-weight: 800">潮流玩家</h2>
-                        <p class="text-gray-400 mt-1">会员ID: BAGEL2025</p>
-                    </div>
-                </div>
-                
-                <!-- 今日寄语 -->
-                <div class="bg-darkCard brutal-border p-5 mb-6 hand-drawn relative rough-edge" style="border-width: 3px;">
-                    <h3 class="font-bold text-accent mb-3" style="font-weight: 700">今日寄语</h3>
-                    <p class="text-white">"创造是表达自我的最佳方式"</p>
-                    <div class="flex items-center mt-4">
-                        <span class="text-gray-400 mr-4">幸运颜色</span>
-                        <div class="w-6 h-6 rounded-full bg-accent"></div>
-                        <span class="text-accent ml-2">亮黄色</span>
-                    </div>
-                </div>
-                
-                <!-- 我的订单 -->
-                <div class="mb-8">
-                    <h2 class="font-bold text-xl text-accent mb-4" style="font-weight: 800">我的订单</h2>
-                    <div class="grid grid-cols-5 gap-2 text-center">
-                        <div class="p-3">
-                            <div class="w-10 h-10 bg-darkCard rounded-full flex items-center justify-center mx-auto mb-1">
-                                <iconify-icon icon="mdi:wallet" class="text-primary"></iconify-icon>
-                            </div>
-                            <span class="text-xs">待付款</span>
-                        </div>
-                        <div class="p-3">
-                            <div class="w-10 h-10 bg-darkCard rounded-full flex items-center justify-center mx-auto mb-1">
-                                <iconify-icon icon="mdi:truck" class="text-secondary"></iconify-icon>
-                            </div>
-                            <span class="text-xs">待发货</span>
-                        </div>
-                        <div class="p-3">
-                            <div class="w-10 h-10 bg-darkCard rounded-full flex items-center justify-center mx-auto mb-1">
-                                <iconify-icon icon="mdi:package" class="text-accent"></iconify-icon>
-                            </div>
-                            <span class="text-xs">待收货</span>
-                        </div>
-                        <div class="p-3">
-                            <div class="w-10 h-10 bg-darkCard rounded-full flex items-center justify-center mx-auto mb-1">
-                                <iconify-icon icon="mdi:star" class="text-green-500"></iconify-icon>
-                            </div>
-                            <span class="text-xs">待评价</span>
-                        </div>
-                        <div class="p-3">
-                            <div class="w-10 h-10 bg-darkCard rounded-full flex items-center justify-center mx-auto mb-1">
-                                <iconify-icon icon="mdi:refresh" class="text-yellow-500"></iconify-icon>
-                            </极div>
-                            <span class="text-xs">售后/退款</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 我的定制收藏 -->
-                <div class="mb-8">
-                    <h2 class="font-bold text-xl text-accent mb-4" style="font-weight: 800">我的定制</h2>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="brutal-border bg-darkCard p-4 hand-drawn relative rough-edge" style="border-width: 3px;">
-                            <div class极="flex items-center mb-3">
-                                <iconify-icon icon="mdi:heart" class="text-primary" width="24"></iconify-icon>
-                                <h3 class="ml-2 font-bold" style="font-weight: 700">想要收藏</h3>
-                            </div>
-                            <p class="text-gray-400 text-sm">12件商品</p>
-                        </div>
-                        <div class="brutal-border bg-darkCard p-4 hand-drawn relative rough-edge" style="border-width: 3px;">
-                            <div class="flex items-center mb-3">
-                                <iconify-icon icon="mdi:store" class="text-secondary" width="24"></iconify-icon>
-                                <h3 class="ml-2 font-bold" style="font-weight: 700">收藏店铺</h3>
-                            </div>
-                            <p class="text-gray-400 text-sm">5家店铺</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 最近浏览的店铺 -->
-                <div class="mb-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h2 class="font-bold text-xl text-accent" style="font-weight: 800">最近浏览</h2>
-                        <a href="#" class="text-gray-400 text-sm">查看全部</a>
-                    </div>
-                    <div class="flex overflow-x-auto no-scrollbar pb-4">
-                        <!-- 浏览记录1 -->
-                        <div class="min-w-[200px] bg-darkCard p-4 brutal-border hand-drawn relative rough-edge mr-4" style="border-width: 3px;">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white mr-3">
-                                    <img src="https://cdn.sa.net/2025/06/03/VxQ6FlsOIEUez41.jpg" alt="店铺头像" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h3 class="font-bold" style="font-weight: 700">艺术狂想</h3>
-                                    <div class="flex items-center text-xs mt-1">
-                                        <iconify-icon icon="mdi:star" class="text-accent"></iconify-icon>
-                                        <span class="mx-1">4.7</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 浏览记录2 -->
-                        <div class="min-w-[200px] bg-darkCard p-4 brutal-border hand-drawn relative rough-edge mr-4" style="border-width: 3px;">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white mr-3">
-                                    <img src="https://cdn.sa.net/2025/06/03/ldYZHikhtEOr1wL.jpg" alt="店铺头像" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h3 class="font-bold" style="font-weight: 700">萌宠物语</h3>
-                                    <div class="flex items-center text-xs mt-1">
-                                        <iconify-icon icon="mdi:star" class="text-accent"></iconify-icon>
-                                        <span class="mx-1">4.9</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- 浏览记录3 (修复重复头像问题) -->
-                        <div class="min-w-[200px] bg-darkCard p-4 brutal-border hand-drawn relative rough-edge mr-4" style="border-width: 3px;">
-                            <div class="flex items-center">
-                                <!-- 修复：更换成不同的头像 -->
-                                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white mr-3">
-                                    <img src="https://cdn.sa.net/2025/06/03/d8fGgqS5Xxr9L6z.jpg" alt="涂鸦实验室" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h3 class="font-bold" style="font-weight: 700">涂鸦实验室</h3>
-                                    <div class="flex items-center text-xs mt-1">
-                                        <iconify-icon icon="mdi:star" class="text-accent"></iconify-icon>
-                                        <span class="mx-1">4.8</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- 代码注释: 背景图层。使用absolute定位和z-0确保它在最底层。 -->
+        <div class="absolute bottom-0 left-0 right-0 w-full h-1/3 z-0 pointer-events-none">
+             <img src="https://cdn.sa.net/2025/08/01/x8f1TK6AqMHtQ7p.png" class="w-full h-full object-cover opacity-30" alt="background city scape">
         </div>
+
+        <!-- 代码注释: 内容层。使用relative和z-10确保它在背景图层之上。 -->
+        <header class="relative z-10 p-4 pt-6 shrink-0 bg-zinc-50/80 backdrop-blur-sm border-b border-zinc-200/60">
+             <h1 class="text-2xl font-bold text-zinc-900">园区活动</h1>
+             <p class="text-sm text-zinc-500 mt-1">发现最新动态，参与精彩社区</p>
+        </header>
         
-        <!-- 底部导航栏 -->
-        <div class="fixed bottom-0 w-full max-w-md bg-black flex justify-between items-center p-4 z-10" 
-             style="border-top: 4px solid #FFF200;">
-            <button class="brutal-border p-3 bg-secondary text-white hand-drawn-btn touch-large" 
-                    onclick="goBack()"
-                    style="min-width: 48px; min-height: 48px">
-                <iconify-icon icon="mdi:arrow-left" width="24"></iconify-icon>
-            </button>
-            
-            <div class="flex bg-black" style="border-top: 4px solid #FF2E00; border-bottom: 4px solid #FF2E00;">
-                <button class="py-3 px-8 font-bold hand-drawn-btn relative bottom-bar-button touch-large tab-button active" 
-                        style="border-right: 3px solid #FF2E00; font-weight: 800; min-width: 100px"
-                        data-tab="home-tab">
-                    <iconify-icon icon="mdi:home" width="24" class="mr-2 bottom-nav-button-icon"></iconify-icon>
-                    <span class="bottom-nav-button-text">首页</span>
-                </button>
-                <button class="py-3 px-8 font-bold hand-drawn-btn relative bottom-bar-button touch-large tab-button" 
-                        style="border-right: 3px solid #FF2E00; font-weight: 800; min-width: 100px"
-                        data-tab="search-tab">
-                    <iconify-icon icon="mdi:search-web" width="24" class="mr-2 bottom-nav-button-icon"></iconify-icon>
-                    <span class="bottom-nav-button-text">搜索</span>
-                </button>
-                <button class="py-3 px-8 font-bold hand-drawn-btn bottom-bar-button touch-large tab-button" 
-                        style="font-weight: 800; min-width: 100px"
-                        data-tab="profile-tab">
-                    <iconify-icon icon="mdi:account" width="24" class="mr-2 bottom-nav-button-icon"></iconify-icon>
-                    <span class="bottom-nav-button-text">我的</span>
-                </button>
+        <div class="relative z-10 px-4 py-3 shrink-0 bg-zinc-50">
+            <div id="filter-tabs" class="flex items-center gap-2 bg-zinc-200/80 p-1 rounded-lg">
+                <button data-filter="all" class="filter-btn flex-1 text-sm font-semibold py-1.5 rounded-md transition-colors duration-300">全部活动</button>
+                <button data-filter="upcoming" class="filter-btn flex-1 text-sm font-semibold py-1.5 rounded-md transition-colors duration-300">即将开始</button>
+                <button data-filter="past" class="filter-btn flex-1 text-sm font-semibold py-1.5 rounded-md transition-colors duration-300">已结束</button>
             </div>
-            
-            <button class="brutal-border p-3 bg-primary text-black hand-drawn-btn relative jitter-hover touch-large"
-                    style="min-width: 48px; min-height: 48px" 
-                    onclick="toggleCart()">
-                <iconify-icon icon="mdi:cart" width="24"></iconify-icon>
-                <span class="absolute -top-2 -right-2 bg-accent text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold border-2 border-black">3</span>
-            </button>
         </div>
+
+        <main class="relative z-10 flex-1 overflow-y-auto no-scrollbar px-4 pb-24">
+            <div id="activities-list" class="space-y-4">
+                <!-- 活动卡片将由JS动态生成 -->
+            </div>
+            <div id="empty-state" class="hidden text-center py-20">
+                <i class="ri-information-line text-5xl text-zinc-300"></i>
+                <p class="mt-4 text-zinc-500">该分类下暂无活动</p>
+            </div>
+        </main>
         
-        <!-- 购物车浮层 -->
-        <div id="cart-panel" class="fixed inset-0 bg-black/60 z-30 hidden">
-            <div class="absolute right-0 top-0 bottom-0 w-4/5 bg-white text-black">
-                <div class="p-5 flex justify-between items-center border-b-4 border-black">
-                    <h2 class="text-2xl font-bold" style="font-weight: 900">购物车</h2>
-                    <button class="text-black text-2xl touch-large" onclick="toggleCart()">
-                        <iconify-icon icon="mdi:close" width="24"></iconify-icon>
-                    </button>
-                </div>
-                
-                <div class="overflow-y-auto no-scrollbar h-[calc(100vh-150px)]">
-                    <!-- 购物车商品1 -->
-                    <div class="p-4 border-b border-gray-300 flex touch-large cart-item">
-                        <div class="w-24 h-24 rounded-lg border-2 border-black bg-cover bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/ln49KMy2FxvtpZj.jpg');"></div>
-                        <div class="ml-4 flex-1">
-                            <h3 class="font-bold text-lg" style="font-weight: 700">手绘耳环</h3>
-                            <p class="text-sm text-gray-600">定制：红色/中号</p>
-                            <div class="flex justify-between items-center mt-2">
-                                <span class="text-accent font-bold">¥169</span>
-                                <div class="flex items-center">
-                                    <button class="w-8 h-8 bg-gray-200 rounded-lg touch-large">-</button>
-                                    <span class="mx-2">1</span>
-                                    <button class="w-8 h-8 bg-gray-200 rounded-lg touch-large">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 购物车商品2 -->
-                    <div class="p-4 border-b border-gray-300 flex touch-large cart-item">
-                        <div class="w-24 h-24 rounded-lg border-2 border-black bg-cover bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/IsqmiLSDB3Cn81p.jpg');"></div>
-                        <div class="ml-4 flex-1">
-                            <h3 class="font-bold text-lg" style="font-weight: 700">泰迪犬服装</h3>
-                            <p class="text-sm text-gray-600">定制：蓝色/小号</p>
-                            <div class="flex justify-between items-center mt-2">
-                                <span class="text-accent font-bold">¥169</span>
-                                <div class="flex items-center">
-                                    <button class="w-8 h-8 bg-gray-200 rounded-lg touch-large">-</button>
-                                    <span class="mx-2">1</span>
-                                    <button class="w-8 h-8 bg-gray-200 rounded-lg touch-large">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 购物车商品3 -->
-                    <div class="p-4 border-b border-gray-300 flex touch-large cart-item">
-                        <div class="w-24 h-24 rounded-lg border-2 border-black bg-cover bg-center" 
-                             style="background-image: url('https://cdn.sa.net/2025/06/03/BUincvL9elPkQw4.jpg');"></div>
-                        <div class="ml-4 flex-1">
-                            <h3 class="font-bold text-lg" style="font-weight: 700">城市景观雕塑</h3>
-                            <p class="text-sm text-gray-600">定制：金属/30cm</p>
-                            <div class="flex justify-between items-center mt-2">
-                                <span class="text-accent font-bold">¥659</span>
-                                <div class="flex items-center">
-                                    <button class="w-8 h-8 bg-gray-200 rounded-lg touch-large">-</button>
-                                    <span class="mx-2">1</span>
-                                    <button class="w-8 h-8 bg-gray-200 rounded-lg touch-large">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t-4 border-black">
-                    <div class="flex justify-between text-lg font-bold mb-4">
-                        <span>合计：</span>
-                        <span class="text-accent">¥997</span>
-                    </div>
-                    <button class="w-full bg-black text-white py-4 font-bold text-lg touch-large" 
-                            style="border: 4px solid #FF2E00; font-weight: 800">
-                        结算
-                    </button>
-                </div>
+        <!-- 代码注释: 导航栏层。使用absolute和z-20确保它在所有内容的最上层。 -->
+        <nav id="bottom-nav" class="absolute bottom-0 left-0 w-full z-20 bg-white/70 backdrop-blur-xl border-t border-zinc-200 shrink-0">
+            <div class="flex justify-around items-center h-16">
+                <a href="index.html" class="flex flex-col items-center justify-center gap-1 text-zinc-500 hover:text-zinc-800 transition-colors flex-1 py-2"><i class="ri-home-4-line text-2xl"></i><span class="text-xs font-medium">首页</span></a>
+                <a href="activities.html" class="flex flex-col items-center justify-center gap-1 text-zinc-800 flex-1 py-2"><i class="ri-calendar-event-fill text-2xl"></i><span class="text-xs font-semibold">园区活动</span></a>
+                <a href="building-management.html" class="flex flex-col items-center justify-center gap-1 text-zinc-500 hover:text-zinc-800 transition-colors flex-1 py-2"><i class="ri-apps-line text-2xl"></i><span class="text-xs font-medium">楼宇管理</span></a>
+                <a href="me.html" class="flex flex-col items-center justify-center gap-1 text-zinc-500 hover:text-zinc-800 transition-colors flex-1 py-2"><i class="ri-user-line text-2xl"></i><span class="text-xs font-medium">我的</span></a>
             </div>
-        </div>
+        </nav>
     </div>
 
     <script>
-        // 页面初始化
-        document.addEventListener('DOMContentLoaded', function() {
-            // 页面切换功能
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    // 移除所有激活状态
-                    document.querySelectorAll('.tab-button').forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.style.backgroundColor = '';
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const activitiesListContainer = document.getElementById('activities-list');
+            const filterTabsContainer = document.getElementById('filter-tabs');
+            const emptyState = document.getElementById('empty-state');
+            const today = new Date();
+
+            // 模拟活动数据
+            const activitiesData = [
+                {
+                    title: "免费物业费 | 招商优惠享不停",
+                    image: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    date: new Date('2025-07-15T09:00:00'),
+                    publisher: "物业管理处",
+                    tag: { text: "优惠", color: "green" }
+                },
+                {
+                    title: "AI赋能未来：企业数字化转型沙龙",
+                    image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    date: new Date(today.getTime() + 15 * 24 * 60 * 60 * 1000), // 15天后
+                    publisher: "园区运营部",
+                    tag: { text: "科技", color: "blue" }
+                },
+                {
+                    title: "夏日清凉节：免费冷饮派送",
+                    image: "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    date: new Date(today.getTime() + 3 * 24 * 60 * 60 * 1000), // 3天后
+                    publisher: "物业管理处",
+                    tag: { text: "福利", color: "orange" }
+                },
+                {
+                    title: "季度消防安全知识讲座与演练",
+                    image: "https://images.pexels.com/photos/8877549/pexels-photo-8877549.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    date: new Date('2025-05-20T14:00:00'),
+                    publisher: "安保部",
+                    tag: { text: "安全", color: "red" }
+                },
+                 {
+                    title: "初创企业融资路演对接会",
+                    image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    date: new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000), // 30天后
+                    publisher: "招商部",
+                    tag: { text: "创业", color: "purple" }
+                }
+            ];
+            
+            // 格式化日期函数
+            const formatDate = (date) => `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+
+            // 生成单个活动卡片的HTML
+            const createActivityCard = (activity) => {
+                const tagColors = {
+                    green: "bg-green-100 text-green-800",
+                    blue: "bg-blue-100 text-blue-800",
+                    orange: "bg-orange-100 text-orange-800",
+                    red: "bg-red-100 text-red-800",
+                    purple: "bg-purple-100 text-purple-800"
+                };
+                
+                const card = document.createElement('a');
+                card.href = "news-details.html"; // 链接到详情页
+                card.className = "block bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden transition-transform duration-300 hover:scale-[1.02]";
+                card.style.opacity = 0; 
+                
+                card.innerHTML = `
+                    <img src="${activity.image}" alt="${activity.title}" class="w-full h-32 object-cover">
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                             <h3 class="font-bold text-zinc-800 leading-tight pr-4">${activity.title}</h3>
+                             <span class="text-xs font-semibold px-2 py-1 rounded-full ${tagColors[activity.tag.color] || tagColors.blue}">${activity.tag.text}</span>
+                        </div>
+                        <div class="flex items-center text-xs text-zinc-400 gap-4">
+                            <span><i class="ri-building-4-line mr-1"></i>${activity.publisher}</span>
+                            <span><i class="ri-calendar-line mr-1"></i>${formatDate(activity.date)}</span>
+                        </div>
+                    </div>
+                `;
+                return card;
+            };
+
+            // 渲染活动列表
+            const renderActivities = (filter) => {
+                activitiesListContainer.innerHTML = '';
+                let filteredData = [];
+                
+                if (filter === 'all') {
+                    filteredData = activitiesData;
+                } else if (filter === 'upcoming') {
+                    filteredData = activitiesData.filter(act => act.date >= today);
+                } else if (filter === 'past') {
+                    filteredData = activitiesData.filter(act => act.date < today);
+                }
+                
+                filteredData.sort((a,b) => b.date - a.date);
+                
+                if (filteredData.length === 0) {
+                    emptyState.classList.remove('hidden');
+                } else {
+                    emptyState.classList.add('hidden');
+                    filteredData.forEach((activity, index) => {
+                         const card = createActivityCard(activity, index);
+                         activitiesListContainer.appendChild(card);
+                         try {
+                            if(typeof motion !== 'undefined'){
+                                 motion.animate(card, { opacity: 1, y: [20, 0] }, { duration: 0.5, delay: index * 0.1 });
+                            } else { card.style.opacity = 1; }
+                         } catch(e) { console.error("Animation failed:", e); card.style.opacity = 1; }
                     });
-                    
-                    // 隐藏所有标签内容
-                    document.querySelectorAll('#home-tab, #search-tab, #profile-tab').forEach(tab => {
-                        tab.classList.add('hidden');
-                    });
-                    
-                    // 设置当前激活状态
-                    this.classList.add('active');
-                    this.style.backgroundColor = '#FF2E00';
-                    
-                    // 显示当前标签内容
-                    const tabId = this.getAttribute('data-tab');
-                    const tabElement = document.getElementById(tabId);
-                    if (tabElement) {
-                        tabElement.classList.remove('hidden');
+                }
+            };
+
+            // 更新筛选标签的样式
+            const updateTabs = (activeFilter) => {
+                const buttons = filterTabsContainer.querySelectorAll('.filter-btn');
+                buttons.forEach(button => {
+                    if (button.dataset.filter === activeFilter) {
+                        button.classList.add('bg-zinc-800', 'text-white');
+                        button.classList.remove('text-zinc-600');
                     } else {
-                        console.error('未找到标签页元素:', tabId);
-                    }
-                    
-                    // 如果是搜索页，聚焦搜索框
-                    if(tabId === 'search-tab') {
-                        const searchInput = document.querySelector('#search-tab input');
-                        if (searchInput) {
-                            searchInput.focus();
-                        }
+                        button.classList.remove('bg-zinc-800', 'text-white');
+                        button.classList.add('text-zinc-600');
                     }
                 });
+            };
+
+            filterTabsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    const filter = e.target.dataset.filter;
+                    updateTabs(filter);
+                    renderActivities(filter);
+                }
             });
-            
-            // 激活首页
-            document.querySelector('[data-tab="home-tab"]').click();
-            
-            // 添加抖动动画
-            const jitterElems = document.querySelectorAll('.jitter-hover');
-            jitterElems.forEach(elem => {
-                elem.addEventListener('mouseover', () => {
-                    elem.classList.add('animate-jitter');
-                    setTimeout(() => {
-                        elem.classList.remove('animate-jitter');
-                    }, 500);
-                });
-            });
-            
-            // 添加商品卡片动画
-            const borderCards = document.querySelectorAll('.brutal-border');
-            borderCards.forEach(card => {
-                card.addEventListener('click', (e) => {
-                    if (!e.target.closest('button')) {
-                        card.classList.add('animate-wiggle');
-                        setTimeout(() => {
-                            card.classList.remove('animate-wiggle');
-                        }, 1000);
-                    }
-                });
-            });
-            
-            // 定制选项交互
-            document.querySelectorAll('.option-chip').forEach(chip => {
-                chip.addEventListener('click', function() {
-                    this.closest('.step-content').querySelectorAll('.option-chip').forEach(c => {
-                        c.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                });
-            });
+
+            // 初始化
+            updateTabs('all');
+            renderActivities('all');
         });
-        
-        // 返回函数
-        function goBack() {
-            document.querySelector('[data-tab="home-tab"]').click();
-        }
-        
-        // 切换购物车显示
-        function toggleCart() {
-            const cartPanel = document.getElementById('cart-panel');
-            if (cartPanel) {
-                cartPanel.classList.toggle('hidden');
-            }
-        }
     </script>
 </body>
 </html>
